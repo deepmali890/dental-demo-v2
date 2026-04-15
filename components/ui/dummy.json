@@ -1,0 +1,4288 @@
+{
+    "_id": "clinicInfo",
+    "_type": "clinicInfo",
+    "clinicName": "SmileCare Dental Clinic",
+    "tagline": "Your Smile, Our Passion — Since 2009",
+    "establishedYear": 2009,
+    "contact": {
+        "primaryPhone": "+91-98765-43210",
+        "secondaryPhone": "+91-11-4567-8900",
+        "whatsapp": "+91-98765-43210",
+        "email": "info@smilecaredental.in",
+        "appointmentEmail": "appointments@smilecaredental.in",
+        "emergencyNumber": "+91-98765-43210"
+    },
+    "address": {
+        "street": "42, Sector 18, Opposite Metro Station",
+        "landmark": "Near Noida City Centre",
+        "city": "Noida",
+        "state": "Uttar Pradesh",
+        "pincode": "201301",
+        "country": "India",
+        "googleMapsUrl": "https://maps.google.com/?q=SmileCare+Dental+Clinic+Noida"
+    },
+    "openingHours": [
+        {
+            "day": "Monday",
+            "isClosed": false,
+            "openTime": "09:00 AM",
+            "closeTime": "08:00 PM"
+        },
+        {
+            "day": "Tuesday",
+            "isClosed": false,
+            "openTime": "09:00 AM",
+            "closeTime": "08:00 PM"
+        },
+        {
+            "day": "Wednesday",
+            "isClosed": false,
+            "openTime": "09:00 AM",
+            "closeTime": "08:00 PM"
+        },
+        {
+            "day": "Thursday",
+            "isClosed": false,
+            "openTime": "09:00 AM",
+            "closeTime": "08:00 PM"
+        },
+        {
+            "day": "Friday",
+            "isClosed": false,
+            "openTime": "09:00 AM",
+            "closeTime": "08:00 PM"
+        },
+        {
+            "day": "Saturday",
+            "isClosed": false,
+            "openTime": "09:00 AM",
+            "closeTime": "06:00 PM"
+        },
+        {
+            "day": "Sunday",
+            "isClosed": false,
+            "openTime": "10:00 AM",
+            "closeTime": "02:00 PM",
+            "note": "By appointment only"
+        }
+    ],
+    "holidayNote": "Clinic will be closed on National Holidays. Emergency dental care available 24/7 — call our emergency number.",
+    "socialMedia": {
+        "facebook": "https://facebook.com/smilecaredental",
+        "instagram": "https://instagram.com/smilecaredental",
+        "youtube": "https://youtube.com/@smilecaredental",
+        "googleBusiness": "https://g.page/smilecaredental",
+        "practo": "https://practo.com/noida/clinic/smilecare-dental"
+    },
+    "stats": [
+        {
+            "value": "15,000+",
+            "label": "Happy Patients",
+            "icon": "😊"
+        },
+        {
+            "value": "15+",
+            "label": "Years Experience",
+            "icon": "🏆"
+        },
+        {
+            "value": "25+",
+            "label": "Expert Doctors",
+            "icon": "👨‍⚕️"
+        },
+        {
+            "value": "4.9★",
+            "label": "Google Rating",
+            "icon": "⭐"
+        }
+    ],
+    "certifications": [
+        {
+            "name": "Indian Dental Association (IDA)",
+            "url": "https://ida.org.in"
+        },
+        {
+            "name": "Dental Council of India Registered",
+            "url": "https://dciindia.gov.in"
+        },
+        {
+            "name": "ISO 9001:2015 Certified Clinic"
+        }
+    ]
+}
+{
+    "_id": "navigation",
+    "_type": "navigation",
+    "headerNav": [
+        {
+            "_key": "nav1",
+            "label": "Home",
+            "url": "/"
+        },
+        {
+            "_key": "nav2",
+            "label": "Services",
+            "url": "/services",
+            "children": [
+                {
+                    "_key": "c1",
+                    "label": "Teeth Whitening",
+                    "icon": "✨",
+                    "url": "/services/teeth-whitening",
+                    "description": "Brighter smile in 1 session"
+                },
+                {
+                    "_key": "c2",
+                    "label": "Dental Implants",
+                    "icon": "🦷",
+                    "url": "/services/dental-implants",
+                    "description": "Permanent tooth replacement"
+                },
+                {
+                    "_key": "c3",
+                    "label": "Orthodontics & Braces",
+                    "icon": "😁",
+                    "url": "/services/orthodontics-braces",
+                    "description": "Straighten your teeth"
+                },
+                {
+                    "_key": "c4",
+                    "label": "Root Canal Treatment",
+                    "icon": "💊",
+                    "url": "/services/root-canal-treatment",
+                    "description": "Pain-free RCT"
+                },
+                {
+                    "_key": "c5",
+                    "label": "Dental Crowns",
+                    "icon": "👑",
+                    "url": "/services/dental-crowns",
+                    "description": "Protect damaged teeth"
+                },
+                {
+                    "_key": "c6",
+                    "label": "View All Services",
+                    "icon": "→",
+                    "url": "/services",
+                    "description": "See our full range"
+                }
+            ]
+        },
+        {
+            "_key": "nav3",
+            "label": "Our Team",
+            "url": "/team"
+        },
+        {
+            "_key": "nav4",
+            "label": "Blog",
+            "url": "/blog"
+        },
+        {
+            "_key": "nav5",
+            "label": "About Us",
+            "url": "/about"
+        },
+        {
+            "_key": "nav6",
+            "label": "Contact",
+            "url": "/contact"
+        }
+    ],
+    "headerCta": {
+        "label": "Book Appointment",
+        "linkType": "internal",
+        "internalLink": "/contact",
+        "style": "primary"
+    },
+    "footerColumns": [
+        {
+            "_key": "fc1",
+            "heading": "Quick Links",
+            "links": [
+                {
+                    "_key": "l1",
+                    "label": "About Us",
+                    "url": "/about"
+                },
+                {
+                    "_key": "l2",
+                    "label": "Our Services",
+                    "url": "/services"
+                },
+                {
+                    "_key": "l3",
+                    "label": "Meet Our Doctors",
+                    "url": "/team"
+                },
+                {
+                    "_key": "l4",
+                    "label": "Patient Gallery",
+                    "url": "/gallery"
+                },
+                {
+                    "_key": "l5",
+                    "label": "Before & After",
+                    "url": "/gallery"
+                }
+            ]
+        },
+        {
+            "_key": "fc2",
+            "heading": "Treatments",
+            "links": [
+                {
+                    "_key": "l6",
+                    "label": "Teeth Whitening",
+                    "url": "/services/teeth-whitening"
+                },
+                {
+                    "_key": "l7",
+                    "label": "Dental Implants",
+                    "url": "/services/dental-implants"
+                },
+                {
+                    "_key": "l8",
+                    "label": "Braces & Aligners",
+                    "url": "/services/orthodontics-braces"
+                },
+                {
+                    "_key": "l9",
+                    "label": "Root Canal",
+                    "url": "/services/root-canal-treatment"
+                },
+                {
+                    "_key": "l10",
+                    "label": "Dental Crowns",
+                    "url": "/services/dental-crowns"
+                },
+                {
+                    "_key": "l11",
+                    "label": "Teeth Cleaning",
+                    "url": "/services/teeth-cleaning"
+                }
+            ]
+        },
+        {
+            "_key": "fc3",
+            "heading": "Patient Info",
+            "links": [
+                {
+                    "_key": "l12",
+                    "label": "Book Appointment",
+                    "url": "/contact"
+                },
+                {
+                    "_key": "l13",
+                    "label": "Pricing & Plans",
+                    "url": "/pricing"
+                },
+                {
+                    "_key": "l14",
+                    "label": "FAQs",
+                    "url": "/faq"
+                },
+                {
+                    "_key": "l15",
+                    "label": "Health Blog",
+                    "url": "/blog"
+                },
+                {
+                    "_key": "l16",
+                    "label": "Emergency Care",
+                    "url": "/contact"
+                }
+            ]
+        }
+    ],
+    "footerBottomLinks": [
+        {
+            "_key": "fb1",
+            "label": "Privacy Policy",
+            "url": "/privacy"
+        },
+        {
+            "_key": "fb2",
+            "label": "Terms of Use",
+            "url": "/terms"
+        }
+    ],
+    "footerTagline": "Trusted dental care for the whole family — because every smile matters.",
+    "copyrightText": "© 2025 SmileCare Dental Clinic, Noida. All rights reserved."
+}
+{
+    "_id": "appointmentSettings",
+    "_type": "appointmentSettings",
+    "formTitle": "Book an Appointment",
+    "formSubtitle": "Fill in the form below and we'll confirm your slot within 2 hours. Or just call us directly!",
+    "formSuccessMessage": "🎉 Thank you! Your appointment request has been received. Our team will call you within 2 hours to confirm your time slot. See you soon! 😊",
+    "formRecipientEmail": "appointments@smilecaredental.in",
+    "availableSlots": [
+        "09:00 AM",
+        "09:30 AM",
+        "10:00 AM",
+        "10:30 AM",
+        "11:00 AM",
+        "11:30 AM",
+        "12:00 PM",
+        "12:30 PM",
+        "02:00 PM",
+        "02:30 PM",
+        "03:00 PM",
+        "03:30 PM",
+        "04:00 PM",
+        "04:30 PM",
+        "05:00 PM",
+        "05:30 PM",
+        "06:00 PM",
+        "06:30 PM",
+        "07:00 PM"
+    ],
+    "slotDurationMinutes": 30,
+    "advanceBookingDays": 30,
+    "emergencyBooking": {
+        "isAvailable": true,
+        "emergencyPhone": "+91-98765-43210",
+        "note": "Dental emergencies attended 24/7. For severe toothache, trauma, knocked-out teeth, or dental abscess — call immediately. Do not wait for next appointment."
+    },
+    "contactPage": {
+        "pageTitle": "Contact Us & Book Appointment",
+        "pageSubtitle": "We're here Monday to Sunday. Walk in or book ahead — your comfort is our priority.",
+        "showMap": true,
+        "mapHeight": 450
+    }
+}
+{
+    "_id": "doctor-rajesh",
+    "_type": "doctor",
+    "name": "Dr. Rajesh Kumar Sharma",
+    "slug": {
+        "current": "dr-rajesh-kumar-sharma"
+    },
+    "designation": "Chief Dental Surgeon & Founder",
+    "role": "doctor",
+    "status": "active",
+    "order": 1,
+    "isFounder": true,
+    "qualifications": [
+        {
+            "_key": "q1",
+            "degree": "BDS",
+            "institution": "King George's Medical University, Lucknow",
+            "year": 1998
+        },
+        {
+            "_key": "q2",
+            "degree": "MDS",
+            "institution": "AIIMS, New Delhi (Oral Surgery)",
+            "year": 2002
+        },
+        {
+            "_key": "q3",
+            "degree": "FICOI",
+            "institution": "International Congress of Oral Implantologists",
+            "year": 2010
+        }
+    ],
+    "specializations": [
+        "Dental Implants",
+        "Oral Surgery",
+        "Full Mouth Rehabilitation",
+        "Cosmetic Dentistry",
+        "Smile Design"
+    ],
+    "experience": 22,
+    "registrationNumber": "UP/DCI/2002/4521",
+    "languages": [
+        "Hindi",
+        "English",
+        "Punjabi"
+    ],
+    "shortBio": "Dr. Rajesh Sharma is a pioneering implantologist with 22+ years of experience, having restored smiles for over 8,000 patients across India.",
+    "fullBio": [
+        {
+            "_key": "b1",
+            "_type": "block",
+            "style": "h2",
+            "children": [
+                {
+                    "_key": "c1",
+                    "_type": "span",
+                    "text": "About Dr. Rajesh Sharma"
+                }
+            ],
+            "markDefs": []
+        },
+        {
+            "_key": "b2",
+            "_type": "block",
+            "style": "normal",
+            "children": [
+                {
+                    "_key": "c2",
+                    "_type": "span",
+                    "text": "Dr. Rajesh Kumar Sharma is the founder and chief dental surgeon of SmileCare Dental Clinic. With over two decades of experience, he has become one of NCR's most trusted names in implantology and cosmetic dentistry."
+                }
+            ],
+            "markDefs": []
+        },
+        {
+            "_key": "b3",
+            "_type": "block",
+            "style": "normal",
+            "children": [
+                {
+                    "_key": "c3",
+                    "_type": "span",
+                    "text": "After completing his BDS from KGMU Lucknow and MDS from AIIMS New Delhi specializing in Oral & Maxillofacial Surgery, Dr. Sharma pursued advanced training in dental implantology in Seoul, South Korea, and Munich, Germany."
+                }
+            ],
+            "markDefs": []
+        },
+        {
+            "_key": "b4",
+            "_type": "block",
+            "style": "normal",
+            "children": [
+                {
+                    "_key": "c4",
+                    "_type": "span",
+                    "text": "He has been felicitated by the Indian Dental Association multiple times and regularly conducts workshops for young dentists across India."
+                }
+            ],
+            "markDefs": []
+        }
+    ],
+    "achievements": [
+        {
+            "_key": "a1",
+            "title": "Best Implantologist — NCR",
+            "year": 2022,
+            "organization": "Indian Dental Association"
+        },
+        {
+            "_key": "a2",
+            "title": "Excellence in Dental Education Award",
+            "year": 2019,
+            "organization": "Dental Council of India"
+        },
+        {
+            "_key": "a3",
+            "title": "Top Dentist — Noida (4 consecutive years)",
+            "year": 2021,
+            "organization": "Times Health Survey"
+        }
+    ],
+    "socialLinks": {
+        "linkedin": "https://linkedin.com/in/dr-rajesh-sharma-dental",
+        "instagram": "https://instagram.com/dr.rajesh.smilecare"
+    },
+    "availableDays": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday"
+    ]
+}
+{
+    "_id": "doctor-priya",
+    "_type": "doctor",
+    "name": "Dr. Priya Mehta",
+    "slug": {
+        "current": "dr-priya-mehta"
+    },
+    "designation": "Senior Orthodontist & Smile Designer",
+    "role": "specialist",
+    "status": "active",
+    "order": 2,
+    "isFounder": false,
+    "qualifications": [
+        {
+            "_key": "q1",
+            "degree": "BDS",
+            "institution": "Maulana Azad Institute of Dental Sciences, Delhi",
+            "year": 2008
+        },
+        {
+            "_key": "q2",
+            "degree": "MDS",
+            "institution": "Manipal College of Dental Sciences (Orthodontics)",
+            "year": 2012
+        },
+        {
+            "_key": "q3",
+            "degree": "Invisalign Certified Provider",
+            "year": 2016
+        }
+    ],
+    "specializations": [
+        "Braces",
+        "Invisalign",
+        "Teeth Alignment",
+        "Ceramic Braces",
+        "Retainers",
+        "Smile Design",
+        "Pediatric Orthodontics"
+    ],
+    "experience": 12,
+    "registrationNumber": "DL/DCI/2012/7834",
+    "languages": [
+        "Hindi",
+        "English"
+    ],
+    "shortBio": "Dr. Priya Mehta is a certified Invisalign provider with a passion for creating perfect smiles. She has treated 2,500+ orthodontic cases including children, teens, and adults.",
+    "fullBio": [
+        {
+            "_key": "b1",
+            "_type": "block",
+            "style": "h2",
+            "children": [
+                {
+                    "_key": "c1",
+                    "_type": "span",
+                    "text": "About Dr. Priya Mehta"
+                }
+            ],
+            "markDefs": []
+        },
+        {
+            "_key": "b2",
+            "_type": "block",
+            "style": "normal",
+            "children": [
+                {
+                    "_key": "c2",
+                    "_type": "span",
+                    "text": "Dr. Priya Mehta joined SmileCare in 2015 and has since become our patients' favorite for her gentle approach and eye for aesthetic perfection. She specializes in both traditional braces and modern clear aligner systems."
+                }
+            ],
+            "markDefs": []
+        },
+        {
+            "_key": "b3",
+            "_type": "block",
+            "style": "normal",
+            "children": [
+                {
+                    "_key": "c3",
+                    "_type": "span",
+                    "text": "A certified Invisalign provider since 2016, Dr. Mehta has helped hundreds of adults achieve straight teeth discreetly without metal braces. She also specializes in orthodontic treatment for children as young as 7 years."
+                }
+            ],
+            "markDefs": []
+        }
+    ],
+    "achievements": [
+        {
+            "_key": "a1",
+            "title": "Young Orthodontist of the Year",
+            "year": 2018,
+            "organization": "Orthodontic Society of India"
+        },
+        {
+            "_key": "a2",
+            "title": "Invisalign Platinum Provider Status",
+            "year": 2022,
+            "organization": "Align Technology"
+        }
+    ],
+    "socialLinks": {
+        "instagram": "https://instagram.com/dr.priya.smilecare"
+    },
+    "availableDays": [
+        "Monday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday"
+    ]
+}
+{
+    "_id": "doctor-arjun",
+    "_type": "doctor",
+    "name": "Dr. Arjun Verma",
+    "slug": {
+        "current": "dr-arjun-verma"
+    },
+    "designation": "Cosmetic & Restorative Dentist",
+    "role": "specialist",
+    "status": "active",
+    "order": 3,
+    "isFounder": false,
+    "qualifications": [
+        {
+            "_key": "q1",
+            "degree": "BDS",
+            "institution": "Subharti Dental College, Meerut",
+            "year": 2010
+        },
+        {
+            "_key": "q2",
+            "degree": "MDS",
+            "institution": "PGIDS Rohtak (Conservative Dentistry)",
+            "year": 2014
+        },
+        {
+            "_key": "q3",
+            "degree": "Fellowship in Aesthetic Dentistry, Paris",
+            "year": 2017
+        }
+    ],
+    "specializations": [
+        "Veneers",
+        "Teeth Whitening",
+        "Composite Bonding",
+        "Smile Makeover",
+        "Crowns & Bridges",
+        "Tooth Colored Fillings"
+    ],
+    "experience": 10,
+    "registrationNumber": "UP/DCI/2014/9921",
+    "languages": [
+        "Hindi",
+        "English"
+    ],
+    "shortBio": "Dr. Arjun Verma is our cosmetic dentistry expert who has transformed 1,800+ smiles using the latest aesthetic techniques. Fellowship trained from Paris Institute of Aesthetic Dentistry.",
+    "fullBio": [
+        {
+            "_key": "b1",
+            "_type": "block",
+            "style": "h2",
+            "children": [
+                {
+                    "_key": "c1",
+                    "_type": "span",
+                    "text": "About Dr. Arjun Verma"
+                }
+            ],
+            "markDefs": []
+        },
+        {
+            "_key": "b2",
+            "_type": "block",
+            "style": "normal",
+            "children": [
+                {
+                    "_key": "c2",
+                    "_type": "span",
+                    "text": "Dr. Arjun Verma has a unique artistic approach to dentistry. He believes every smile is a canvas, and his meticulous attention to detail ensures results that are both beautiful and long-lasting. After completing his Fellowship in Aesthetic Dentistry from Paris, he brought international standards of cosmetic dentistry to SmileCare Clinic."
+                }
+            ],
+            "markDefs": []
+        }
+    ],
+    "achievements": [
+        {
+            "_key": "a1",
+            "title": "Best Cosmetic Dentist — Delhi NCR",
+            "year": 2023,
+            "organization": "Dental Tribune India"
+        }
+    ],
+    "availableDays": [
+        "Tuesday",
+        "Thursday",
+        "Friday",
+        "Saturday"
+    ]
+}
+{
+    "_id": "doctor-sunita",
+    "_type": "doctor",
+    "name": "Dr. Sunita Agarwal",
+    "slug": {
+        "current": "dr-sunita-agarwal"
+    },
+    "designation": "Pediatric Dental Specialist (Pedodontist)",
+    "role": "specialist",
+    "status": "active",
+    "order": 4,
+    "isFounder": false,
+    "qualifications": [
+        {
+            "_key": "q1",
+            "degree": "BDS",
+            "institution": "DJ College of Dental Sciences, Modinagar",
+            "year": 2011
+        },
+        {
+            "_key": "q2",
+            "degree": "MDS",
+            "institution": "Pediatric Dentistry, SDM Dharwad",
+            "year": 2015
+        }
+    ],
+    "specializations": [
+        "Children's Dentistry",
+        "Baby Teeth",
+        "Fluoride Treatment",
+        "Dental Sealants",
+        "Kids Braces",
+        "Habit Breaking Appliances"
+    ],
+    "experience": 9,
+    "languages": [
+        "Hindi",
+        "English"
+    ],
+    "shortBio": "Dr. Sunita Agarwal is our gentle child-friendly dentist. She creates a fun, fear-free environment for kids aged 1–16 years, making dental visits something children actually look forward to!",
+    "fullBio": [
+        {
+            "_key": "b1",
+            "_type": "block",
+            "style": "h2",
+            "children": [
+                {
+                    "_key": "c1",
+                    "_type": "span",
+                    "text": "About Dr. Sunita Agarwal"
+                }
+            ],
+            "markDefs": []
+        },
+        {
+            "_key": "b2",
+            "_type": "block",
+            "style": "normal",
+            "children": [
+                {
+                    "_key": "c2",
+                    "_type": "span",
+                    "text": "Dr. Sunita Agarwal specializes in making dental care a positive experience for children. Her clinic room is designed especially for kids with colorful walls, fun music, and a treasure chest of prizes. She firmly believes that establishing good dental habits in childhood leads to a lifetime of healthy smiles."
+                }
+            ],
+            "markDefs": []
+        }
+    ],
+    "availableDays": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Friday",
+        "Saturday"
+    ]
+}
+{
+    "_id": "doctor-rahul",
+    "_type": "doctor",
+    "name": "Dr. Rahul Gupta",
+    "slug": {
+        "current": "dr-rahul-gupta"
+    },
+    "designation": "Gum Specialist (Periodontist)",
+    "role": "specialist",
+    "status": "active",
+    "order": 5,
+    "isFounder": false,
+    "qualifications": [
+        {
+            "_key": "q1",
+            "degree": "BDS",
+            "institution": "Lucknow Dental College",
+            "year": 2013
+        },
+        {
+            "_key": "q2",
+            "degree": "MDS",
+            "institution": "Periodontics, KGMU Lucknow",
+            "year": 2017
+        }
+    ],
+    "specializations": [
+        "Gum Disease Treatment",
+        "Laser Gum Treatment",
+        "Scaling & Polishing",
+        "Gum Surgery",
+        "Bone Grafting",
+        "Crown Lengthening"
+    ],
+    "experience": 7,
+    "languages": [
+        "Hindi",
+        "English"
+    ],
+    "shortBio": "Dr. Rahul Gupta is our gum health specialist. He uses advanced laser technology for painless gum treatments and has successfully treated 1,200+ patients with severe gum disease.",
+    "fullBio": [
+        {
+            "_key": "b1",
+            "_type": "block",
+            "style": "h2",
+            "children": [
+                {
+                    "_key": "c1",
+                    "_type": "span",
+                    "text": "About Dr. Rahul Gupta"
+                }
+            ],
+            "markDefs": []
+        },
+        {
+            "_key": "b2",
+            "_type": "block",
+            "style": "normal",
+            "children": [
+                {
+                    "_key": "c2",
+                    "_type": "span",
+                    "text": "Dr. Rahul Gupta heads SmileCare's Periodontics department. He is one of the few periodontists in NCR trained in advanced laser gum surgery, offering patients a virtually painless alternative to traditional gum treatment."
+                }
+            ],
+            "markDefs": []
+        }
+    ],
+    "availableDays": [
+        "Monday",
+        "Wednesday",
+        "Thursday",
+        "Saturday"
+    ]
+}
+{
+    "_id": "service-whitening",
+    "_type": "service",
+    "title": "Teeth Whitening & Bleaching",
+    "slug": {
+        "current": "teeth-whitening"
+    },
+    "status": "published",
+    "order": 1,
+    "isFeatured": true,
+    "icon": "✨",
+    "shortDescription": "Get a dazzling smile up to 8 shades brighter in just one session! Our professional Zoom whitening is safe, effective, and completely painless.",
+    "fullDescription": [
+        {
+            "_key": "b1",
+            "_type": "block",
+            "style": "h2",
+            "children": [
+                {
+                    "_key": "c1",
+                    "_type": "span",
+                    "text": "What is Professional Teeth Whitening?"
+                }
+            ],
+            "markDefs": []
+        },
+        {
+            "_key": "b2",
+            "_type": "block",
+            "style": "normal",
+            "children": [
+                {
+                    "_key": "c2",
+                    "_type": "span",
+                    "text": "Professional teeth whitening is the most popular cosmetic dental procedure in the world. Unlike over-the-counter whitening strips, our in-clinic Zoom WhiteSpeed whitening system delivers dramatically brighter results in just 45 minutes."
+                }
+            ],
+            "markDefs": []
+        },
+        {
+            "_key": "b3",
+            "_type": "block",
+            "style": "h2",
+            "children": [
+                {
+                    "_key": "c3",
+                    "_type": "span",
+                    "text": "Types of Whitening We Offer"
+                }
+            ],
+            "markDefs": []
+        },
+        {
+            "_key": "b4",
+            "_type": "block",
+            "style": "normal",
+            "listItem": "bullet",
+            "children": [
+                {
+                    "_key": "c4",
+                    "_type": "span",
+                    "text": "Zoom In-Office Whitening — Up to 8 shades brighter in 45 minutes"
+                }
+            ],
+            "markDefs": []
+        },
+        {
+            "_key": "b5",
+            "_type": "block",
+            "style": "normal",
+            "listItem": "bullet",
+            "children": [
+                {
+                    "_key": "c5",
+                    "_type": "span",
+                    "text": "Custom Take-Home Whitening Kits — Professional-strength trays for home use"
+                }
+            ],
+            "markDefs": []
+        },
+        {
+            "_key": "b6",
+            "_type": "block",
+            "style": "normal",
+            "listItem": "bullet",
+            "children": [
+                {
+                    "_key": "c6",
+                    "_type": "span",
+                    "text": "Combination Treatment — In-clinic session + take-home maintenance kit"
+                }
+            ],
+            "markDefs": []
+        },
+        {
+            "_key": "b7",
+            "_type": "block",
+            "style": "h2",
+            "children": [
+                {
+                    "_key": "c7",
+                    "_type": "span",
+                    "text": "Is it Safe?"
+                }
+            ],
+            "markDefs": []
+        },
+        {
+            "_key": "b8",
+            "_type": "block",
+            "style": "normal",
+            "children": [
+                {
+                    "_key": "c8",
+                    "_type": "span",
+                    "text": "Yes, completely. The procedure is carried out under the supervision of our cosmetic dentist. We apply a protective gel on your gums before treatment. Mild temporary sensitivity may occur, which subsides within 24–48 hours."
+                }
+            ],
+            "markDefs": []
+        },
+        {
+            "_key": "b9",
+            "_type": "block",
+            "style": "h2",
+            "children": [
+                {
+                    "_key": "c9",
+                    "_type": "span",
+                    "text": "How Long Do Results Last?"
+                }
+            ],
+            "markDefs": []
+        },
+        {
+            "_key": "b10",
+            "_type": "block",
+            "style": "normal",
+            "children": [
+                {
+                    "_key": "c10",
+                    "_type": "span",
+                    "text": "With proper care and avoiding staining foods/drinks, results can last 12–18 months. Annual touch-ups help maintain brightness."
+                }
+            ],
+            "markDefs": []
+        }
+    ],
+    "duration": "45–60 minutes (single session)",
+    "painLevel": "painless",
+    "benefits": [
+        {
+            "_key": "ben1",
+            "icon": "✨",
+            "title": "8 Shades Brighter",
+            "description": "Clinically proven to whiten teeth up to 8 shades in one session"
+        },
+        {
+            "_key": "ben2",
+            "icon": "⚡",
+            "title": "Fast Results",
+            "description": "Walk in with stained teeth, walk out with a dazzling smile — in under an hour"
+        },
+        {
+            "_key": "ben3",
+            "icon": "🛡️",
+            "title": "Safe & Supervised",
+            "description": "Professional-grade whitening done safely by our cosmetic dentist"
+        },
+        {
+            "_key": "ben4",
+            "icon": "💎",
+            "title": "Long-lasting",
+            "description": "Results last 12–18 months with proper care and simple maintenance"
+        }
+    ],
+    "procedure": [
+        {
+            "_key": "p1",
+            "stepNumber": 1,
+            "title": "Consultation & Shade Assessment",
+            "description": "Dr. Arjun examines your teeth, assesses current shade, and discusses your target shade. Before photos are taken for comparison."
+        },
+        {
+            "_key": "p2",
+            "stepNumber": 2,
+            "title": "Gum Protection",
+            "description": "A protective barrier gel is carefully applied to your gums and soft tissue to prevent any sensitivity during the procedure."
+        },
+        {
+            "_key": "p3",
+            "stepNumber": 3,
+            "title": "Whitening Gel Application",
+            "description": "Professional-strength Zoom whitening gel is applied to all visible teeth surfaces."
+        },
+        {
+            "_key": "p4",
+            "stepNumber": 4,
+            "title": "LED Light Activation (3 x 15 min)",
+            "description": "A special LED light activates the gel. Three 15-minute sessions are done with fresh gel application between each round."
+        },
+        {
+            "_key": "p5",
+            "stepNumber": 5,
+            "title": "Post-Treatment & Take-Home Kit",
+            "description": "Your results are assessed, after photos taken, and you receive a take-home touch-up kit with instructions."
+        }
+    ],
+    "pricing": {
+        "showPrice": true,
+        "startingFrom": 8000,
+        "priceRange": "₹8,000 – ₹15,000",
+        "note": "Price varies based on type of whitening chosen. Consultation is free."
+    },
+    "faqs": [
+        {
+            "_key": "f1",
+            "question": "Will whitening work on crowns or veneers?",
+            "answer": "No, whitening gel only works on natural tooth enamel. Crowns, veneers, and fillings won't change color. We recommend whitening before getting restorations done."
+        },
+        {
+            "_key": "f2",
+            "question": "Is teeth whitening painful?",
+            "answer": "Most patients experience zero discomfort. Some feel mild, temporary sensitivity for 1–2 days after, which is completely normal and resolves on its own."
+        },
+        {
+            "_key": "f3",
+            "question": "How long should I avoid colored foods after whitening?",
+            "answer": "Follow the 'white diet' for 48 hours after treatment — avoid coffee, tea, red wine, curries, and colored drinks for best results."
+        },
+        {
+            "_key": "f4",
+            "question": "How often can I whiten my teeth?",
+            "answer": "We recommend in-clinic whitening no more than once a year. Touch-up kits can be used every 3–6 months."
+        }
+    ],
+    "primaryCta": {
+        "label": "Book Whitening Session",
+        "linkType": "internal",
+        "internalLink": "/contact",
+        "style": "primary"
+    },
+    "assignedDoctors": [
+        {
+            "_type": "reference",
+            "_ref": "doctor-arjun"
+        }
+    ],
+    "seo": {
+        "metaTitle": "Teeth Whitening in Noida | SmileCare Dental Clinic",
+        "metaDescription": "Professional Zoom teeth whitening — up to 8 shades brighter in 45 minutes. Safe, painless, and long-lasting results. Book your session today!"
+    }
+}
+{
+    "_id": "service-implants",
+    "_type": "service",
+    "title": "Dental Implants",
+    "slug": {
+        "current": "dental-implants"
+    },
+    "status": "published",
+    "order": 2,
+    "isFeatured": true,
+    "icon": "🦷",
+    "shortDescription": "Replace missing teeth permanently with titanium dental implants — the most natural-looking, feeling, and functioning tooth replacement solution available.",
+    "fullDescription": [
+        {
+            "_key": "b1",
+            "_type": "block",
+            "style": "h2",
+            "children": [
+                {
+                    "_key": "c1",
+                    "_type": "span",
+                    "text": "What are Dental Implants?"
+                }
+            ],
+            "markDefs": []
+        },
+        {
+            "_key": "b2",
+            "_type": "block",
+            "style": "normal",
+            "children": [
+                {
+                    "_key": "c2",
+                    "_type": "span",
+                    "text": "A dental implant is a small titanium screw that is surgically placed into the jawbone to replace the root of a missing tooth. Once integrated with the bone (osseointegration), a crown is placed on top — creating a tooth that looks, feels, and functions exactly like a natural tooth."
+                }
+            ],
+            "markDefs": []
+        },
+        {
+            "_key": "b3",
+            "_type": "block",
+            "style": "h2",
+            "children": [
+                {
+                    "_key": "c3",
+                    "_type": "span",
+                    "text": "Why Implants are the Gold Standard"
+                }
+            ],
+            "markDefs": []
+        },
+        {
+            "_key": "b4",
+            "_type": "block",
+            "style": "normal",
+            "children": [
+                {
+                    "_key": "c4",
+                    "_type": "span",
+                    "text": "Unlike dentures that can slip, or bridges that require grinding down healthy teeth, implants are self-supporting and permanent. They are the closest thing to having your natural teeth back."
+                }
+            ],
+            "markDefs": []
+        },
+        {
+            "_key": "b5",
+            "_type": "block",
+            "style": "h2",
+            "children": [
+                {
+                    "_key": "c5",
+                    "_type": "span",
+                    "text": "Types of Implants We Offer"
+                }
+            ],
+            "markDefs": []
+        },
+        {
+            "_key": "b6",
+            "_type": "block",
+            "style": "normal",
+            "listItem": "bullet",
+            "children": [
+                {
+                    "_key": "c6",
+                    "_type": "span",
+                    "text": "Single Tooth Implant — Replace one missing tooth without affecting adjacent teeth"
+                }
+            ],
+            "markDefs": []
+        },
+        {
+            "_key": "b7",
+            "_type": "block",
+            "style": "normal",
+            "listItem": "bullet",
+            "children": [
+                {
+                    "_key": "c7",
+                    "_type": "span",
+                    "text": "Implant-Supported Bridge — Replace 2–3 consecutive missing teeth on just 2 implants"
+                }
+            ],
+            "markDefs": []
+        },
+        {
+            "_key": "b8",
+            "_type": "block",
+            "style": "normal",
+            "listItem": "bullet",
+            "children": [
+                {
+                    "_key": "c8",
+                    "_type": "span",
+                    "text": "All-on-4 / All-on-6 — Replace an entire arch of teeth on just 4 or 6 implants"
+                }
+            ],
+            "markDefs": []
+        },
+        {
+            "_key": "b9",
+            "_type": "block",
+            "style": "normal",
+            "listItem": "bullet",
+            "children": [
+                {
+                    "_key": "c9",
+                    "_type": "span",
+                    "text": "Immediate Load Implants — Teeth in a day — temporary crown on same day as implant"
+                }
+            ],
+            "markDefs": []
+        }
+    ],
+    "duration": "3–6 months total (multiple appointments)",
+    "painLevel": "mild",
+    "benefits": [
+        {
+            "_key": "ben1",
+            "icon": "🦷",
+            "title": "Permanent Solution",
+            "description": "Implants last a lifetime with proper care — no need to replace like dentures"
+        },
+        {
+            "_key": "ben2",
+            "icon": "🍎",
+            "title": "Eat Anything",
+            "description": "Bite into apples, nuts, and hard foods with full confidence and zero pain"
+        },
+        {
+            "_key": "ben3",
+            "icon": "🪥",
+            "title": "Easy Maintenance",
+            "description": "Clean implants just like natural teeth — regular brushing and flossing"
+        },
+        {
+            "_key": "ben4",
+            "icon": "🏥",
+            "title": "Preserves Jawbone",
+            "description": "Implants stimulate the jawbone, preventing bone loss that occurs with missing teeth"
+        },
+        {
+            "_key": "ben5",
+            "icon": "😊",
+            "title": "😊",
+            "description": "The crown is custom-made to match your exact tooth color and shape perfectly"
+        }
+    ],
+    "procedure": [
+        {
+            "_key": "p1",
+            "stepNumber": 1,
+            "title": "3D Scan & Treatment Planning",
+            "description": "CBCT scan is taken to assess bone quantity, quality, and implant placement. Digital planning ensures precise, safe placement."
+        },
+        {
+            "_key": "p2",
+            "stepNumber": 2,
+            "title": "Implant Placement Surgery",
+            "description": "Under local anesthesia, a small titanium implant is placed in the jawbone. Most patients are surprised by how comfortable it is."
+        },
+        {
+            "_key": "p3",
+            "stepNumber": 3,
+            "title": "Healing Period (Osseointegration)",
+            "description": "Over 3–4 months, the implant fuses with your jawbone. A temporary crown may be placed during this time."
+        },
+        {
+            "_key": "p4",
+            "stepNumber": 4,
+            "title": "Abutment Placement",
+            "description": "Once healed, a small connector (abutment) is attached to the implant. Impressions are taken for the final crown."
+        },
+        {
+            "_key": "p5",
+            "stepNumber": 5,
+            "title": "Final Crown Placement",
+            "description": "Your custom-made ceramic crown is permanently attached. Final adjustments to bite are made for perfect fit and function."
+        }
+    ],
+    "pricing": {
+        "showPrice": true,
+        "startingFrom": 25000,
+        "priceRange": "₹25,000 – ₹45,000 per implant",
+        "note": "Price includes implant, abutment, and crown. EMI available from ₹2,500/month."
+    },
+    "faqs": [
+        {
+            "_key": "f1",
+            "question": "Is the implant surgery painful?",
+            "answer": "No — the surgery is done under local anesthesia. You will feel pressure but no pain. Post-surgery discomfort is manageable with prescribed medication and typically lasts only 2–3 days."
+        },
+        {
+            "_key": "f2",
+            "question": "How long do dental implants last?",
+            "answer": "With proper care, implants can last a lifetime. The crown on top may need replacement after 15–20 years."
+        },
+        {
+            "_key": "f3",
+            "question": "What is the success rate of dental implants?",
+            "answer": "Nobel Biocare implants placed by Dr. Rajesh have a 98%+ success rate over 10 years."
+        },
+        {
+            "_key": "f4",
+            "question": "Is EMI/financing available for implants?",
+            "answer": "Yes! We offer 0% interest EMI up to 12 months through leading banks and NBFCs."
+        }
+    ],
+    "primaryCta": {
+        "label": "Book Free Implant Consultation",
+        "linkType": "internal",
+        "internalLink": "/contact",
+        "style": "primary"
+    },
+    "secondaryCta": {
+        "label": "View Before & After",
+        "linkType": "internal",
+        "internalLink": "/gallery",
+        "style": "secondary"
+    },
+    "assignedDoctors": [
+        {
+            "_type": "reference",
+            "_ref": "doctor-rajesh"
+        }
+    ],
+    "seo": {
+        "metaTitle": "Dental Implants in Noida | SmileCare Dental Clinic",
+        "metaDescription": "Permanent tooth replacement with Nobel Biocare implants. 98% success rate, painless surgery, EMI available. Book free consultation with Dr. Rajesh Sharma."
+    }
+}
+{
+    "_id": "service-orthodontics",
+    "_type": "service",
+    "title": "Orthodontics & Braces",
+    "slug": {
+        "current": "orthodontics-braces"
+    },
+    "status": "published",
+    "order": 3,
+    "isFeatured": true,
+    "icon": "😁",
+    "shortDescription": "Straighten crooked teeth and fix bite issues with our range of braces — from traditional metal to virtually invisible Invisalign aligners. Treatment for all ages!",
+    "fullDescription": [
+        {
+            "_key": "b1",
+            "_type": "block",
+            "style": "h2",
+            "children": [
+                {
+                    "_key": "c1",
+                    "_type": "span",
+                    "text": "What is Orthodontic Treatment?"
+                }
+            ],
+            "markDefs": []
+        },
+        {
+            "_key": "b2",
+            "_type": "block",
+            "style": "normal",
+            "children": [
+                {
+                    "_key": "c2",
+                    "_type": "span",
+                    "text": "Orthodontics is the branch of dentistry focused on correcting misaligned teeth and jaws. Whether you have crowded teeth, gaps, an overbite, or underbite, orthodontic treatment can transform both your smile and your oral health."
+                }
+            ],
+            "markDefs": []
+        },
+        {
+            "_key": "b3",
+            "_type": "block",
+            "style": "h2",
+            "children": [
+                {
+                    "_key": "c3",
+                    "_type": "span",
+                    "text": "Types of Braces We Offer"
+                }
+            ],
+            "markDefs": []
+        },
+        {
+            "_key": "b4",
+            "_type": "block",
+            "style": "h3",
+            "children": [
+                {
+                    "_key": "c4",
+                    "_type": "span",
+                    "text": "Metal Braces"
+                }
+            ],
+            "markDefs": []
+        },
+        {
+            "_key": "b5",
+            "_type": "block",
+            "style": "normal",
+            "children": [
+                {
+                    "_key": "c5",
+                    "_type": "span",
+                    "text": "The most time-tested option. Today's metal braces are smaller, more comfortable, and more effective than ever. Great for complex cases and more affordable."
+                }
+            ],
+            "markDefs": []
+        },
+        {
+            "_key": "b6",
+            "_type": "block",
+            "style": "h3",
+            "children": [
+                {
+                    "_key": "c6",
+                    "_type": "span",
+                    "text": "Invisalign Clear Aligners"
+                }
+            ],
+            "markDefs": []
+        },
+        {
+            "_key": "b7",
+            "_type": "block",
+            "style": "normal",
+            "children": [
+                {
+                    "_key": "c7",
+                    "_type": "span",
+                    "text": "A series of custom-made, removable clear plastic trays that gently shift your teeth. Virtually invisible — most people won't even know you're wearing them. Great for mild to moderate cases and adults."
+                }
+            ],
+            "markDefs": []
+        },
+        {
+            "_key": "b8",
+            "_type": "block",
+            "style": "h2",
+            "children": [
+                {
+                    "_key": "c8",
+                    "_type": "span",
+                    "text": "Am I Too Old for Braces?"
+                }
+            ],
+            "markDefs": []
+        },
+        {
+            "_key": "b9",
+            "_type": "block",
+            "style": "normal",
+            "children": [
+                {
+                    "_key": "c9",
+                    "_type": "span",
+                    "text": "Absolutely not! Orthodontic treatment works at any age. Dr. Priya treats patients from age 7 to 65+. In fact, 1 in 3 of our orthodontic patients are adults."
+                }
+            ],
+            "markDefs": []
+        }
+    ],
+    "duration": "12–24 months (varies by complexity)",
+    "painLevel": "mild",
+    "benefits": [
+        {
+            "_key": "ben1",
+            "icon": "😁",
+            "title": "Straight Teeth",
+            "description": "Correct crowding, gaps, and bite issues for a perfectly aligned smile"
+        },
+        {
+            "_key": "ben2",
+            "icon": "🦷",
+            "title": "Better Oral Health",
+            "description": "Straight teeth are easier to clean, reducing cavities and gum disease risk"
+        },
+        {
+            "_key": "ben3",
+            "icon": "🔍",
+            "title": "Invisible Options",
+            "description": "Invisalign and ceramic braces offer discreet treatment for image-conscious patients"
+        },
+        {
+            "_key": "ben4",
+            "icon": "✅",
+            "title": "All Ages Welcome",
+            "description": "Effective orthodontic treatment for children from age 7 and adults of all ages"
+        },
+        {
+            "_key": "ben5",
+            "icon": "💰",
+            "title": "Flexible Payment",
+            "description": "EMI plans available — monthly installments starting from ₹3,000/month"
+        }
+    ],
+    "procedure": [
+        {
+            "_key": "p1",
+            "stepNumber": 1,
+            "title": "Orthodontic Consultation",
+            "description": "Dr. Priya examines your teeth, takes photos, X-rays, and digital scans. Treatment options are discussed and a customized plan is designed."
+        },
+        {
+            "_key": "p2",
+            "stepNumber": 2,
+            "title": "Records & Treatment Planning",
+            "description": "Detailed impressions or 3D digital scans are taken to fabricate your appliances."
+        },
+        {
+            "_key": "p3",
+            "stepNumber": 3,
+            "title": "Brace Fitting / Aligner Delivery",
+            "description": "Braces are bonded to teeth, or your first set of Invisalign aligners are delivered with complete instructions."
+        },
+        {
+            "_key": "p4",
+            "stepNumber": 4,
+            "title": "Regular Adjustment Visits",
+            "description": "Monthly visits (every 6–8 weeks) for wire changes and progress monitoring."
+        },
+        {
+            "_key": "p5",
+            "stepNumber": 5,
+            "title": "Retainer Fitting",
+            "description": "Once teeth are in position, braces are removed and custom retainers are made to hold results permanently."
+        }
+    ],
+    "pricing": {
+        "showPrice": true,
+        "startingFrom": 35000,
+        "priceRange": "₹35,000 – ₹1,50,000",
+        "note": "Metal: ₹35K–45K | Ceramic: ₹55K–70K | Invisalign: ₹90K–1.5L | EMI available"
+    },
+    "faqs": [
+        {
+            "_key": "f1",
+            "question": "At what age should I get braces for my child?",
+            "answer": "The ideal age for an orthodontic evaluation is 7 years — even if no treatment is needed yet, early assessment allows Dr. Priya to spot developing problems and plan timely intervention."
+        },
+        {
+            "_key": "f2",
+            "question": "How long does orthodontic treatment take?",
+            "answer": "Typically 12–24 months depending on complexity. Simple cases can be completed in 6–9 months."
+        },
+        {
+            "_key": "f3",
+            "question": "Does getting braces hurt?",
+            "answer": "The bonding process is painless. You may feel soreness for 3–5 days after each tightening, which is normal."
+        },
+        {
+            "_key": "f4",
+            "question": "Can I eat normally with braces?",
+            "answer": "You'll need to avoid hard, sticky, and chewy foods. Invisalign patients can eat anything by removing their aligners."
+        }
+    ],
+    "primaryCta": {
+        "label": "Book Orthodontic Consultation",
+        "linkType": "internal",
+        "internalLink": "/contact",
+        "style": "primary"
+    },
+    "assignedDoctors": [
+        {
+            "_type": "reference",
+            "_ref": "doctor-priya"
+        }
+    ],
+    "seo": {
+        "metaTitle": "Braces & Invisalign in Noida | SmileCare Dental Clinic",
+        "metaDescription": "Metal braces, ceramic braces, and Invisalign by certified orthodontist Dr. Priya Mehta. All ages treated. EMI from ₹3,000/month. Book free consultation!"
+    }
+}
+{
+    "_id": "service-rct",
+    "_type": "service",
+    "title": "Root Canal Treatment",
+    "slug": {
+        "current": "root-canal-treatment"
+    },
+    "status": "published",
+    "order": 4,
+    "isFeatured": true,
+    "icon": "💊",
+    "shortDescription": "Don't fear the root canal — our modern, painless RCT saves infected teeth and relieves toothache in a single comfortable appointment using rotary technology.",
+    "duration": "60–90 minutes (usually single sitting)",
+    "painLevel": "painless",
+    "benefits": [
+        {
+            "_key": "ben1",
+            "icon": "🚫",
+            "title": "Saves Your Tooth",
+            "description": "Avoid extraction — keep your natural tooth which is always the best option"
+        },
+        {
+            "_key": "ben2",
+            "icon": "💊",
+            "title": "Instant Pain Relief",
+            "description": "The moment infected pulp is removed, the toothache disappears"
+        },
+        {
+            "_key": "ben3",
+            "icon": "⚡",
+            "title": "Single Sitting",
+            "description": "90% of cases done in one appointment with our rotary technology"
+        },
+        {
+            "_key": "ben4",
+            "icon": "🦷",
+            "title": "Look Natural",
+            "description": "Followed by a crown, nobody will know you had RCT"
+        }
+    ],
+    "procedure": [
+        {
+            "_key": "p1",
+            "stepNumber": 1,
+            "title": "X-Ray & Assessment",
+            "description": "Periapical X-ray taken to see root length, number of canals, and infection spread."
+        },
+        {
+            "_key": "p2",
+            "stepNumber": 2,
+            "title": "Local Anesthesia",
+            "description": "Area is numbed thoroughly — you will feel nothing but pressure during the procedure."
+        },
+        {
+            "_key": "p3",
+            "stepNumber": 3,
+            "title": "Pulp Removal",
+            "description": "A tiny opening is made in the tooth. Infected pulp is removed using ProTaper Gold rotary instruments."
+        },
+        {
+            "_key": "p4",
+            "stepNumber": 4,
+            "title": "Canal Shaping & Cleaning",
+            "description": "Canals are shaped, measured to exact length, and thoroughly irrigated with antibacterial solutions."
+        },
+        {
+            "_key": "p5",
+            "stepNumber": 5,
+            "title": "Canal Filling (Obturation)",
+            "description": "Canals are sealed with biocompatible gutta-percha material to prevent future infection."
+        },
+        {
+            "_key": "p6",
+            "stepNumber": 6,
+            "title": "Final Seal",
+            "description": "A temporary or permanent filling is placed. Crown is recommended within 2 weeks."
+        }
+    ],
+    "pricing": {
+        "showPrice": true,
+        "startingFrom": 3500,
+        "priceRange": "₹3,500 – ₹8,000",
+        "note": "Price per tooth, excluding crown. Crown recommended after RCT: ₹5,000–15,000 additional."
+    },
+    "faqs": [
+        {
+            "_key": "f1",
+            "question": "Is the root canal procedure painful?",
+            "answer": "No — the procedure is done under local anesthesia. You will feel pressure but no pain. 90% of our root canals are completed in a single appointment."
+        },
+        {
+            "_key": "f2",
+            "question": "Is a crown necessary after root canal?",
+            "answer": "Yes, strongly recommended. A root-canal-treated tooth becomes brittle and has 6x higher risk of breaking without a crown."
+        }
+    ],
+    "primaryCta": {
+        "label": "Book Emergency Appointment",
+        "linkType": "internal",
+        "internalLink": "/contact",
+        "style": "primary"
+    },
+    "assignedDoctors": [
+        {
+            "_type": "reference",
+            "_ref": "doctor-rajesh"
+        },
+        {
+            "_type": "reference",
+            "_ref": "doctor-arjun"
+        }
+    ],
+    "seo": {
+        "metaTitle": "Painless Root Canal Treatment Noida | SmileCare",
+        "metaDescription": "Single-sitting painless RCT using ProTaper Gold rotary technology. No more toothache fear — 90% done in one visit. Emergency appointments available."
+    }
+}
+{
+    "_id": "service-crowns",
+    "_type": "service",
+    "title": "Dental Crowns & Bridges",
+    "slug": {
+        "current": "dental-crowns"
+    },
+    "status": "published",
+    "order": 5,
+    "isFeatured": false,
+    "icon": "👑",
+    "shortDescription": "Restore damaged, broken, or missing teeth with our custom ceramic crowns and bridges — designed to match your natural teeth perfectly in shape, size, and color.",
+    "duration": "2 appointments over 7–10 days",
+    "painLevel": "painless",
+    "benefits": [
+        {
+            "_key": "ben1",
+            "icon": "👑",
+            "title": "Restores Full Function",
+            "description": "Bite and chew normally with a crown that is as strong as your natural tooth"
+        },
+        {
+            "_key": "ben2",
+            "icon": "🎨",
+            "title": "Natural Looking",
+            "description": "Zirconia crowns are custom-shaded to blend seamlessly with your other teeth"
+        },
+        {
+            "_key": "ben3",
+            "icon": "🛡️",
+            "title": "Protects Weak Teeth",
+            "description": "Prevents cracks from spreading and saves the tooth from future breakage"
+        },
+        {
+            "_key": "ben4",
+            "icon": "⏱️",
+            "title": "Quick Process",
+            "description": "Just 2 visits — tooth preparation and final fitting — within 7–10 days"
+        }
+    ],
+    "pricing": {
+        "showPrice": true,
+        "startingFrom": 5000,
+        "priceRange": "₹5,000 – ₹18,000 per crown",
+        "note": "PFM: ₹5K–8K | Zirconia: ₹10K–15K | E-Max: ₹12K–18K"
+    },
+    "assignedDoctors": [
+        {
+            "_type": "reference",
+            "_ref": "doctor-arjun"
+        },
+        {
+            "_type": "reference",
+            "_ref": "doctor-rajesh"
+        }
+    ]
+}
+{
+    "_id": "service-cleaning",
+    "_type": "service",
+    "title": "Teeth Cleaning & Scaling",
+    "slug": {
+        "current": "teeth-cleaning"
+    },
+    "status": "published",
+    "order": 6,
+    "isFeatured": false,
+    "icon": "🪥",
+    "shortDescription": "Professional teeth cleaning removes stubborn tartar, plaque, and stains that regular brushing can't. Recommended every 6 months for optimal gum health.",
+    "duration": "45–60 minutes",
+    "painLevel": "painless",
+    "benefits": [
+        {
+            "_key": "ben1",
+            "icon": "🦷",
+            "title": "Prevents Gum Disease",
+            "description": "Regular cleaning prevents gingivitis from progressing to periodontitis"
+        },
+        {
+            "_key": "ben2",
+            "icon": "😊",
+            "title": "Fresh Breath",
+            "description": "Remove bacteria-laden tartar — the primary cause of bad breath"
+        },
+        {
+            "_key": "ben3",
+            "icon": "✨",
+            "title": "Whiter Appearance",
+            "description": "Polishing removes surface stains from tea, coffee, and tobacco"
+        },
+        {
+            "_key": "ben4",
+            "icon": "🔍",
+            "title": "Early Problem Detection",
+            "description": "Our dentist checks for cavities, gum issues, and oral cancer during every cleaning visit"
+        }
+    ],
+    "pricing": {
+        "showPrice": true,
+        "startingFrom": 1500,
+        "priceRange": "₹1,500 – ₹3,500",
+        "note": "Basic scaling: ₹1,500 | Deep cleaning (both arches): ₹3,500 | Includes polishing"
+    },
+    "assignedDoctors": [
+        {
+            "_type": "reference",
+            "_ref": "doctor-rahul"
+        }
+    ]
+}
+{
+    "_id": "service-smile-makeover",
+    "_type": "service",
+    "title": "Smile Makeover",
+    "slug": {
+        "current": "smile-makeover"
+    },
+    "status": "published",
+    "order": 7,
+    "isFeatured": true,
+    "icon": "💫",
+    "shortDescription": "Transform your entire smile with a customized combination of cosmetic treatments — designed using Digital Smile Design technology for a preview before any treatment begins.",
+    "duration": "3–5 visits over 2–6 weeks",
+    "painLevel": "painless",
+    "benefits": [
+        {
+            "_key": "ben1",
+            "icon": "💫",
+            "title": "Complete Transformation",
+            "description": "Address multiple concerns in one coordinated plan"
+        },
+        {
+            "_key": "ben2",
+            "icon": "🎨",
+            "title": "Digital Preview",
+            "description": "See your new smile before treatment begins with DSD technology"
+        },
+        {
+            "_key": "ben3",
+            "icon": "✅",
+            "title": "Customized for You",
+            "description": "Every makeover is unique — designed for your face and personality"
+        },
+        {
+            "_key": "ben4",
+            "icon": "⚡",
+            "title": "Quick Results",
+            "description": "Most makeovers complete in 2–4 weeks"
+        }
+    ],
+    "pricing": {
+        "showPrice": true,
+        "startingFrom": 30000,
+        "priceRange": "₹30,000 – ₹3,00,000+",
+        "note": "Price depends on number of teeth and treatments involved. Free Digital Smile Design consultation included."
+    },
+    "assignedDoctors": [
+        {
+            "_type": "reference",
+            "_ref": "doctor-arjun"
+        },
+        {
+            "_type": "reference",
+            "_ref": "doctor-rajesh"
+        }
+    ]
+}
+{
+    "_id": "service-gum",
+    "_type": "service",
+    "title": "Gum Disease Treatment",
+    "slug": {
+        "current": "gum-disease-treatment"
+    },
+    "status": "published",
+    "order": 8,
+    "isFeatured": false,
+    "icon": "❤️",
+    "shortDescription": "Expert treatment for bleeding gums, gum recession, and periodontitis using advanced LASER therapy. Painless, faster healing, and no surgical cuts in most cases.",
+    "duration": "1–3 sessions (varies by severity)",
+    "painLevel": "painless",
+    "pricing": {
+        "showPrice": true,
+        "startingFrom": 3000,
+        "priceRange": "₹3,000 – ₹25,000",
+        "note": "Depends on severity — gingivitis vs. moderate vs. advanced periodontitis"
+    },
+    "assignedDoctors": [
+        {
+            "_type": "reference",
+            "_ref": "doctor-rahul"
+        }
+    ]
+}
+{
+    "_id": "service-children",
+    "_type": "service",
+    "title": "Children's Dentistry",
+    "slug": {
+        "current": "childrens-dentistry"
+    },
+    "status": "published",
+    "order": 9,
+    "isFeatured": false,
+    "icon": "👶",
+    "shortDescription": "Fun, fear-free dental care for children aged 1–16 years! Our kid-friendly environment with cartoons, prizes, and a gentle touch makes dental visits something children enjoy.",
+    "duration": "30–45 minutes",
+    "painLevel": "painless",
+    "pricing": {
+        "showPrice": true,
+        "startingFrom": 500,
+        "priceRange": "₹500 – ₹8,000",
+        "note": "Basic checkup: ₹500 | Fluoride treatment: ₹800 | Fillings: ₹1,500+ | Braces consultation: Free"
+    },
+    "assignedDoctors": [
+        {
+            "_type": "reference",
+            "_ref": "doctor-sunita"
+        }
+    ]
+}
+{
+    "_id": "service-veneers",
+    "_type": "service",
+    "title": "Dental Veneers",
+    "slug": {
+        "current": "dental-veneers"
+    },
+    "status": "published",
+    "order": 10,
+    "isFeatured": false,
+    "icon": "🌟",
+    "shortDescription": "Ultra-thin porcelain shells bonded to the front of teeth — instantly correcting chips, stains, gaps, and minor misalignment for a picture-perfect Hollywood smile.",
+    "duration": "2–3 visits over 2 weeks",
+    "painLevel": "painless",
+    "pricing": {
+        "showPrice": true,
+        "startingFrom": 12000,
+        "priceRange": "₹12,000 – ₹20,000 per tooth",
+        "note": "E-Max veneers: ₹12K–15K | Ultra-thin no-prep: ₹15K–20K | Minimum 6 teeth recommended"
+    },
+    "assignedDoctors": [
+        {
+            "_type": "reference",
+            "_ref": "doctor-arjun"
+        }
+    ]
+}
+{
+    "_id": "testimonial-1",
+    "_type": "testimonial",
+    "patientName": "Ananya Srivastava",
+    "patientCity": "Noida",
+    "patientAge": 34,
+    "review": "I had been postponing my dental implant for 3 years out of fear. Dr. Rajesh and his team made me feel so comfortable that I didn't even realize when the procedure was done! Zero pain, zero stress. The crown looks absolutely identical to my natural teeth. Best dental decision I ever made. Highly recommend SmileCare to everyone!",
+    "rating": 5,
+    "reviewDate": "2024-11-15",
+    "source": "google",
+    "status": "published",
+    "isFeatured": true,
+    "order": 1,
+    "relatedService": {
+        "_type": "reference",
+        "_ref": "service-implants"
+    },
+    "treatedBy": {
+        "_type": "reference",
+        "_ref": "doctor-rajesh"
+    },
+    "treatmentType": "Dental Implant — Single Tooth"
+}
+{
+    "_id": "testimonial-2",
+    "_type": "testimonial",
+    "patientName": "Rohan Kapoor",
+    "patientCity": "Greater Noida",
+    "patientAge": 28,
+    "review": "Got Invisalign done with Dr. Priya and the results are beyond what I imagined. 14 months to a perfectly straight smile — and nobody even knew I was wearing aligners the entire time! Dr. Priya is incredibly thorough and always available to answer questions. My confidence has gone up by 100%.",
+    "rating": 5,
+    "reviewDate": "2024-12-08",
+    "source": "google",
+    "status": "published",
+    "isFeatured": true,
+    "order": 2,
+    "relatedService": {
+        "_type": "reference",
+        "_ref": "service-orthodontics"
+    },
+    "treatedBy": {
+        "_type": "reference",
+        "_ref": "doctor-priya"
+    },
+    "treatmentType": "Invisalign Clear Aligners"
+}
+{
+    "_id": "testimonial-3",
+    "_type": "testimonial",
+    "patientName": "Meera Bhatnagar",
+    "patientCity": "Delhi",
+    "patientAge": 42,
+    "review": "I came in with a terrible toothache at 8 PM and Dr. Rajesh personally attended to me even though it was near closing time. Root canal done painlessly in one sitting. The next morning I was back at work feeling completely fine! This is what true patient care looks like. Thank you SmileCare!",
+    "rating": 5,
+    "reviewDate": "2024-10-22",
+    "source": "google",
+    "status": "published",
+    "isFeatured": true,
+    "order": 3,
+    "relatedService": {
+        "_type": "reference",
+        "_ref": "service-rct"
+    },
+    "treatmentType": "Emergency Root Canal"
+}
+{
+    "_id": "testimonial-4",
+    "_type": "testimonial",
+    "patientName": "Vikram Singh",
+    "patientCity": "Ghaziabad",
+    "patientAge": 51,
+    "review": "I got All-on-4 implants after losing most of my upper teeth. The transformation is nothing short of miraculous. I can eat what I want, smile without hesitation, and nobody knows these aren't my natural teeth. Dr. Rajesh's skill and patience throughout the 4-month process was outstanding. Worth every rupee!",
+    "rating": 5,
+    "reviewDate": "2024-09-14",
+    "source": "practo",
+    "status": "published",
+    "isFeatured": true,
+    "order": 4,
+    "relatedService": {
+        "_type": "reference",
+        "_ref": "service-implants"
+    },
+    "treatedBy": {
+        "_type": "reference",
+        "_ref": "doctor-rajesh"
+    },
+    "treatmentType": "All-on-4 Full Arch Implants"
+}
+{
+    "_id": "testimonial-5",
+    "_type": "testimonial",
+    "patientName": "Preethi Reddy",
+    "patientCity": "Noida",
+    "patientAge": 26,
+    "review": "I had always been self-conscious about my stained, uneven teeth. Dr. Arjun designed my smile makeover using that digital preview tool — and when I saw the result before treatment even started, I cried! The actual result is even better. 8 veneers later, I have the smile I always dreamed of. SmileCare changed my life.",
+    "rating": 5,
+    "reviewDate": "2024-12-01",
+    "source": "google",
+    "status": "published",
+    "isFeatured": true,
+    "order": 5,
+    "relatedService": {
+        "_type": "reference",
+        "_ref": "service-smile-makeover"
+    },
+    "treatedBy": {
+        "_type": "reference",
+        "_ref": "doctor-arjun"
+    },
+    "treatmentType": "Smile Makeover with E-Max Veneers"
+}
+{
+    "_id": "testimonial-6",
+    "_type": "testimonial",
+    "patientName": "Kavita Agarwal",
+    "patientCity": "Noida",
+    "patientAge": 38,
+    "review": "My 8-year-old was terrified of dentists after a bad experience elsewhere. Dr. Sunita was an absolute angel — within 10 minutes my daughter was laughing and cooperating completely. She got her cavity filled without a single tear. We are now SmileCare regulars for the whole family!",
+    "rating": 5,
+    "reviewDate": "2024-11-30",
+    "source": "google",
+    "status": "published",
+    "isFeatured": true,
+    "order": 6,
+    "relatedService": {
+        "_type": "reference",
+        "_ref": "service-children"
+    },
+    "treatedBy": {
+        "_type": "reference",
+        "_ref": "doctor-sunita"
+    },
+    "treatmentType": "Pediatric Cavity Filling"
+}
+{
+    "_id": "testimonial-7",
+    "_type": "testimonial",
+    "patientName": "Aditya Malhotra",
+    "patientCity": "Delhi",
+    "patientAge": 32,
+    "review": "I had severe bleeding gums and was told by another clinic I'd need surgery. Dr. Rahul treated me with laser therapy — no cuts, no stitches, and barely any discomfort. After 3 sessions my gums are pink and healthy. The difference in before-after photos is incredible. Highly professional team.",
+    "rating": 5,
+    "reviewDate": "2024-10-05",
+    "source": "google",
+    "status": "published",
+    "isFeatured": false,
+    "order": 7,
+    "relatedService": {
+        "_type": "reference",
+        "_ref": "service-gum"
+    },
+    "treatedBy": {
+        "_type": "reference",
+        "_ref": "doctor-rahul"
+    },
+    "treatmentType": "Laser Periodontal Therapy"
+}
+{
+    "_id": "testimonial-8",
+    "_type": "testimonial",
+    "patientName": "Sunita Sharma",
+    "patientCity": "Faridabad",
+    "patientAge": 45,
+    "review": "The Zoom whitening was absolutely worth it! I went from yellow, coffee-stained teeth to sparkling white in under an hour. The staff made me feel so comfortable throughout. I keep catching myself smiling in the mirror now. Wish I had done this years ago!",
+    "rating": 5,
+    "reviewDate": "2024-12-10",
+    "source": "google",
+    "status": "published",
+    "isFeatured": false,
+    "order": 8,
+    "relatedService": {
+        "_type": "reference",
+        "_ref": "service-whitening"
+    },
+    "treatmentType": "Zoom Whitening"
+}
+{
+    "_id": "faq-1",
+    "_type": "faq",
+    "question": "How often should I visit the dentist?",
+    "answer": [
+        {
+            "_key": "a1",
+            "_type": "block",
+            "style": "normal",
+            "children": [
+                {
+                    "_key": "c1",
+                    "_type": "span",
+                    "text": "We recommend a dental checkup and cleaning every 6 months for most patients. Patients with active gum disease, high cavity risk, or orthodontic treatment may need more frequent visits — your dentist will advise you specifically."
+                }
+            ],
+            "markDefs": []
+        }
+    ],
+    "category": "general",
+    "status": "published",
+    "isFeatured": true,
+    "order": 1
+}
+{
+    "_id": "faq-2",
+    "_type": "faq",
+    "question": "What should I do in a dental emergency?",
+    "answer": [
+        {
+            "_key": "a1",
+            "_type": "block",
+            "style": "normal",
+            "children": [
+                {
+                    "_key": "c1",
+                    "_type": "span",
+                    "text": "Call us immediately on +91-98765-43210. For knocked-out teeth, keep the tooth moist (in milk or saliva) and see us within 30 minutes for best chances of reimplantation. For severe toothache or swelling, come in on the same day — we reserve emergency slots every day."
+                }
+            ],
+            "markDefs": []
+        }
+    ],
+    "category": "emergencies",
+    "status": "published",
+    "isFeatured": true,
+    "order": 2
+}
+{
+    "_id": "faq-3",
+    "_type": "faq",
+    "question": "How can I book an appointment?",
+    "answer": [
+        {
+            "_key": "a1",
+            "_type": "block",
+            "style": "normal",
+            "children": [
+                {
+                    "_key": "c1",
+                    "_type": "span",
+                    "text": "You can book online through the appointment form on our website, call us at +91-98765-43210, or WhatsApp us. We also accept walk-ins subject to availability. For same-day appointments, calling is faster."
+                }
+            ],
+            "markDefs": []
+        }
+    ],
+    "category": "appointments",
+    "status": "published",
+    "isFeatured": true,
+    "order": 3
+}
+{
+    "_id": "faq-4",
+    "_type": "faq",
+    "question": "Do you accept dental insurance?",
+    "answer": [
+        {
+            "_key": "a1",
+            "_type": "block",
+            "style": "normal",
+            "children": [
+                {
+                    "_key": "c1",
+                    "_type": "span",
+                    "text": "Yes, we work with most major health insurance providers. We accept cashless treatment for empanelled insurers. Please bring your insurance card and pre-authorization letter if required. For non-empanelled plans, we provide detailed bills for reimbursement claims."
+                }
+            ],
+            "markDefs": []
+        }
+    ],
+    "category": "costs",
+    "status": "published",
+    "isFeatured": true,
+    "order": 4
+}
+{
+    "_id": "faq-5",
+    "_type": "faq",
+    "question": "Is EMI/finance available for expensive treatments?",
+    "answer": [
+        {
+            "_key": "a1",
+            "_type": "block",
+            "style": "normal",
+            "children": [
+                {
+                    "_key": "c1",
+                    "_type": "span",
+                    "text": "Absolutely! We offer 0% interest EMI for 3, 6, 9, and 12 months through HDFC Bank, Bajaj Finserv, and other NBFCs. Down payment and terms vary. Speak to our reception team to check eligibility."
+                }
+            ],
+            "markDefs": []
+        }
+    ],
+    "category": "costs",
+    "status": "published",
+    "isFeatured": true,
+    "order": 5
+}
+{
+    "_id": "faq-6",
+    "_type": "faq",
+    "question": "Are dental X-rays safe?",
+    "answer": [
+        {
+            "_key": "a1",
+            "_type": "block",
+            "style": "normal",
+            "children": [
+                {
+                    "_key": "c1",
+                    "_type": "span",
+                    "text": "Yes, dental X-rays involve very minimal radiation — far less than a chest X-ray. We use modern digital sensors that reduce radiation by up to 80% compared to traditional film X-rays. Lead aprons are provided as standard practice. The diagnostic benefit far outweighs the negligible risk."
+                }
+            ],
+            "markDefs": []
+        }
+    ],
+    "category": "general",
+    "status": "published",
+    "isFeatured": true,
+    "order": 6
+}
+{
+    "_id": "faq-7",
+    "_type": "faq",
+    "question": "What age should my child first see a dentist?",
+    "answer": [
+        {
+            "_key": "a1",
+            "_type": "block",
+            "style": "normal",
+            "children": [
+                {
+                    "_key": "c1",
+                    "_type": "span",
+                    "text": "The Indian Dental Association recommends a first dental visit when the first baby tooth appears, or by age 1 — whichever comes first. Early visits establish good habits, allow us to monitor development, and help children feel comfortable with dental care from a young age."
+                }
+            ],
+            "markDefs": []
+        }
+    ],
+    "category": "children",
+    "status": "published",
+    "isFeatured": true,
+    "order": 7
+}
+{
+    "_id": "faq-8",
+    "_type": "faq",
+    "question": "How do I keep my teeth clean with braces?",
+    "answer": [
+        {
+            "_key": "a1",
+            "_type": "block",
+            "style": "normal",
+            "children": [
+                {
+                    "_key": "c1",
+                    "_type": "span",
+                    "text": "Brush after every meal using a soft brush and fluoride toothpaste. Use interdental brushes to clean around brackets and under wires. Floss with a floss threader or water flosser daily. Avoid sticky and hard foods. Come in for regular cleanings every 3 months during orthodontic treatment."
+                }
+            ],
+            "markDefs": []
+        }
+    ],
+    "category": "treatments",
+    "status": "published",
+    "isFeatured": false,
+    "order": 8
+}
+{
+    "_id": "faq-9",
+    "_type": "faq",
+    "question": "What is the right way to brush teeth?",
+    "answer": [
+        {
+            "_key": "a1",
+            "_type": "block",
+            "style": "normal",
+            "children": [
+                {
+                    "_key": "c1",
+                    "_type": "span",
+                    "text": "Use a soft-bristled brush at a 45-degree angle to the gumline. Brush in gentle circular motions for 2 minutes — twice a day. Don't brush too hard (it damages enamel and gums). Replace your brush every 3 months. Electric toothbrushes are more effective and we highly recommend them."
+                }
+            ],
+            "markDefs": []
+        }
+    ],
+    "category": "general",
+    "status": "published",
+    "isFeatured": false,
+    "order": 9
+}
+{
+    "_id": "faq-10",
+    "_type": "faq",
+    "question": "What should I eat after a tooth extraction?",
+    "answer": [
+        {
+            "_key": "a1",
+            "_type": "block",
+            "style": "normal",
+            "children": [
+                {
+                    "_key": "c1",
+                    "_type": "span",
+                    "text": "Stick to soft, cold foods for 24 hours — yogurt, ice cream, mashed dal, banana, and khichdi. Avoid hot, spicy, or hard foods for 48–72 hours. Do not use a straw (suction can dislodge the clot). Do not rinse forcefully for 24 hours. Gentle warm saltwater rinses from day 2 help healing."
+                }
+            ],
+            "markDefs": []
+        }
+    ],
+    "category": "aftercare",
+    "status": "published",
+    "isFeatured": false,
+    "order": 10
+}
+{
+    "_id": "blog-cat-1",
+    "_type": "blogCategory",
+    "title": "Oral Health Tips",
+    "slug": {
+        "current": "oral-health-tips"
+    },
+    "description": "Daily habits, brushing techniques, diet advice, and preventive care tips for a lifetime of healthy teeth and gums.",
+    "color": "#3b82f6",
+    "order": 1
+}
+{
+    "_id": "blog-cat-2",
+    "_type": "blogCategory",
+    "title": "Treatment Guides",
+    "slug": {
+        "current": "treatment-guides"
+    },
+    "description": "In-depth guides to our dental treatments — what to expect, how to prepare, and aftercare instructions.",
+    "color": "#10b981",
+    "order": 2
+}
+{
+    "_id": "blog-cat-3",
+    "_type": "blogCategory",
+    "title": "Cosmetic Dentistry",
+    "slug": {
+        "current": "cosmetic-dentistry"
+    },
+    "description": "Tips, trends, and guides about smile makeovers, veneers, whitening, and aesthetic dental procedures.",
+    "color": "#f59e0b",
+    "order": 3
+}
+{
+    "_id": "blog-cat-4",
+    "_type": "blogCategory",
+    "title": "Patient Stories",
+    "slug": {
+        "current": "patient-stories"
+    },
+    "description": "Real transformation stories from our patients — their journey from dental concerns to confident smiles.",
+    "color": "#8b5cf6",
+    "order": 4
+}
+{
+    "_id": "blog-cat-5",
+    "_type": "blogCategory",
+    "title": "Children's Dental Health",
+    "slug": {
+        "current": "childrens-dental-health"
+    },
+    "description": "Advice for parents on baby teeth, dental habits, diet, and keeping children's smiles healthy.",
+    "color": "#ec4899",
+    "order": 5
+}
+{
+    "_id": "blog-post-1",
+    "_type": "blogPost",
+    "title": "10 Foods That Secretly Destroy Your Teeth (And Healthy Swaps!)",
+    "slug": {
+        "current": "foods-that-destroy-teeth"
+    },
+    "status": "published",
+    "publishedAt": "2024-12-10T09:00:00.000Z",
+    "isFeatured": true,
+    "readTimeMinutes": 6,
+    "author": {
+        "_type": "reference",
+        "_ref": "doctor-rajesh"
+    },
+    "categories": [
+        {
+            "_type": "reference",
+            "_ref": "blog-cat-1"
+        }
+    ],
+    "tags": [
+        "diet",
+        "teeth",
+        "enamel",
+        "cavity prevention",
+        "healthy eating"
+    ],
+    "excerpt": "You brush twice a day and floss regularly — but are the foods you eat secretly sabotaging your smile? Discover the 10 biggest dietary culprits for dental damage and their tooth-friendly alternatives.",
+    "body": [
+        {
+            "_key": "b1",
+            "_type": "block",
+            "style": "h2",
+            "children": [
+                {
+                    "_key": "c1",
+                    "_type": "span",
+                    "text": "Why Diet is the #1 Factor in Dental Health"
+                }
+            ],
+            "markDefs": []
+        },
+        {
+            "_key": "b2",
+            "_type": "block",
+            "style": "normal",
+            "children": [
+                {
+                    "_key": "c2",
+                    "_type": "span",
+                    "text": "You can have a perfect brushing technique, but if you're regularly consuming certain foods and drinks, you're fighting a losing battle. Diet accounts for nearly 60% of cavity risk — and most people have no idea which foods are the worst offenders."
+                }
+            ],
+            "markDefs": []
+        },
+        {
+            "_key": "b3",
+            "_type": "block",
+            "style": "h2",
+            "children": [
+                {
+                    "_key": "c3",
+                    "_type": "span",
+                    "text": "The 10 Biggest Dental Saboteurs"
+                }
+            ],
+            "markDefs": []
+        },
+        {
+            "_key": "b4",
+            "_type": "block",
+            "style": "h3",
+            "children": [
+                {
+                    "_key": "c4",
+                    "_type": "span",
+                    "text": "1. Packaged Fruit Juices"
+                }
+            ],
+            "markDefs": []
+        },
+        {
+            "_key": "b5",
+            "_type": "block",
+            "style": "normal",
+            "children": [
+                {
+                    "_key": "c5",
+                    "_type": "span",
+                    "text": "Despite the 'healthy' image, packaged juices are loaded with sugar and citric acid — a devastating combination that erodes enamel. Even 'no added sugar' variants contain high natural sugar. Healthy swap: Fresh fruit (not juice) — the fiber slows sugar absorption. If you must drink juice, use a straw and rinse with water immediately after."
+                }
+            ],
+            "markDefs": []
+        },
+        {
+            "_key": "b6",
+            "_type": "block",
+            "style": "h3",
+            "children": [
+                {
+                    "_key": "c6",
+                    "_type": "span",
+                    "text": "2. Sticky Sweets — Toffees, Laddoos, Chikki"
+                }
+            ],
+            "markDefs": []
+        },
+        {
+            "_key": "b7",
+            "_type": "block",
+            "style": "normal",
+            "children": [
+                {
+                    "_key": "c7",
+                    "_type": "span",
+                    "text": "Sticky, chewy sweets cling to tooth surfaces for hours, feeding bacteria continuously. This is far worse than a quickly-eaten piece of chocolate. Healthy swap: Dark chocolate (70%+) is actually protective due to tannins. It's less sticky and has some antibacterial properties."
+                }
+            ],
+            "markDefs": []
+        },
+        {
+            "_key": "b8",
+            "_type": "block",
+            "style": "h3",
+            "children": [
+                {
+                    "_key": "c8",
+                    "_type": "span",
+                    "text": "3. Chai and Coffee"
+                }
+            ],
+            "markDefs": []
+        },
+        {
+            "_key": "b9",
+            "_type": "block",
+            "style": "normal",
+            "children": [
+                {
+                    "_key": "c9",
+                    "_type": "span",
+                    "text": "The tannins in tea and coffee cause deep staining. Adding sugar makes them acidic too. Healthy swap: Rinse with water after every cup. Use a straw for iced coffee. Green tea (no sugar) is actually protective."
+                }
+            ],
+            "markDefs": []
+        },
+        {
+            "_key": "b10",
+            "_type": "block",
+            "style": "h2",
+            "children": [
+                {
+                    "_key": "c10",
+                    "_type": "span",
+                    "text": "The Tooth-Friendly Foods List"
+                }
+            ],
+            "markDefs": []
+        },
+        {
+            "_key": "b11",
+            "_type": "block",
+            "style": "normal",
+            "listItem": "bullet",
+            "children": [
+                {
+                    "_key": "c11",
+                    "_type": "span",
+                    "text": "Cheese: neutralizes acid and strengthens enamel with calcium"
+                }
+            ],
+            "markDefs": []
+        },
+        {
+            "_key": "b12",
+            "_type": "block",
+            "style": "normal",
+            "listItem": "bullet",
+            "children": [
+                {
+                    "_key": "c12",
+                    "_type": "span",
+                    "text": "Leafy greens: high in calcium and require lots of chewing (natural cleaning)"
+                }
+            ],
+            "markDefs": []
+        },
+        {
+            "_key": "b13",
+            "_type": "block",
+            "style": "normal",
+            "listItem": "bullet",
+            "children": [
+                {
+                    "_key": "c13",
+                    "_type": "span",
+                    "text": "Apples and carrots: fibrous texture scrubs teeth, stimulates saliva"
+                }
+            ],
+            "markDefs": []
+        },
+        {
+            "_key": "b14",
+            "_type": "block",
+            "style": "normal",
+            "listItem": "bullet",
+            "children": [
+                {
+                    "_key": "c14",
+                    "_type": "span",
+                    "text": "Plain water (fluoridated): the single best beverage for dental health"
+                }
+            ],
+            "markDefs": []
+        },
+        {
+            "_key": "b15",
+            "_type": "block",
+            "style": "h2",
+            "children": [
+                {
+                    "_key": "c15",
+                    "_type": "span",
+                    "text": "The Golden Rule"
+                }
+            ],
+            "markDefs": []
+        },
+        {
+            "_key": "b16",
+            "_type": "block",
+            "style": "normal",
+            "children": [
+                {
+                    "_key": "c16",
+                    "_type": "span",
+                    "text": "It's not WHAT you eat — it's HOW OFTEN you eat it. Sipping juice slowly over an hour is far more damaging than drinking it quickly. Snacking frequently throughout the day keeps your mouth acidic for longer."
+                }
+            ],
+            "markDefs": []
+        }
+    ],
+    "relatedServices": [
+        {
+            "_type": "reference",
+            "_ref": "service-cleaning"
+        },
+        {
+            "_type": "reference",
+            "_ref": "service-whitening"
+        }
+    ],
+    "seo": {
+        "metaTitle": "10 Foods That Destroy Your Teeth | SmileCare Dental Blog",
+        "metaDescription": "Discover the 10 foods secretly damaging your teeth and their tooth-friendly swaps. Expert advice from Dr. Rajesh Sharma, SmileCare Dental Clinic Noida."
+    }
+}
+{
+    "_id": "blog-post-2",
+    "_type": "blogPost",
+    "title": "Root Canal Treatment: Everything You Were Afraid to Ask",
+    "slug": {
+        "current": "root-canal-treatment-guide"
+    },
+    "status": "published",
+    "publishedAt": "2024-11-28T09:00:00.000Z",
+    "isFeatured": false,
+    "readTimeMinutes": 8,
+    "author": {
+        "_type": "reference",
+        "_ref": "doctor-rajesh"
+    },
+    "categories": [
+        {
+            "_type": "reference",
+            "_ref": "blog-cat-2"
+        }
+    ],
+    "tags": [
+        "root canal",
+        "RCT",
+        "toothache",
+        "endodontics",
+        "dental treatment"
+    ],
+    "excerpt": "The phrase 'root canal' fills most people with dread. But the truth? A modern root canal feels like getting a filling. Here's the complete, honest, myth-busting guide to what really happens during RCT.",
+    "body": [
+        {
+            "_key": "b1",
+            "_type": "block",
+            "style": "h2",
+            "children": [
+                {
+                    "_key": "c1",
+                    "_type": "span",
+                    "text": "The Biggest Myth About Root Canals"
+                }
+            ],
+            "markDefs": []
+        },
+        {
+            "_key": "b2",
+            "_type": "block",
+            "style": "normal",
+            "children": [
+                {
+                    "_key": "c2",
+                    "_type": "span",
+                    "text": "'Root canals are painful.' This is the most persistent myth in dentistry — and it couldn't be further from the truth. The truth: a root canal RELIEVES pain. The procedure itself, done under local anesthesia, is no more uncomfortable than getting a filling."
+                }
+            ],
+            "markDefs": []
+        },
+        {
+            "_key": "b3",
+            "_type": "block",
+            "style": "h2",
+            "children": [
+                {
+                    "_key": "c3",
+                    "_type": "span",
+                    "text": "Why Do You Need a Root Canal?"
+                }
+            ],
+            "markDefs": []
+        },
+        {
+            "_key": "b4",
+            "_type": "block",
+            "style": "normal",
+            "children": [
+                {
+                    "_key": "c4",
+                    "_type": "span",
+                    "text": "Inside every tooth is a soft tissue called the dental pulp — containing nerves, blood vessels, and connective tissue. When bacteria breach the outer layers of a tooth through a deep cavity, crack, or trauma, they infect the pulp."
+                }
+            ],
+            "markDefs": []
+        },
+        {
+            "_key": "b5",
+            "_type": "block",
+            "style": "normal",
+            "children": [
+                {
+                    "_key": "c5",
+                    "_type": "span",
+                    "text": "Symptoms that may indicate pulp infection:"
+                }
+            ],
+            "markDefs": []
+        },
+        {
+            "_key": "b6",
+            "_type": "block",
+            "style": "normal",
+            "listItem": "bullet",
+            "children": [
+                {
+                    "_key": "c6",
+                    "_type": "span",
+                    "text": "Severe, persistent toothache"
+                }
+            ],
+            "markDefs": []
+        },
+        {
+            "_key": "b7",
+            "_type": "block",
+            "style": "normal",
+            "listItem": "bullet",
+            "children": [
+                {
+                    "_key": "c7",
+                    "_type": "span",
+                    "text": "Sharp pain when biting or chewing"
+                }
+            ],
+            "markDefs": []
+        },
+        {
+            "_key": "b8",
+            "_type": "block",
+            "style": "normal",
+            "listItem": "bullet",
+            "children": [
+                {
+                    "_key": "c8",
+                    "_type": "span",
+                    "text": "Prolonged sensitivity to hot or cold (lasting minutes, not seconds)"
+                }
+            ],
+            "markDefs": []
+        },
+        {
+            "_key": "b9",
+            "_type": "block",
+            "style": "normal",
+            "listItem": "bullet",
+            "children": [
+                {
+                    "_key": "c9",
+                    "_type": "span",
+                    "text": "Darkening of the tooth"
+                }
+            ],
+            "markDefs": []
+        },
+        {
+            "_key": "b10",
+            "_type": "block",
+            "style": "normal",
+            "listItem": "bullet",
+            "children": [
+                {
+                    "_key": "c10",
+                    "_type": "span",
+                    "text": "Swelling or tenderness in the gum near the tooth"
+                }
+            ],
+            "markDefs": []
+        },
+        {
+            "_key": "b11",
+            "_type": "block",
+            "style": "h2",
+            "children": [
+                {
+                    "_key": "c11",
+                    "_type": "span",
+                    "text": "What Happens Step-by-Step During RCT?"
+                }
+            ],
+            "markDefs": []
+        },
+        {
+            "_key": "b12",
+            "_type": "block",
+            "style": "h3",
+            "children": [
+                {
+                    "_key": "c12",
+                    "_type": "span",
+                    "text": "Step 1 — Anesthesia"
+                }
+            ],
+            "markDefs": []
+        },
+        {
+            "_key": "b13",
+            "_type": "block",
+            "style": "normal",
+            "children": [
+                {
+                    "_key": "c13",
+                    "_type": "span",
+                    "text": "The area around the tooth is numbed with a small injection. Within 2 minutes, the tooth and surrounding gum are completely numb. You will feel pressure during the procedure — but zero pain."
+                }
+            ],
+            "markDefs": []
+        },
+        {
+            "_key": "b14",
+            "_type": "block",
+            "style": "h3",
+            "children": [
+                {
+                    "_key": "c14",
+                    "_type": "span",
+                    "text": "Step 2 — Pulp Removal"
+                }
+            ],
+            "markDefs": []
+        },
+        {
+            "_key": "b15",
+            "_type": "block",
+            "style": "normal",
+            "children": [
+                {
+                    "_key": "c15",
+                    "_type": "span",
+                    "text": "Using tiny, flexible instruments called rotary files, the infected pulp is removed from all canals. The canals are simultaneously shaped and measured to their exact lengths using an electronic apex locator for precision."
+                }
+            ],
+            "markDefs": []
+        },
+        {
+            "_key": "b16",
+            "_type": "block",
+            "style": "h3",
+            "children": [
+                {
+                    "_key": "c16",
+                    "_type": "span",
+                    "text": "Step 3 — Canal Filling (Obturation)"
+                }
+            ],
+            "markDefs": []
+        },
+        {
+            "_key": "b17",
+            "_type": "block",
+            "style": "normal",
+            "children": [
+                {
+                    "_key": "c17",
+                    "_type": "span",
+                    "text": "Once perfectly clean and shaped, the canals are filled with a rubber-like material called gutta-percha and sealed with cement. This permanently seals the canals from future infection."
+                }
+            ],
+            "markDefs": []
+        },
+        {
+            "_key": "b18",
+            "_type": "block",
+            "style": "h2",
+            "children": [
+                {
+                    "_key": "c18",
+                    "_type": "span",
+                    "text": "Crown After RCT — Is It Mandatory?"
+                }
+            ],
+            "markDefs": []
+        },
+        {
+            "_key": "b19",
+            "_type": "block",
+            "style": "normal",
+            "children": [
+                {
+                    "_key": "c19",
+                    "_type": "span",
+                    "text": "After RCT, the tooth loses its blood supply and becomes brittle over time. A crown protects it from fractures. Without a crown, a root-canal-treated tooth has 6x higher risk of breaking. We strongly recommend a crown within 2 weeks of RCT completion."
+                }
+            ],
+            "markDefs": []
+        }
+    ],
+    "relatedServices": [
+        {
+            "_type": "reference",
+            "_ref": "service-rct"
+        },
+        {
+            "_type": "reference",
+            "_ref": "service-crowns"
+        }
+    ],
+    "seo": {
+        "metaTitle": "Root Canal Treatment Guide — Painless RCT | SmileCare Blog",
+        "metaDescription": "The complete guide to root canal treatment — myths busted, step-by-step process explained. Modern RCT is painless. Expert advice from SmileCare Dental Noida."
+    }
+}
+{
+    "_id": "blog-post-3",
+    "_type": "blogPost",
+    "title": "Invisalign vs Metal Braces: Which is Right for You in 2025?",
+    "slug": {
+        "current": "invisalign-vs-metal-braces-comparison"
+    },
+    "status": "published",
+    "publishedAt": "2024-12-05T09:00:00.000Z",
+    "isFeatured": false,
+    "readTimeMinutes": 7,
+    "author": {
+        "_type": "reference",
+        "_ref": "doctor-priya"
+    },
+    "categories": [
+        {
+            "_type": "reference",
+            "_ref": "blog-cat-2"
+        }
+    ],
+    "tags": [
+        "invisalign",
+        "braces",
+        "orthodontics",
+        "teeth straightening",
+        "comparison"
+    ],
+    "excerpt": "Both Invisalign and metal braces can give you a straight smile — but they work differently, cost differently, and suit different lifestyles. Dr. Priya Mehta breaks down the real differences so you can make the right choice.",
+    "body": [
+        {
+            "_key": "b1",
+            "_type": "block",
+            "style": "h2",
+            "children": [
+                {
+                    "_key": "c1",
+                    "_type": "span",
+                    "text": "The Short Answer"
+                }
+            ],
+            "markDefs": []
+        },
+        {
+            "_key": "b2",
+            "_type": "block",
+            "style": "normal",
+            "children": [
+                {
+                    "_key": "c2",
+                    "_type": "span",
+                    "text": "Metal braces are more powerful, more affordable, and better for complex cases. Invisalign is more comfortable, practically invisible, and better for mild-to-moderate cases and adults who prioritize discretion. The best choice depends on YOUR specific case, age, lifestyle, and budget."
+                }
+            ],
+            "markDefs": []
+        },
+        {
+            "_key": "b3",
+            "_type": "block",
+            "style": "h2",
+            "children": [
+                {
+                    "_key": "c3",
+                    "_type": "span",
+                    "text": "Appearance Comparison"
+                }
+            ],
+            "markDefs": []
+        },
+        {
+            "_key": "b4",
+            "_type": "block",
+            "style": "normal",
+            "children": [
+                {
+                    "_key": "c4",
+                    "_type": "span",
+                    "text": "Metal braces have visible metal brackets and wires. Invisalign uses clear plastic trays that are virtually invisible — from 3 feet away, most people can't tell you're wearing them. Ideal for professionals and adults who are image-conscious."
+                }
+            ],
+            "markDefs": []
+        },
+        {
+            "_key": "b5",
+            "_type": "block",
+            "style": "h2",
+            "children": [
+                {
+                    "_key": "c5",
+                    "_type": "span",
+                    "text": "Cost at SmileCare"
+                }
+            ],
+            "markDefs": []
+        },
+        {
+            "_key": "b6",
+            "_type": "block",
+            "style": "normal",
+            "listItem": "bullet",
+            "children": [
+                {
+                    "_key": "c6",
+                    "_type": "span",
+                    "text": "Metal Braces: ₹35,000 – ₹45,000 (full treatment)"
+                }
+            ],
+            "markDefs": []
+        },
+        {
+            "_key": "b7",
+            "_type": "block",
+            "style": "normal",
+            "listItem": "bullet",
+            "children": [
+                {
+                    "_key": "c7",
+                    "_type": "span",
+                    "text": "Ceramic Braces: ₹55,000 – ₹70,000"
+                }
+            ],
+            "markDefs": []
+        },
+        {
+            "_key": "b8",
+            "_type": "block",
+            "style": "normal",
+            "listItem": "bullet",
+            "children": [
+                {
+                    "_key": "c8",
+                    "_type": "span",
+                    "text": "Invisalign: ₹90,000 – ₹1,50,000 (depending on complexity)"
+                }
+            ],
+            "markDefs": []
+        },
+        {
+            "_key": "b9",
+            "_type": "block",
+            "style": "h2",
+            "children": [
+                {
+                    "_key": "c9",
+                    "_type": "span",
+                    "text": "Who Should Choose What?"
+                }
+            ],
+            "markDefs": []
+        },
+        {
+            "_key": "b10",
+            "_type": "block",
+            "style": "h3",
+            "children": [
+                {
+                    "_key": "c10",
+                    "_type": "span",
+                    "text": "Choose Metal Braces If:"
+                }
+            ],
+            "markDefs": []
+        },
+        {
+            "_key": "b11",
+            "_type": "block",
+            "style": "normal",
+            "listItem": "bullet",
+            "children": [
+                {
+                    "_key": "c11",
+                    "_type": "span",
+                    "text": "Budget is a primary concern"
+                }
+            ],
+            "markDefs": []
+        },
+        {
+            "_key": "b12",
+            "_type": "block",
+            "style": "normal",
+            "listItem": "bullet",
+            "children": [
+                {
+                    "_key": "c12",
+                    "_type": "span",
+                    "text": "You have complex crowding or severe bite issues"
+                }
+            ],
+            "markDefs": []
+        },
+        {
+            "_key": "b13",
+            "_type": "block",
+            "style": "normal",
+            "listItem": "bullet",
+            "children": [
+                {
+                    "_key": "c13",
+                    "_type": "span",
+                    "text": "You're a child or teenager (easier to manage)"
+                }
+            ],
+            "markDefs": []
+        },
+        {
+            "_key": "b14",
+            "_type": "block",
+            "style": "h3",
+            "children": [
+                {
+                    "_key": "c14",
+                    "_type": "span",
+                    "text": "Choose Invisalign If:"
+                }
+            ],
+            "markDefs": []
+        },
+        {
+            "_key": "b15",
+            "_type": "block",
+            "style": "normal",
+            "listItem": "bullet",
+            "children": [
+                {
+                    "_key": "c15",
+                    "_type": "span",
+                    "text": "You're an adult professional who can't have visible braces"
+                }
+            ],
+            "markDefs": []
+        },
+        {
+            "_key": "b16",
+            "_type": "block",
+            "style": "normal",
+            "listItem": "bullet",
+            "children": [
+                {
+                    "_key": "c16",
+                    "_type": "span",
+                    "text": "Your case is mild to moderate"
+                }
+            ],
+            "markDefs": []
+        },
+        {
+            "_key": "b17",
+            "_type": "block",
+            "style": "normal",
+            "listItem": "bullet",
+            "children": [
+                {
+                    "_key": "c17",
+                    "_type": "span",
+                    "text": "You want the freedom to eat and drink anything"
+                }
+            ],
+            "markDefs": []
+        }
+    ],
+    "relatedServices": [
+        {
+            "_type": "reference",
+            "_ref": "service-orthodontics"
+        }
+    ],
+    "seo": {
+        "metaTitle": "Invisalign vs Braces 2025 — Which is Better? | SmileCare",
+        "metaDescription": "Complete comparison of Invisalign vs metal braces — cost, comfort, effectiveness. Expert guide by Dr. Priya Mehta, SmileCare Dental Clinic Noida."
+    }
+}
+{
+    "_id": "blog-post-4",
+    "_type": "blogPost",
+    "title": "How to Brush Your Child's Teeth at Every Age (0–12 Years)",
+    "slug": {
+        "current": "how-to-brush-childs-teeth-by-age"
+    },
+    "status": "published",
+    "publishedAt": "2024-11-15T09:00:00.000Z",
+    "isFeatured": false,
+    "readTimeMinutes": 5,
+    "author": {
+        "_type": "reference",
+        "_ref": "doctor-sunita"
+    },
+    "categories": [
+        {
+            "_type": "reference",
+            "_ref": "blog-cat-5"
+        }
+    ],
+    "tags": [
+        "children",
+        "baby teeth",
+        "brushing",
+        "parenting",
+        "oral hygiene"
+    ],
+    "excerpt": "Baby teeth matter more than most parents realize — they hold space for permanent teeth and affect speech, nutrition, and confidence. Here's Dr. Sunita's age-by-age guide to keeping your child's teeth healthy.",
+    "body": [
+        {
+            "_key": "b1",
+            "_type": "block",
+            "style": "h2",
+            "children": [
+                {
+                    "_key": "c1",
+                    "_type": "span",
+                    "text": "Why Baby Teeth Matter More Than You Think"
+                }
+            ],
+            "markDefs": []
+        },
+        {
+            "_key": "b2",
+            "_type": "block",
+            "style": "normal",
+            "children": [
+                {
+                    "_key": "c2",
+                    "_type": "span",
+                    "text": "One of the most common things parents say in my clinic: 'It's just a baby tooth — it'll fall out anyway.' This is a dangerous myth. Baby teeth hold space for permanent teeth, are essential for chewing and proper nutrition, critical for speech development, and dental infections in baby teeth CAN affect developing permanent teeth."
+                }
+            ],
+            "markDefs": []
+        },
+        {
+            "_key": "b3",
+            "_type": "block",
+            "style": "h2",
+            "children": [
+                {
+                    "_key": "c3",
+                    "_type": "span",
+                    "text": "Age-by-Age Brushing Guide"
+                }
+            ],
+            "markDefs": []
+        },
+        {
+            "_key": "b4",
+            "_type": "block",
+            "style": "h3",
+            "children": [
+                {
+                    "_key": "c4",
+                    "_type": "span",
+                    "text": "0–6 Months (Before First Tooth)"
+                }
+            ],
+            "markDefs": []
+        },
+        {
+            "_key": "b5",
+            "_type": "block",
+            "style": "normal",
+            "children": [
+                {
+                    "_key": "c5",
+                    "_type": "span",
+                    "text": "Wipe your baby's gums twice daily with a clean, damp cloth or soft silicone finger brush. This removes milk residue and gets baby accustomed to oral hygiene."
+                }
+            ],
+            "markDefs": []
+        },
+        {
+            "_key": "b6",
+            "_type": "block",
+            "style": "h3",
+            "children": [
+                {
+                    "_key": "c6",
+                    "_type": "span",
+                    "text": "6–12 Months (First Tooth Appears)"
+                }
+            ],
+            "markDefs": []
+        },
+        {
+            "_key": "b7",
+            "_type": "block",
+            "style": "normal",
+            "children": [
+                {
+                    "_key": "c7",
+                    "_type": "span",
+                    "text": "Start brushing as soon as the first tooth erupts. Use a soft infant toothbrush with a rice-grain sized amount of fluoride toothpaste (1000ppm F). Brush once a day (before bed is most important). Don't rinse after brushing — let the toothpaste work!"
+                }
+            ],
+            "markDefs": []
+        },
+        {
+            "_key": "b8",
+            "_type": "block",
+            "style": "h3",
+            "children": [
+                {
+                    "_key": "c8",
+                    "_type": "span",
+                    "text": "3–6 Years (Preschool)"
+                }
+            ],
+            "markDefs": []
+        },
+        {
+            "_key": "b9",
+            "_type": "block",
+            "style": "normal",
+            "children": [
+                {
+                    "_key": "c9",
+                    "_type": "span",
+                    "text": "Use a pea-sized amount of toothpaste now. Begin teaching the child to brush, but always check and finish brushing for them. Introduce flossing once teeth touch each other."
+                }
+            ],
+            "markDefs": []
+        },
+        {
+            "_key": "b10",
+            "_type": "block",
+            "style": "h2",
+            "children": [
+                {
+                    "_key": "c10",
+                    "_type": "span",
+                    "text": "When Should My Child First See a Dentist?"
+                }
+            ],
+            "markDefs": []
+        },
+        {
+            "_key": "b11",
+            "_type": "block",
+            "style": "normal",
+            "children": [
+                {
+                    "_key": "c11",
+                    "_type": "span",
+                    "text": "First visit by age 1 or when the first tooth appears, whichever comes first. Early visits are low-stress, educational appointments — we count teeth, apply fluoride varnish, and counsel parents. Children who start early have significantly less dental anxiety."
+                }
+            ],
+            "markDefs": []
+        }
+    ],
+    "relatedServices": [
+        {
+            "_type": "reference",
+            "_ref": "service-children"
+        }
+    ],
+    "seo": {
+        "metaTitle": "Children's Dental Care Guide | SmileCare Dental Blog",
+        "metaDescription": "Age-by-age guide to brushing your child's teeth from Dr. Sunita Agarwal, pediatric dentist at SmileCare Dental Clinic Noida."
+    }
+}
+{
+    "_id": "blog-post-5",
+    "_type": "blogPost",
+    "title": "Before and After My Smile Makeover: Preethi's Real Story",
+    "slug": {
+        "current": "smile-makeover-patient-story-preethi"
+    },
+    "status": "published",
+    "publishedAt": "2024-12-08T09:00:00.000Z",
+    "isFeatured": false,
+    "readTimeMinutes": 5,
+    "author": {
+        "_type": "reference",
+        "_ref": "doctor-arjun"
+    },
+    "categories": [
+        {
+            "_type": "reference",
+            "_ref": "blog-cat-4"
+        }
+    ],
+    "tags": [
+        "smile makeover",
+        "veneers",
+        "transformation",
+        "patient story",
+        "cosmetic dentistry"
+    ],
+    "excerpt": "Preethi had been hiding her smile for 10 years. At 26, she finally took the step — and what followed was a life-changing 3-week journey. Read the full story in her own words.",
+    "body": [
+        {
+            "_key": "b1",
+            "_type": "block",
+            "style": "normal",
+            "children": [
+                {
+                    "_key": "c1",
+                    "_type": "span",
+                    "text": "I had always been the girl who didn't smile in photos. Dark, stained teeth from years of tea and genetics, one chipped tooth, and they were uneven. I'd cover my mouth when I laughed. I hated it but thought — that's just how my teeth are. My friend got veneers done at SmileCare and when I saw her transformation I actually gasped. I booked a consultation the same evening."
+                }
+            ],
+            "markDefs": []
+        },
+        {
+            "_key": "b2",
+            "_type": "block",
+            "style": "h2",
+            "children": [
+                {
+                    "_key": "c2",
+                    "_type": "span",
+                    "text": "The Consultation — Seeing the Future"
+                }
+            ],
+            "markDefs": []
+        },
+        {
+            "_key": "b3",
+            "_type": "block",
+            "style": "normal",
+            "children": [
+                {
+                    "_key": "c3",
+                    "_type": "span",
+                    "text": "Dr. Arjun took photos and then showed me this digital preview — what my smile would look like with 8 veneers. I could choose the shape, length, whiteness level. When I saw it, I actually started crying. It was the smile I had imagined but never thought was possible for me. We spent 20 minutes adjusting until I said 'yes, that's it.'"
+                }
+            ],
+            "markDefs": []
+        },
+        {
+            "_key": "b4",
+            "_type": "block",
+            "style": "h2",
+            "children": [
+                {
+                    "_key": "c4",
+                    "_type": "span",
+                    "text": "The Treatment (3 Visits, 3 Weeks)"
+                }
+            ],
+            "markDefs": []
+        },
+        {
+            "_key": "b5",
+            "_type": "block",
+            "style": "normal",
+            "listItem": "bullet",
+            "children": [
+                {
+                    "_key": "c5",
+                    "_type": "span",
+                    "text": "Visit 1 — Preparation: Ultra-thin layer removed from front of teeth. Temporary veneers placed — looked amazing already!"
+                }
+            ],
+            "markDefs": []
+        },
+        {
+            "_key": "b6",
+            "_type": "block",
+            "style": "normal",
+            "listItem": "bullet",
+            "children": [
+                {
+                    "_key": "c6",
+                    "_type": "span",
+                    "text": "Visit 2 — Trial: Permanent E-Max veneers checked in different lighting. Perfect."
+                }
+            ],
+            "markDefs": []
+        },
+        {
+            "_key": "b7",
+            "_type": "block",
+            "style": "normal",
+            "listItem": "bullet",
+            "children": [
+                {
+                    "_key": "c7",
+                    "_type": "span",
+                    "text": "Visit 3 — Final Bonding: Veneers permanently cemented. I looked in the mirror and couldn't stop grinning."
+                }
+            ],
+            "markDefs": []
+        },
+        {
+            "_key": "b8",
+            "_type": "block",
+            "style": "h2",
+            "children": [
+                {
+                    "_key": "c8",
+                    "_type": "span",
+                    "text": "Life After Veneers"
+                }
+            ],
+            "markDefs": []
+        },
+        {
+            "_key": "b9",
+            "_type": "block",
+            "style": "normal",
+            "children": [
+                {
+                    "_key": "c9",
+                    "_type": "span",
+                    "text": "I smile with my teeth in every photo now. People keep saying 'there's something different about you — you seem so happy!' Nobody guesses it's my teeth — they just think I look brighter. My confidence at work has genuinely improved. The veneers feel 100% natural. Dr. Arjun and the SmileCare team gave me so much more than a beautiful smile — they gave me confidence I didn't know I had been missing."
+                }
+            ],
+            "markDefs": []
+        }
+    ],
+    "relatedServices": [
+        {
+            "_type": "reference",
+            "_ref": "service-smile-makeover"
+        },
+        {
+            "_type": "reference",
+            "_ref": "service-veneers"
+        }
+    ],
+    "seo": {
+        "metaTitle": "Real Smile Makeover Story — Preethi's Veneer Transformation | SmileCare",
+        "metaDescription": "Read Preethi's real smile makeover journey at SmileCare Dental Clinic. 8 E-Max veneers in 3 weeks. Digital Smile Design preview included."
+    }
+}
+{
+    "_id": "pricing-family",
+    "_type": "pricingPlan",
+    "title": "Family Dental Care Package",
+    "planType": "package",
+    "status": "promotional",
+    "isPopular": true,
+    "order": 1,
+    "currency": "₹",
+    "price": 4999,
+    "originalPrice": 7500,
+    "priceLabel": "₹4,999 for 4 members",
+    "priceUnit": "per family",
+    "includedItems": [
+        {
+            "_key": "i1",
+            "item": "Full dental checkup (4 members)",
+            "isHighlighted": true
+        },
+        {
+            "_key": "i2",
+            "item": "Professional scaling & polishing (4 members)",
+            "isHighlighted": false
+        },
+        {
+            "_key": "i3",
+            "item": "Dental X-rays if needed",
+            "isHighlighted": false
+        },
+        {
+            "_key": "i4",
+            "item": "Fluoride treatment for children",
+            "isHighlighted": false
+        },
+        {
+            "_key": "i5",
+            "item": "Personalized oral hygiene counseling",
+            "isHighlighted": false
+        },
+        {
+            "_key": "i6",
+            "item": "10% discount on any follow-up treatments",
+            "isHighlighted": true
+        }
+    ],
+    "notIncluded": [
+        "Major treatments (implants, braces, etc.)",
+        "Emergency visits"
+    ],
+    "description": "Complete preventive care for your entire family in one visit. Valid for families with up to 4 members. Book once a year for optimal dental health.",
+    "validityDays": 365,
+    "promoEndDate": "2025-03-31T23:59:00.000Z",
+    "cta": {
+        "label": "Book Family Package",
+        "linkType": "internal",
+        "internalLink": "/contact",
+        "style": "primary"
+    }
+}
+{
+    "_id": "pricing-makeover",
+    "_type": "pricingPlan",
+    "title": "Smile Makeover Starter (4 Veneers)",
+    "planType": "package",
+    "status": "active",
+    "isPopular": false,
+    "order": 2,
+    "currency": "₹",
+    "price": 55000,
+    "originalPrice": 60000,
+    "priceUnit": "4 veneers",
+    "includedItems": [
+        {
+            "_key": "i1",
+            "item": "Digital Smile Design consultation",
+            "isHighlighted": true
+        },
+        {
+            "_key": "i2",
+            "item": "4 E-Max ceramic veneers",
+            "isHighlighted": true
+        },
+        {
+            "_key": "i3",
+            "item": "Tooth preparation & temporaries",
+            "isHighlighted": false
+        },
+        {
+            "_key": "i4",
+            "item": "Final bonding appointment",
+            "isHighlighted": false
+        },
+        {
+            "_key": "i5",
+            "item": "1 year follow-up",
+            "isHighlighted": false
+        },
+        {
+            "_key": "i6",
+            "item": "Teeth whitening of remaining teeth",
+            "isHighlighted": true
+        }
+    ],
+    "description": "Perfect for improving the top 4 front teeth. Includes full DSD consultation and E-Max veneers for a natural-looking transformation.",
+    "cta": {
+        "label": "Book Smile Consultation",
+        "linkType": "internal",
+        "internalLink": "/contact",
+        "style": "primary"
+    }
+}
+{
+    "_id": "pricing-membership",
+    "_type": "pricingPlan",
+    "title": "SmileCare Annual Membership — Individual",
+    "planType": "membership",
+    "status": "active",
+    "isPopular": false,
+    "order": 3,
+    "currency": "₹",
+    "price": 2999,
+    "priceUnit": "per year",
+    "includedItems": [
+        {
+            "_key": "i1",
+            "item": "2 comprehensive checkups per year",
+            "isHighlighted": true
+        },
+        {
+            "_key": "i2",
+            "item": "2 professional cleanings per year",
+            "isHighlighted": true
+        },
+        {
+            "_key": "i3",
+            "item": "All required X-rays",
+            "isHighlighted": false
+        },
+        {
+            "_key": "i4",
+            "item": "15% discount on ALL treatments",
+            "isHighlighted": true
+        },
+        {
+            "_key": "i5",
+            "item": "Emergency consultation at no extra charge",
+            "isHighlighted": false
+        },
+        {
+            "_key": "i6",
+            "item": "Priority appointment booking",
+            "isHighlighted": false
+        },
+        {
+            "_key": "i7",
+            "item": "WhatsApp access to your dentist (basic queries)",
+            "isHighlighted": false
+        }
+    ],
+    "notIncluded": [
+        "Medicines and materials cost",
+        "Major prosthetic work"
+    ],
+    "description": "The smartest investment for your dental health. Members save an average of ₹8,000–12,000 per year compared to individual visit costs.",
+    "validityDays": 365,
+    "cta": {
+        "label": "Join as Member",
+        "linkType": "internal",
+        "internalLink": "/contact",
+        "style": "primary"
+    }
+}
+{
+    "_id": "pricing-implant",
+    "_type": "pricingPlan",
+    "title": "Single Dental Implant — Complete",
+    "planType": "single",
+    "status": "active",
+    "isPopular": false,
+    "order": 4,
+    "currency": "₹",
+    "price": 32000,
+    "originalPrice": 40000,
+    "priceUnit": "per implant",
+    "includedItems": [
+        {
+            "_key": "i1",
+            "item": "Nobel Biocare / Straumann implant (imported)",
+            "isHighlighted": true
+        },
+        {
+            "_key": "i2",
+            "item": "Zirconia abutment",
+            "isHighlighted": false
+        },
+        {
+            "_key": "i3",
+            "item": "Full ceramic crown (tooth-colored)",
+            "isHighlighted": false
+        },
+        {
+            "_key": "i4",
+            "item": "3D CBCT scan",
+            "isHighlighted": false
+        },
+        {
+            "_key": "i5",
+            "item": "Surgical procedure with anesthesia",
+            "isHighlighted": false
+        },
+        {
+            "_key": "i6",
+            "item": "All follow-up visits during healing",
+            "isHighlighted": false
+        },
+        {
+            "_key": "i7",
+            "item": "5-year warranty on crown",
+            "isHighlighted": true
+        }
+    ],
+    "notIncluded": [
+        "Bone grafting if required (additional ₹15,000–25,000)",
+        "Tooth extraction if required before implant"
+    ],
+    "description": "Complete single tooth implant solution using world's most trusted implant brands. Includes everything from scan to final crown. EMI from ₹2,700/month.",
+    "cta": {
+        "label": "Book Implant Consultation",
+        "linkType": "internal",
+        "internalLink": "/contact",
+        "style": "primary"
+    },
+    "relatedService": {
+        "_type": "reference",
+        "_ref": "service-implants"
+    }
+}
+{
+    "_id": "aboutPage",
+    "_type": "aboutPage",
+    "pageTitle": "About SmileCare Dental Clinic",
+    "story": {
+        "heading": "From a Dream to NCR's Most Trusted Dental Clinic",
+        "content": [
+            {
+                "_key": "b1",
+                "_type": "block",
+                "style": "normal",
+                "children": [
+                    {
+                        "_key": "c1",
+                        "_type": "span",
+                        "text": "In 2009, Dr. Rajesh Kumar Sharma returned to India after 3 years of advanced implantology training in Germany with one mission: to bring world-class dental care to patients who didn't have to fly abroad for it."
+                    }
+                ],
+                "markDefs": []
+            },
+            {
+                "_key": "b2",
+                "_type": "block",
+                "style": "normal",
+                "children": [
+                    {
+                        "_key": "c2",
+                        "_type": "span",
+                        "text": "Starting with just 2 dental chairs and a team of 5, SmileCare opened its doors in Sector 18, Noida. Word spread quickly. Patients who came in nervous and in pain left smiling — and brought their families. Within 3 years, we expanded to 8 chairs. Today, we operate a 20-chair state-of-the-art facility with 25+ specialists."
+                    }
+                ],
+                "markDefs": []
+            },
+            {
+                "_key": "b3",
+                "_type": "block",
+                "style": "normal",
+                "children": [
+                    {
+                        "_key": "c3",
+                        "_type": "span",
+                        "text": "Our journey is built on one non-negotiable foundation: we treat every patient the way we'd want our own family treated — with skill, honesty, and genuine care."
+                    }
+                ],
+                "markDefs": []
+            }
+        ]
+    },
+    "missionVision": {
+        "mission": "To provide every patient with world-class, pain-free dental care in a warm and welcoming environment — making quality dentistry accessible, affordable, and something to look forward to.",
+        "vision": "To be India's most patient-trusted dental network — where every smile tells a story of expert care, genuine compassion, and life-changing transformation.",
+        "coreValues": [
+            {
+                "_key": "v1",
+                "icon": "🎯",
+                "title": "Patient First",
+                "description": "Every decision we make starts with one question: Is this best for the patient?"
+            },
+            {
+                "_key": "v2",
+                "icon": "🔬",
+                "title": "Clinical Excellence",
+                "description": "Continuous training, latest technology, evidence-based treatment — we never stop learning."
+            },
+            {
+                "_key": "v3",
+                "icon": "💛",
+                "title": "Compassion",
+                "description": "Dental anxiety is real. We meet every patient with patience, empathy, and zero judgment."
+            },
+            {
+                "_key": "v4",
+                "icon": "🤝",
+                "title": "Integrity",
+                "description": "We recommend only treatments you need. No upselling, no fear-mongering, no hidden costs."
+            },
+            {
+                "_key": "v5",
+                "icon": "🌱",
+                "title": "Growth",
+                "description": "We grow by making our patients healthier — not by maximizing billing."
+            },
+            {
+                "_key": "v6",
+                "icon": "👨‍👩‍👧‍👦",
+                "title": "Community",
+                "description": "Monthly free dental camps in schools and underserved communities — because every child deserves a healthy smile."
+            }
+        ]
+    },
+    "milestones": [
+        {
+            "_key": "m1",
+            "year": "2009",
+            "title": "SmileCare Founded",
+            "description": "Dr. Rajesh opens a 2-chair clinic in Sector 18, Noida with a team of 5."
+        },
+        {
+            "_key": "m2",
+            "year": "2011",
+            "title": "1,000 Patients",
+            "description": "Reached our first milestone — and expanded to 5 dental chairs."
+        },
+        {
+            "_key": "m3",
+            "year": "2013",
+            "title": "Implant Center Launch",
+            "description": "Became an authorized Nobel Biocare Implant Center in NCR."
+        },
+        {
+            "_key": "m4",
+            "year": "2015",
+            "title": "New Building",
+            "description": "Moved to our current 20-chair state-of-the-art facility with dedicated specialist rooms."
+        },
+        {
+            "_key": "m5",
+            "year": "2016",
+            "title": "Invisalign Partnership",
+            "description": "Dr. Priya becomes NCR's first Invisalign Platinum Provider."
+        },
+        {
+            "_key": "m6",
+            "year": "2018",
+            "title": "5,000 Smiles",
+            "description": "5,000th patient treated — celebrated with a patient appreciation event."
+        },
+        {
+            "_key": "m7",
+            "year": "2020",
+            "title": "Digital Smile Design",
+            "description": "Launched our Digital Smile Design studio — first in Noida."
+        },
+        {
+            "_key": "m8",
+            "year": "2022",
+            "title": "Best Clinic Award",
+            "description": "Awarded Best Multi-Specialty Dental Clinic in NCR by Times Health."
+        },
+        {
+            "_key": "m9",
+            "year": "2024",
+            "title": "15,000 Happy Patients",
+            "description": "Reached 15,000 patients with a 4.9★ Google rating — our proudest milestone yet."
+        }
+    ],
+    "technology": {
+        "sectionTitle": "Technology You Can Trust",
+        "description": "We invest in the best technology not to impress — but because it directly improves your diagnosis, treatment, and experience.",
+        "items": [
+            {
+                "_key": "t1",
+                "name": "CBCT 3D Scanner (Carestream CS9600)",
+                "description": "Full 3D imaging for implant planning, wisdom tooth assessment, and orthodontic diagnosis — far more accurate than traditional 2D X-rays."
+            },
+            {
+                "_key": "t2",
+                "name": "Digital Smile Design (DSD) Software",
+                "description": "See a digital preview of your new smile before any treatment begins. Adjust shape, color, and length until you're completely satisfied."
+            },
+            {
+                "_key": "t3",
+                "name": "PerioLase MVP-7 LASER System",
+                "description": "Laser gum treatment for virtually painless periodontitis treatment — no scalpels, no stitches, faster healing."
+            },
+            {
+                "_key": "t4",
+                "name": "ProTaper Gold Rotary RCT System",
+                "description": "Latest generation rotary instruments for single-sitting, precise root canal treatments with maximum comfort."
+            },
+            {
+                "_key": "t5",
+                "name": "Intraoral Cameras",
+                "description": "HD cameras show you exactly what the dentist sees inside your mouth — so you're always informed and involved in your treatment."
+            },
+            {
+                "_key": "t6",
+                "name": "Autoclave Sterilization Class B",
+                "description": "Medical-grade sterilization of all instruments. Sealed sterile pouches opened fresh in front of every patient."
+            }
+        ]
+    },
+    "affiliations": [
+        {
+            "_key": "af1",
+            "name": "Indian Dental Association (IDA)",
+            "url": "https://ida.org.in"
+        },
+        {
+            "_key": "af2",
+            "name": "Dental Council of India",
+            "url": "https://dciindia.gov.in"
+        },
+        {
+            "_key": "af3",
+            "name": "Nobel Biocare Authorized Center",
+            "url": "https://nobelbiocare.com"
+        },
+        {
+            "_key": "af4",
+            "name": "Invisalign Platinum Provider",
+            "url": "https://invisalign.com"
+        },
+        {
+            "_key": "af5",
+            "name": "International Congress of Oral Implantologists",
+            "url": "https://icoi.org"
+        }
+    ],
+    "seo": {
+        "metaTitle": "About SmileCare Dental Clinic Noida | Our Story & Team",
+        "metaDescription": "Learn about SmileCare Dental Clinic — 15 years of excellence, 15,000+ patients, and 25+ specialists. Our story, mission, values, and state-of-the-art technology."
+    }
+}
+{
+    "_id": "homepage",
+    "_type": "homepage",
+    "hero": {
+        "badge": "✨ Trusted by 15,000+ Happy Patients",
+        "heading": "Your Perfect Smile Starts Here",
+        "headingHighlight": "Perfect Smile",
+        "subheading": "Advanced dental care with a gentle touch — from routine cleanings to complete smile makeovers. Experience dentistry that feels different.",
+        "primaryCta": {
+            "label": "Book Free Consultation",
+            "linkType": "internal",
+            "internalLink": "/contact",
+            "style": "primary"
+        },
+        "secondaryCta": {
+            "label": "View Our Services",
+            "linkType": "internal",
+            "internalLink": "/services",
+            "style": "secondary"
+        },
+        "trustIndicators": [
+            {
+                "_key": "t1",
+                "icon": "🦷",
+                "text": "Painless Treatments"
+            },
+            {
+                "_key": "t2",
+                "icon": "⭐",
+                "text": "4.9★ Google Rating"
+            },
+            {
+                "_key": "t3",
+                "icon": "🏆",
+                "text": "15+ Years of Excellence"
+            },
+            {
+                "_key": "t4",
+                "icon": "👨‍⚕️",
+                "text": "25+ Expert Specialists"
+            }
+        ]
+    },
+    "announcementBanner": {
+        "isActive": true,
+        "text": "🎉 New Year Offer: Family Dental Package at ₹4,999 (Save ₹2,500)",
+        "linkText": "Book Now",
+        "linkUrl": "/pricing",
+        "bgColor": "#1e40af"
+    },
+    "highlights": {
+        "sectionTitle": "Why SmileCare is Different",
+        "sectionSubtitle": "We combine cutting-edge technology with genuine care — because your comfort matters as much as your smile.",
+        "items": [
+            {
+                "_key": "h1",
+                "icon": "🔬",
+                "title": "Advanced Technology",
+                "description": "CBCT 3D scans, Digital Smile Design, LASER treatment, and rotary RCT — we invest in technology that improves your experience."
+            },
+            {
+                "_key": "h2",
+                "icon": "👨‍⚕️",
+                "title": "25+ Specialist Doctors",
+                "description": "Each doctor is a specialist in their field — implantologist, orthodontist, cosmetic dentist, pedodontist, and periodontist."
+            },
+            {
+                "_key": "h3",
+                "icon": "💊",
+                "title": "Pain-Free Treatments",
+                "description": "We use the latest techniques and anesthesia protocols to ensure every visit is as comfortable as possible."
+            },
+            {
+                "_key": "h4",
+                "icon": "🏠",
+                "title": "Family-Friendly Clinic",
+                "description": "From toddlers to grandparents — we treat the whole family with equal care, patience, and warmth."
+            },
+            {
+                "_key": "h5",
+                "icon": "💰",
+                "title": "Transparent Pricing",
+                "description": "No surprise bills. We discuss all costs upfront before starting any treatment. EMI available for major treatments."
+            },
+            {
+                "_key": "h6",
+                "icon": "⏱️",
+                "title": "Respect Your Time",
+                "description": "Online booking, minimal waiting, and punctual appointments — because we know your time is valuable."
+            },
+            {
+                "_key": "h7",
+                "icon": "📱",
+                "title": "24/7 Support",
+                "description": "WhatsApp access to your doctor for post-treatment queries and dental emergencies round the clock."
+            },
+            {
+                "_key": "h8",
+                "icon": "⭐",
+                "title": "4.9★ on Google",
+                "description": "1,200+ genuine Google reviews — our happiest patients are our best marketing."
+            }
+        ]
+    },
+    "servicesSection": {
+        "sectionTitle": "Our Most-Loved Treatments",
+        "sectionSubtitle": "From routine checkups to complete smile transformations — comprehensive dental care under one roof.",
+        "showAllServices": false,
+        "viewAllCta": {
+            "label": "Explore All Services",
+            "linkType": "internal",
+            "internalLink": "/services",
+            "style": "secondary"
+        }
+    },
+    "aboutSnippet": {
+        "sectionLabel": "About SmileCare",
+        "heading": "15 Years of Transforming Smiles in NCR",
+        "description": [
+            {
+                "_key": "b1",
+                "_type": "block",
+                "style": "normal",
+                "children": [
+                    {
+                        "_key": "c1",
+                        "_type": "span",
+                        "text": "SmileCare Dental Clinic was founded in 2009 by Dr. Rajesh Kumar Sharma with a simple belief — every person deserves access to world-class dental care delivered with compassion."
+                    }
+                ],
+                "markDefs": []
+            },
+            {
+                "_key": "b2",
+                "_type": "block",
+                "style": "normal",
+                "children": [
+                    {
+                        "_key": "c2",
+                        "_type": "span",
+                        "text": "What started as a small clinic in Noida has grown into NCR's most trusted multi-specialty dental center, with 25+ specialists, state-of-the-art technology, and over 15,000 happy patients."
+                    }
+                ],
+                "markDefs": []
+            }
+        ],
+        "features": [
+            "ISO 9001:2015 Certified Clinic",
+            "Nobel Biocare & Straumann Implant Center",
+            "Certified Invisalign Provider (Platinum)",
+            "Digital Smile Design Studio",
+            "Equipped with CBCT 3D Scanner"
+        ],
+        "cta": {
+            "label": "Our Full Story",
+            "linkType": "internal",
+            "internalLink": "/about",
+            "style": "secondary"
+        }
+    },
+    "statsSection": {
+        "isVisible": true,
+        "useClinicStats": true
+    },
+    "testimonialsSection": {
+        "sectionTitle": "What Our Patients Say",
+        "sectionSubtitle": "Don't take our word for it — hear from the 15,000+ patients who trust us with their smiles.",
+        "displayMode": "auto"
+    },
+    "ctaBanner": {
+        "heading": "Ready for Your Best Smile Ever?",
+        "subtext": "Book a free consultation today — our specialists will create a personalized treatment plan just for you. No obligation, no pressure.",
+        "bgColor": "#0a2f6b",
+        "primaryCta": {
+            "label": "Book Free Consultation — It's Free!",
+            "linkType": "internal",
+            "internalLink": "/contact",
+            "style": "primary"
+        },
+        "secondaryCta": {
+            "label": "Call Us Now",
+            "linkType": "phone",
+            "phoneNumber": "+91-98765-43210",
+            "style": "secondary"
+        }
+    },
+    "blogSection": {
+        "isVisible": true,
+        "sectionTitle": "Dental Health Tips & Guides",
+        "sectionSubtitle": "Expert advice from our dental specialists — because prevention is always better than cure.",
+        "viewAllCta": {
+            "label": "Read All Articles",
+            "linkType": "internal",
+            "internalLink": "/blog",
+            "style": "ghost"
+        }
+    },
+    "faqSection": {
+        "isVisible": true,
+        "sectionTitle": "Common Questions Answered",
+        "faqs": [
+            {
+                "_type": "reference",
+                "_ref": "faq-1"
+            },
+            {
+                "_type": "reference",
+                "_ref": "faq-2"
+            },
+            {
+                "_type": "reference",
+                "_ref": "faq-3"
+            },
+            {
+                "_type": "reference",
+                "_ref": "faq-4"
+            },
+            {
+                "_type": "reference",
+                "_ref": "faq-5"
+            },
+            {
+                "_type": "reference",
+                "_ref": "faq-7"
+            }
+        ]
+    },
+    "gallerySection": {
+        "isVisible": true,
+        "sectionTitle": "Our Clinic"
+    },
+    "seo": {
+        "metaTitle": "SmileCare Dental Clinic Noida | Best Dentist in NCR",
+        "metaDescription": "Trusted dental clinic in Noida with 15,000+ happy patients. Expert specialists for implants, braces, whitening, RCT & more. Book free consultation today!"
+    }
+}
