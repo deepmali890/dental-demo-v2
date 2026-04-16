@@ -1,40 +1,45 @@
 // app/api/webhook/resend/route.js
-import crypto from "crypto";
+import { Resend } from "resend";
+
+const resend = new Resend(process.env.RESEND_API_KEY);
 
 export async function POST(req) {
     try {
-        const body = await req.text();
         const signature = req.headers.get("resend-signature");
 
-        // Verify signature
-        const expected = crypto
-            .createHmac("sha256", process.env.RESEND_WEBHOOK_SECRET)
-            .update(body)
-            .digest("hex");
+        const body = await req.text();
 
-        if (signature !== expected) {
-            console.error("❌ Invalid webhook signature");
+        // Verify signature
+        const isValid = await resend.webhooks.verify({
+            signature,
+            body,
+            secret: process.env.RESEND_WEBHOOK_SECRET,
+        })
+
+        if (!isValid) {
+            console.error("❌ Invalid signature");
             return Response.json({ error: "Invalid signature" }, { status: 401 });
         }
 
-        const parsed = JSON.parse(body);
+        const data = JSON.parse(body);
 
-        console.log("📩 WEBHOOK EVENT:", parsed);
+        console.log("📩 VERIFIED WEBHOOK:", data);
 
 
-        const { type, data } = parsed;
+        const { type, data: emailData } = data;
 
-        if (type === 'email.sent') {
-            console.log("📤 SENT:", data.id);
+        if (type === "email.sent") {
+            console.log("📤 SENT:", emailData.email_id);
         }
 
         if (type === "email.delivered") {
-            console.log("✅ DELIVERED:", data.id);
+            console.log("✅ DELIVERED:", emailData.email_id);
         }
 
         if (type === "email.bounced") {
-            console.log("❌ BOUNCED:", data.id);
+            console.log("❌ BOUNCED:", emailData.email_id);
         }
+
 
         return Response.json({ success: true });
 
