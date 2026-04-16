@@ -1,10 +1,16 @@
 // app/api/webhook/resend/route.js
+
+export const runtime = "nodejs";
+
 import { Resend } from "resend";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
 export async function POST(req) {
     try {
+
+        console.log("SECRET:", process.env.RESEND_WEBHOOK_SECRET);
+        
         const signature = req.headers.get("resend-signature");
 
         const body = await req.text();
