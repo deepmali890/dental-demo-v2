@@ -29,9 +29,10 @@ export async function POST(req) {
         }
 
 
-        await resend.emails.send({
-            from: "appointments@yourdomain.com",
-            to: "your-email@gmail.com",
+        const response = await resend.emails.send({
+            from: "Dental Preview <appointments@dentalpreview.online>",
+            to: ["appointments@dentalpreview.online"],
+            reply_to: email || "no-reply@dentalpreview.online",
             subject: `New Appointment: ${name} — ${service}`,
             html: `
         <h2>New Appointment Request</h2>
@@ -45,11 +46,14 @@ export async function POST(req) {
       `,
         });
 
-        // Patient ko bhi confirmation bhejo
+        console.log("Appointment email sent for:", name);
+
+        let userEmailResponse = null;
+
         if (email) {
-            await resend.emails.send({
-                from: "appointments@yourdomain.com",
-                to: email,
+            userEmailResponse = await resend.emails.send({
+                from: "Dental Preview <appointments@dentalpreview.online>",
+                to: [email],
                 subject: "Appointment Request Received",
                 html: `
           <h2>Thank you, ${name}!</h2>
@@ -57,14 +61,26 @@ export async function POST(req) {
           <p>We will call you shortly to confirm.</p>
         `,
             });
+
+            console.log("📨 USER EMAIL RESPONSE:", userEmailResponse);
         }
-        return Response.json({ success: true })
+        return Response.json({
+            success: true,
+            message: "Emails processed",
+            data: {
+                adminEmailId: response?.data?.id || null,
+                userEmailId: userEmailResponse?.data?.id || null,
+            },
+        });
     } catch (error) {
         console.error("CONTACT ERROR:", error);
         return Response.json(
-            { error: "Something went wrong" },
+            {
+                success: false,
+                error: "Failed to send email",
+                details: error.message,
+            },
             { status: 500 }
         );
-
     }
 }

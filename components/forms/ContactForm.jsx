@@ -219,7 +219,7 @@ export default function ContactForm({
 
       {/* Consent */}
       <label className="flex gap-3 text-sm text-gray-600">
-        <input type="checkbox" name="consent" checked={form.consent} onChange={handleChange} />
+        <input type="checkbox" name="consent" required checked={form.consent} onChange={handleChange} />
         I agree to be contacted
       </label>
 
