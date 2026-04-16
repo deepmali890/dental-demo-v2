@@ -1,79 +1,75 @@
 // app/api/webhook/resend/route.js
 
-import { Resend } from "resend"
+export const runtime = "nodejs";
 
-export const runtime = "nodejs"
+import { Webhook } from "svix";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
 
 export async function POST(req) {
-    try {
 
-        const webhookSecret = process.env.RESEND_WEBHOOK_SECRET
+    const webhookSecret = process.env.RESEND_WEBHOOK_SECRET;
 
-        console.log("ENV CHECK:", {
-            hasApiKey: !!process.env.RESEND_API_KEY,
-            hasWebhookSecret: !!process.env.RESEND_WEBHOOK_SECRET,
-            secretPrefix: webhookSecret?.substring(0, 8),
-        })
-
-        if (!webhookSecret) {
-            console.error("RESEND_WEBHOOK_SECRET is not set!")
-            return Response.json(
-                { error: "Webhook secret not configured" },
-                { status: 500 }
-            )
-        }
-
-        const signature = req.headers.get("resend-signature")
-        const body = await req.text()
-
-        if (!signature) {
-            return Response.json(
-                { error: "Missing signature header" },
-                { status: 400 }
-            )
-        }
-
-
-        const isValid = await resend.webhooks.verify({
-            body,
-            signature,
-            secret: webhookSecret,
-        })
-
-        if (!isValid) {
-            return Response.json({ error: "Invalid signature" }, { status: 401 })
-        }
-
-        const event = JSON.parse(body)
-        console.log("WEBHOOK EVENT:", event.type, event.data?.email_id)
-
-
-        switch (event.type) {
-            case "email.sent":
-                await handleEmailSent(event.data)
-                break
-            case "email.delivered":
-                await handleEmailDelivered(event.data)
-                break
-            case "email.bounced":
-                await handleEmailBounced(event.data)
-                break
-            case "email.complained":
-                await handleEmailComplained(event.data)
-                break
-            default:
-                console.log("Unhandled event type:", event.type)
-        }
-
-        return Response.json({ success: true })
-
-
-    } catch (error) {
-        console.error("WEBHOOK ERROR:", error.message)
-        return Response.json({ error: error.message }, { status: 500 })
+    if (!webhookSecret) {
+        console.error("RESEND_WEBHOOK_SECRET set nahi hai");
+        return Response.json({ error: "Server misconfiguration" }, { status: 500 });
     }
+
+    const svixId = req.headers.get("svix-id");
+    const svixTimestamp = req.headers.get("svix-timestamp");
+    const svixSignature = req.headers.get("svix-signature");
+
+    console.log("DEBUG:", {
+        "svix-id": svixId,
+        "svix-timestamp": svixTimestamp,
+        "svix-signature": svixSignature,
+        secretPrefix: webhookSecret?.substring(0, 10),
+        bodyLength: rawBody.length,
+    });
+
+
+    if (!svixId || !svixTimestamp || !svixSignature) {
+        console.error("Svix headers are missing", { svixId, svixTimestamp, svixSignature });
+        return Response.json({ error: "Missing required headers" }, { status: 400 });
+    }
+
+    const rawBody = await req.text();
+
+    let event;
+    try {
+        const wh = new Webhook(webhookSecret);
+        event = wh.verify(rawBody, {
+            "svix-id": svixId,
+            "svix-timestamp": svixTimestamp,
+            "svix-signature": svixSignature,
+        });
+
+    } catch (err) {
+        console.error("Signature verification fail:", err.message);
+        return Response.json({ error: "Invalid signature" }, { status: 401 });
+    }
+
+    console.log("WEBHOOK EVENT:", event.type, event.data);
+
+
+
+    switch (event.type) {
+        case "email.sent":
+            console.log("Email sent:", event.data.email_id);
+            break;
+        case "email.delivered":
+            console.log("Email delivered:", event.data.email_id);
+            break;
+        case "email.bounced":
+            console.error("Email bounced:", event.data.email_id, "| Reason:", event.data.bounce?.message);
+            break;
+        case "email.complained":
+            console.error("Spam complaint for:", event.data.email_id);
+            break;
+        default:
+            console.log("Unknown event:", event.type);
+    }
+    return Response.json({ success: true }, { status: 200 });
+
 }
 
 
