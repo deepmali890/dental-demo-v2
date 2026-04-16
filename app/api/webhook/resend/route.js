@@ -1,12 +1,10 @@
 // app/api/webhook/resend/route.js
 
-export const runtime = "nodejs";
 
+export const runtime = "nodejs";
 import { Webhook } from "svix";
 
-
 export async function POST(req) {
-
     const webhookSecret = process.env.RESEND_WEBHOOK_SECRET;
 
     if (!webhookSecret) {
@@ -14,43 +12,39 @@ export async function POST(req) {
         return Response.json({ error: "Server misconfiguration" }, { status: 500 });
     }
 
-    const svixId = req.headers.get("svix-id");
+    const svixId        = req.headers.get("svix-id");
     const svixTimestamp = req.headers.get("svix-timestamp");
     const svixSignature = req.headers.get("svix-signature");
 
+    const rawBody = await req.text();
+
     console.log("DEBUG:", {
-        "svix-id": svixId,
+        "svix-id":        svixId,
         "svix-timestamp": svixTimestamp,
         "svix-signature": svixSignature,
-        secretPrefix: webhookSecret?.substring(0, 10),
-        bodyLength: rawBody.length,
+        secretPrefix:     webhookSecret?.substring(0, 10),
+        bodyLength:       rawBody.length,
     });
 
-
     if (!svixId || !svixTimestamp || !svixSignature) {
-        console.error("Svix headers are missing", { svixId, svixTimestamp, svixSignature });
+        console.error("Svix headers missing", { svixId, svixTimestamp, svixSignature });
         return Response.json({ error: "Missing required headers" }, { status: 400 });
     }
-
-    const rawBody = await req.text();
 
     let event;
     try {
         const wh = new Webhook(webhookSecret);
         event = wh.verify(rawBody, {
-            "svix-id": svixId,
+            "svix-id":        svixId,
             "svix-timestamp": svixTimestamp,
             "svix-signature": svixSignature,
         });
-
     } catch (err) {
         console.error("Signature verification fail:", err.message);
         return Response.json({ error: "Invalid signature" }, { status: 401 });
     }
 
     console.log("WEBHOOK EVENT:", event.type, event.data);
-
-
 
     switch (event.type) {
         case "email.sent":
@@ -63,13 +57,13 @@ export async function POST(req) {
             console.error("Email bounced:", event.data.email_id, "| Reason:", event.data.bounce?.message);
             break;
         case "email.complained":
-            console.error("Spam complaint for:", event.data.email_id);
+            console.error("Spam complaint:", event.data.email_id);
             break;
         default:
             console.log("Unknown event:", event.type);
     }
-    return Response.json({ success: true }, { status: 200 });
 
+    return Response.json({ success: true }, { status: 200 });
 }
 
 
