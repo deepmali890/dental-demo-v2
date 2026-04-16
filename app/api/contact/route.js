@@ -17,8 +17,10 @@ export async function POST(req) {
             );
         }
 
+        const FROM_EMAIL = "Dental Preview <onboarding@resend.dev>";
+
         const adminEmailResponse = await resend.emails.send({
-            from: "Dental Preview <info@dentalpreview.online>",
+            from: FROM_EMAIL,
             to: ["appointments@dentalpreview.online"],
             reply_to: email || "no-reply@dentalpreview.online",
             subject: `New Appointment: ${name} — ${service}`,
@@ -100,7 +102,7 @@ export async function POST(req) {
 
         if (email) {
             userEmailResponse = await resend.emails.send({
-                from: "Dental Preview <appointments@dentalpreview.online>",
+                from: FROM_EMAIL,
                 to: [email],
                 subject: "Appointment Request Received — Dental Preview",
                 html: `
