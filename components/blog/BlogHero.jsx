@@ -57,7 +57,7 @@ export default function BlogHero({ post, jsonLd }) {
       </div>
 
       {/* ✅ FLOATING IMAGE (NO CROPPING) */}
-      {post.coverImage?.asset && (
+      {/* {post.coverImage?.asset && (
         <div className="absolute right-4 bottom-0 md:right-12 
                         w-[260px] sm:w-[340px] md:w-[440px] lg:w-[520px]
                         pointer-events-none">
@@ -71,7 +71,7 @@ export default function BlogHero({ post, jsonLd }) {
             priority
           />
         </div>
-      )}
+      )} */}
 
     </section>
   )

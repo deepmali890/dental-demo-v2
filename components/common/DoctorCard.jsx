@@ -13,7 +13,7 @@ export default function DoctorCard({ doctor }) {
         >
 
             {/* Image */}
-            <div className="relative h-[320px] w-full rounded-2xl overflow-hidden bg-gray-100">
+            <div className="relative h-[400px]  mt-4 w-full rounded-2xl overflow-hidden bg-gray-100">
 
                 {doctor.profilePhoto?.asset ? (
                     <Image

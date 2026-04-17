@@ -35,7 +35,7 @@ export default function AboutFounders({ founders }) {
                 <div className="flex items-center gap-4 mb-4">
 
                   {/* Image */}
-                  <div className="relative w-16 h-16 rounded-xl overflow-hidden bg-gray-100 flex-shrink-0">
+                  <div className="relative w-20 h-20 rounded-xl overflow-hidden bg-gray-100 flex-shrink-0">
                     {doc.profilePhoto?.asset ? (
                       <SanityImage
                         image={doc.profilePhoto}

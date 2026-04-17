@@ -7,11 +7,21 @@ import { useEffect, useState } from 'react'
 export default function AnnouncementBar({ data }) {
   const [visible, setVisible] = useState(false)
 
-  // Smooth mount animation
+  const storageKey = `announcement_${data?._id || 'default'}`
+
   useEffect(() => {
-    const timer = setTimeout(() => setVisible(true), 100)
-    return () => clearTimeout(timer)
-  }, [])
+    const isClosed = localStorage.getItem(storageKey)
+
+    if (!isClosed && data?.isActive) {
+      const timer = setTimeout(() => setVisible(true), 100)
+      return () => clearTimeout(timer)
+    }
+  }, [data, storageKey])
+
+  const handleClose = () => {
+    localStorage.setItem(storageKey, 'true')
+    setVisible(false)
+  }
 
   if (!data?.isActive || !visible) return null
 
@@ -22,9 +32,8 @@ export default function AnnouncementBar({ data }) {
       className={`
         relative w-full
         text-white text-sm
-        px-4 py-3
+        px-4 sm:px-6 py-3
         flex items-center justify-center
-        text-center
         border-b border-white/10
         backdrop-blur-md
         transition-all duration-500
@@ -37,11 +46,17 @@ export default function AnnouncementBar({ data }) {
       }}
     >
 
-      {/* Content */}
-      <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-3 max-w-4xl">
+      {/* CONTENT WRAPPER */}
+      <div className="
+        flex flex-col sm:flex-row items-center
+        gap-2 sm:gap-3
+        max-w-4xl w-full
+        text-center sm:text-left
+        pr-10
+      ">
 
-        {/* Text */}
-        <p className="font-medium leading-relaxed">
+        {/* TEXT */}
+        <p className="font-medium leading-relaxed break-words">
           {data.text}
         </p>
 
@@ -63,15 +78,14 @@ export default function AnnouncementBar({ data }) {
             <ArrowRight size={14} />
           </Link>
         )}
-
       </div>
 
-      {/* Close */}
+      {/* CLOSE BUTTON */}
       <button
-        onClick={() => setVisible(false)}
+        onClick={handleClose}
         className="
           absolute right-3 top-1/2 -translate-y-1/2
-          w-7 h-7 flex items-center justify-center
+          w-8 h-8 flex items-center justify-center
           rounded-md
           hover:bg-white/10
           transition
