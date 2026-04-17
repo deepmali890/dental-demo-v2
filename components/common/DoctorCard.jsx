@@ -5,6 +5,7 @@ import Image from 'next/image'
 import { urlFor } from '@/sanity/lib/client'
 
 export default function DoctorCard({ doctor }) {
+
     return (
         <Link
             href={`/team/${doctor.slug}`}

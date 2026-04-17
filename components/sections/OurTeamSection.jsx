@@ -10,6 +10,8 @@ export default function OurTeamSection({ data, fallbackDoctors }) {
 
   if (!doctors.length) return null
 
+  console.log('OurTeamSection doctors:', doctors)
+
   return (
     <section className="section bg-white" id="team">
       <div className="max-w-7xl mx-auto mx-auto px-4">

@@ -40,6 +40,7 @@ export const HOMEPAGE_QUERY = `
      "teamMembers": teamMembers[]-> {
      _id,
      name,
+    "slug": slug.current,
      designation,
      shortBio,
      experience,

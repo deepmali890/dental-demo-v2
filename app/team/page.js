@@ -21,6 +21,8 @@ export default async function TeamPage() {
     const homepageData = await getData()
     const cta = homepageData?.homepage?.ctaBanner
 
+    console.log('TeamPage doctors:', doctors)
+
     return (
         <>
             <PageHero

@@ -67,6 +67,8 @@ export default async function RootLayout({ children }) {
     console.error("Layout Data Error:", error);
   }
 
+  console.log("Navigation Data:", navigation);
+
   return (
     <html
       lang="en"

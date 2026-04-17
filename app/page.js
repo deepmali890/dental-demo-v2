@@ -56,6 +56,8 @@ const HomePage = async () => {
         allDoctors
     } = data
 
+    console.log('Doctors on HomePage:', allDoctors)
+
 
     const isVisible = (section) => section?.isVisible !== false
 
