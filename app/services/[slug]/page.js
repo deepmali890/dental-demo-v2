@@ -76,13 +76,12 @@ const ServiceDetailPage = async ({ params }) => {
   const hasFaqs = service.faqs?.length > 0
   const hasTestimonials = service.testimonials?.length > 0
 
-  console.log('Rendering ServiceDetailPage for Testimonials:', service.testimonials)
 
   return (
     <>
       <ServiceHero service={service} jsonLd={jsonLd} />
 
-      <section className="section bg-white md:px-6">
+      <section className="section  bg-white md:px-6">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 gap-12 lg:grid-cols-3">
 

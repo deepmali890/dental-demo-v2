@@ -12,7 +12,7 @@ export default function HeroSection({ data, clinicInfo }) {
   const stats = clinicInfo?.stats?.slice(0, 3) || []
 
   return (
-    <section className="relative  min-h-[90vh] overflow-hidden bg-slate-50 pt-20 lg:pt-32 pb-16 lg:pb-24">
+    <section className="relative min-h-[90vh] overflow-hidden bg-slate-50 pt-20 lg:pt-30 pb-16 lg:pb-24">
 
       {/* BACKGROUND */}
       <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
@@ -28,7 +28,7 @@ export default function HeroSection({ data, clinicInfo }) {
         <div className="absolute top-0 right-0 h-full w-1/3 bg-white skew-x-[-12deg] translate-x-32 shadow-[0_0_80px_rgba(0,0,0,0.02)] hidden lg:block" />
       </div>
 
-      <div className="max-w-370 mx-auto relative  z-10 mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto mx-auto relative  z-10  px-4 ">
         <div className="grid grid-cols-1 gap-16 lg:grid-cols-12 lg:items-center">
 
           {/* LEFT */}

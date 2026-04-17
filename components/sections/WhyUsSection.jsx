@@ -76,11 +76,11 @@ export default function WhyUsSection({ data }) {
                 </h3>
 
                 {/* Description */}
-                {item.description && (
-                  <p className="text-sm text-gray-500 leading-relaxed max-w-[260px] mx-auto">
-                    {item.description}
-                  </p>
-                )}
+                 {item.description && (
+                    <p className="text-sm text-gray-500 leading-relaxed">
+                      {item.description}
+                    </p>
+                  )}
 
               </div>
             )

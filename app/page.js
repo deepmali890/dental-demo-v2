@@ -57,6 +57,7 @@ const HomePage = async () => {
     } = data
 
 
+
     const isVisible = (section) => section?.isVisible !== false
 
     return (
@@ -78,9 +79,10 @@ const HomePage = async () => {
                 />
             )}
 
-            {/* About */}
-            {hp?.aboutSnippet && (
-                <AboutSnippet data={hp.aboutSnippet} />
+
+            {/* Why Us */}
+            {hp?.highlights?.items?.length > 0 && (
+                <WhyUsSection data={hp.highlights} />
             )}
 
             {/* Services */}
@@ -91,10 +93,12 @@ const HomePage = async () => {
                 />
             )}
 
-            {/* Why Us */}
-            {hp?.highlights?.items?.length > 0 && (
-                <WhyUsSection data={hp.highlights} />
+
+            {/* About */}
+            {hp?.aboutSnippet && (
+                <AboutSnippet data={hp.aboutSnippet} />
             )}
+
 
             {/* Our Team */}
             {hp?.ourTeamSection && (
@@ -118,6 +122,7 @@ const HomePage = async () => {
                 <CTABanner data={hp.ctaBanner} />
             )}
 
+
             {/* Blog */}
             {isVisible(hp?.blogSection) && (
                 <BlogSection data={hp.blogSection} posts={latestPosts} />
@@ -127,6 +132,9 @@ const HomePage = async () => {
             {isVisible(hp?.faqSection) && hp?.faqSection?.faqs?.length > 0 && (
                 <FAQSection data={hp.faqSection} faqs={hp.faqSection.faqs} />
             )}
+
+
+
         </>
     )
 }

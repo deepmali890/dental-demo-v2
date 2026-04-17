@@ -27,8 +27,6 @@ export default async function AboutPage() {
         getAllDoctors(),
     ])
 
-    console.log('about:', about)
-
     const founders = Array.isArray(doctors)
         ? doctors.filter(d => d.isFounder)
         : []

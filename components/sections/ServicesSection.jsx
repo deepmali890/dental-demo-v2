@@ -35,7 +35,7 @@ export default function ServicesSection({ data, fallbackServices }) {
 
                     <div className="hidden md:block">
                         {cta ? (
-                            <CTAButton data={cta} className="!rounded-full !px-8 !py-3 !bg-blue-600 !text-white !text-sm" />
+                            <CTAButton data={cta} className="!rounded-full !px-8 !py-3 !bg-blue-900 !text-white !text-sm" />
                         ) : (
                             <Link href="/services" className="group flex items-center gap-2 text-blue-600 font-bold text-sm uppercase tracking-wider">
                                 View All Services

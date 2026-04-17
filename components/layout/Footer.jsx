@@ -3,39 +3,93 @@ import Image from 'next/image'
 import { urlFor } from '@/sanity/lib/client'
 import { Clock, Mail, MapPin, Phone } from 'lucide-react'
 
-/* 🔥 Custom Social Icons (no library needed) */
 const SocialIcon = ({ type }) => {
   const icons = {
     facebook: (
-      <svg viewBox="0 0 24 24" className="w-4 h-4 fill-current">
-        <path d="M22 12a10 10 0 10-11.6 9.9v-7H7v-3h3.4V9.5c0-3.4 2-5.3 5-5.3 1.4 0 2.9.2 2.9.2v3.2h-1.6c-1.6 0-2.1 1-2.1 2v2.3H18l-.5 3h-2.8v7A10 10 0 0022 12z"/>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 256 256"
+        width="24"
+        height="24"
+      >
+        <g
+          fill="#ffffff"
+          fillRule="nonzero"
+          stroke="none"
+          strokeWidth="1"
+          strokeLinecap="butt"
+          strokeLinejoin="miter"
+          strokeMiterlimit="10"
+          strokeDasharray=""
+          strokeDashoffset="0"
+          style={{ mixBlendMode: "normal" }}
+        >
+          <g transform="scale(8.53333,8.53333)">
+            <path d="M15,3c-6.627,0 -12,5.373 -12,12c0,6.016 4.432,10.984 10.206,11.852v-8.672h-2.969v-3.154h2.969v-2.099c0,-3.475 1.693,-5 4.581,-5c1.383,0 2.115,0.103 2.461,0.149v2.753h-1.97c-1.226,0 -1.654,1.163 -1.654,2.473v1.724h3.593l-0.487,3.154h-3.106v8.697c5.857,-0.794 10.376,-5.802 10.376,-11.877c0,-6.627 -5.373,-12 -12,-12z" />
+          </g>
+        </g>
       </svg>
     ),
+
     instagram: (
-      <svg viewBox="0 0 24 24" className="w-4 h-4 fill-current">
-        <path d="M7 2C4.2 2 2 4.2 2 7v10c0 2.8 2.2 5 5 5h10c2.8 0 5-2.2 
-        5-5V7c0-2.8-2.2-5-5-5H7zm5 5a5 5 0 110 10 5 5 0 010-10zm6.5-.9a1.1 
-        1.1 0 110 2.2 1.1 1.1 0 010-2.2z"/>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 256 256"
+        width="24"
+        height="24"
+      >
+        <g
+          fill="#ffffff"
+          fillRule="nonzero"
+          stroke="none"
+          strokeWidth="1"
+          strokeLinecap="butt"
+          strokeLinejoin="miter"
+          strokeMiterlimit="10"
+          strokeDasharray=""
+          strokeDashoffset="0"
+          style={{ mixBlendMode: "normal" }}
+        >
+          <g transform="scale(8.53333,8.53333)">
+            <path d="M9.99805,3c-3.859,0 -6.99805,3.14195 -6.99805,7.00195v10c0,3.859 3.14195,6.99805 7.00195,6.99805h10c3.859,0 6.99805,-3.14195 6.99805,-7.00195v-10c0,-3.859 -3.14195,-6.99805 -7.00195,-6.99805zM22,7c0.552,0 1,0.448 1,1c0,0.552 -0.448,1 -1,1c-0.552,0 -1,-0.448 -1,-1c0,-0.552 0.448,-1 1,-1zM15,9c3.309,0 6,2.691 6,6c0,3.309 -2.691,6 -6,6c-3.309,0 -6,-2.691 -6,-6c0,-3.309 2.691,-6 6,-6zM15,11c-2.20914,0 -4,1.79086 -4,4c0,2.20914 1.79086,4 4,4c2.20914,0 4,-1.79086 4,-4c0,-2.20914 -1.79086,-4 -4,-4z" />
+          </g>
+        </g>
       </svg>
     ),
+
     youtube: (
-      <svg viewBox="0 0 24 24" className="w-4 h-4 fill-current">
-        <path d="M21.8 8s-.2-1.4-.8-2c-.8-.8-1.7-.8-2.1-.9C16 5 
-        12 5 12 5h0s-4 0-6.9.1c-.4 0-1.3.1-2.1.9-.6.6-.8 
-        2-.8 2S2 9.6 2 11.2v1.6C2 14.4 2.2 16 2.2 16s.2 
-        1.4.8 2c.8.8 1.9.8 2.4.9C7.4 19 12 19 12 19s4 
-        0 6.9-.1c.4 0 1.3-.1 2.1-.9.6-.6.8-2 .8-2s.2-1.6.2-3.2v-1.6C22 
-        9.6 21.8 8 21.8 8zM10 15V9l5 3-5 3z"/>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 256 256"
+        width="24"
+        height="24"
+      >
+        <g
+          fill="#ffffff"
+          fillRule="nonzero"
+          stroke="none"
+          strokeWidth="1"
+          strokeLinecap="butt"
+          strokeLinejoin="miter"
+          strokeMiterlimit="10"
+          strokeDasharray=""
+          strokeDashoffset="0"
+          style={{ mixBlendMode: "normal" }}
+        >
+          <g transform="scale(8.53333,8.53333)">
+            <path d="M15,4c-4.186,0 -9.61914,1.04883 -9.61914,1.04883l-0.01367,0.01563c-1.90652,0.30491 -3.36719,1.94317 -3.36719,3.93555v6v0.00195v5.99805v0.00195c0.00384,1.96564 1.4353,3.63719 3.37695,3.94336l0.00391,0.00586c0,0 5.43314,1.05078 9.61914,1.05078c4.186,0 9.61914,-1.05078 9.61914,-1.05078l0.00195,-0.00195c1.94389,-0.30554 3.37683,-1.97951 3.37891,-3.94727v-0.00195v-5.99805v-0.00195v-6c-0.00288,-1.96638 -1.43457,-3.63903 -3.37695,-3.94531l-0.00391,-0.00586c0,0 -5.43314,-1.04883 -9.61914,-1.04883zM12,10.39844l8,4.60156l-8,4.60156z" />
+          </g>
+        </g>
       </svg>
     ),
   }
-
   return icons[type] || null
 }
 
 export default function Footer({ clinicInfo, navigation }) {
   const clinic = clinicInfo || {}
   const nav = navigation || {}
+
   const columns = nav.footerColumns || []
   const bottomLinks = nav.footerBottomLinks || []
   const social = clinic.socialMedia || {}
@@ -53,24 +107,24 @@ export default function Footer({ clinicInfo, navigation }) {
   ].filter(s => s.href)
 
   return (
-    <footer className="bg-primary text-white">
+    <footer className="bg-primary text-white overflow-hidden">
 
       {/* Main */}
-      <div className="container mx-auto px-4 py-16">
-        <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-4">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 sm:py-16">
+        <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
 
           {/* Clinic */}
-          <div>
+          <div className="max-w-sm">
             {clinic.logo?.asset ? (
               <Image
                 src={urlFor(clinic.logo).height(48).url()}
                 alt={clinic.clinicName}
                 width={140}
                 height={48}
-                className="h-12 w-auto object-contain mb-4 brightness-0 invert"
+                className="h-10 sm:h-12 w-auto object-contain mb-4 brightness-0 invert"
               />
             ) : (
-              <p className="text-xl font-semibold mb-4">
+              <p className="text-lg sm:text-xl font-semibold mb-4">
                 {clinic.clinicName || 'Dental Clinic'}
               </p>
             )}
@@ -81,7 +135,7 @@ export default function Footer({ clinicInfo, navigation }) {
 
             {/* Social */}
             {socialLinks.length > 0 && (
-              <div className="flex gap-3">
+              <div className="flex flex-wrap gap-3">
                 {socialLinks.map((s) => (
                   <a
                     key={s.key}
@@ -96,14 +150,20 @@ export default function Footer({ clinicInfo, navigation }) {
             )}
           </div>
 
-          {/* Nav */}
-          {columns.slice(0, 2).map((col, idx) => (
+          {/* Nav Columns */}
+          {columns.slice(0, 3).map((col, idx) => (
             <div key={idx}>
-              <h3 className="text-sm font-semibold mb-4">{col.heading}</h3>
+              <h3 className="text-sm font-semibold mb-4">
+                {col.heading}
+              </h3>
+
               <ul className="space-y-2 text-sm text-white/70">
                 {col.links?.map((link, i) => (
                   <li key={i}>
-                    <Link href={link.url} className="hover:text-white transition">
+                    <Link
+                      href={link.url}
+                      className="hover:text-white transition break-words"
+                    >
                       {link.label}
                     </Link>
                   </li>
@@ -119,38 +179,55 @@ export default function Footer({ clinicInfo, navigation }) {
             <ul className="space-y-3 text-sm text-white/70">
 
               {address.street && (
-                <li className="flex gap-2">
-                  <MapPin size={16} className="mt-0.5 opacity-70" />
-                  <span>{address.street}, {address.city}</span>
+                <li className="flex gap-2 items-start">
+                  <MapPin size={16} className="mt-1 opacity-70 shrink-0" />
+                  <span className="leading-relaxed">
+                    {address.street}, {address.city}
+                  </span>
                 </li>
               )}
 
               {contact.primaryPhone && (
-                <li className="flex gap-2">
-                  <Phone size={16} className="opacity-70" />
-                  <a href={`tel:${contact.primaryPhone}`}>{contact.primaryPhone}</a>
+                <li className="flex gap-2 items-center">
+                  <Phone size={16} className="opacity-70 shrink-0" />
+                  <a
+                    href={`tel:${contact.primaryPhone}`}
+                    className="break-all"
+                  >
+                    {contact.primaryPhone}
+                  </a>
                 </li>
               )}
 
               {contact.email && (
-                <li className="flex gap-2">
-                  <Mail size={16} className="opacity-70" />
-                  <a href={`mailto:${contact.email}`}>{contact.email}</a>
+                <li className="flex gap-2 items-center">
+                  <Mail size={16} className="opacity-70 shrink-0" />
+                  <a
+                    href={`mailto:${contact.email}`}
+                    className="break-all"
+                  >
+                    {contact.email}
+                  </a>
                 </li>
               )}
 
               {todayHours && (
-                <li className="flex gap-2">
-                  <Clock size={16} className="opacity-70" />
+                <li className="flex gap-2 items-center">
+                  <Clock size={16} className="opacity-70 shrink-0" />
                   <span>
-                    {todayHours.isClosed ? 'Closed' : `${todayHours.openTime} – ${todayHours.closeTime}`}
+                    {todayHours.isClosed
+                      ? 'Closed'
+                      : `${todayHours.openTime} – ${todayHours.closeTime}`}
                   </span>
                 </li>
               )}
             </ul>
 
             {/* CTA */}
-            <Link href="/contact" className="btn-primary mt-5">
+            <Link
+              href="/contact"
+              className="inline-block mt-5 px-5 py-2.5 rounded-lg bg-white text-primary text-sm font-semibold hover:bg-gray-100 transition"
+            >
               Book Appointment
             </Link>
           </div>
@@ -160,14 +237,14 @@ export default function Footer({ clinicInfo, navigation }) {
 
       {/* Bottom */}
       <div className="border-t border-white/10">
-        <div className="container mx-auto px-4 py-5 flex flex-col md:flex-row justify-between text-xs text-white/60 gap-3">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5 flex flex-col md:flex-row items-center justify-between text-xs text-white/60 gap-3 text-center md:text-left">
 
-          <p>
+          <p className="leading-relaxed">
             {nav.copyrightText ||
               `© ${new Date().getFullYear()} ${clinic.clinicName}. All rights reserved.`}
           </p>
 
-          <div className="flex gap-4">
+          <div className="flex flex-wrap justify-center md:justify-end gap-4">
             {bottomLinks.map((link, i) => (
               <Link key={i} href={link.url} className="hover:text-white">
                 {link.label}

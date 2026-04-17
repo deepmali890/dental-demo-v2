@@ -6,6 +6,7 @@ import { getLayoutData } from "@/sanity/lib/fetchData";
 import { cache } from "react";
 import clinicData from "@/config/clinicData";
 import WhatsAppButton from "@/components/ui/WhatsAppButton";
+import LayoutWrapper from "@/components/layout/LayoutWrapper";
 
 const getData = cache(getLayoutData);
 
@@ -67,6 +68,8 @@ export default async function RootLayout({ children }) {
     console.error("Layout Data Error:", error);
   }
 
+  console.log("Navigation Data:", navigation);
+
   return (
     <html
       lang="en"
@@ -78,17 +81,9 @@ export default async function RootLayout({ children }) {
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }} />
 
 
-        {/* HEADER */}
-        <Header clinicInfo={clinicInfo} navigation={navigation} />
-
-        {/* MAIN */}
-        <main id="main-content" className="flex-1">
+        <LayoutWrapper clinicInfo={clinicInfo} navigation={navigation}>
           {children}
-        </main>
-        <WhatsAppButton phone="+91-98765-43210" />
-
-        {/* FOOTER */}
-        <Footer clinicInfo={clinicInfo} navigation={navigation} />
+        </LayoutWrapper>
 
       </body>
     </html>
