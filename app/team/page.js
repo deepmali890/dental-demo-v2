@@ -5,7 +5,7 @@ import PageHero from '@/components/ui/PageHero'
 import { getAllDoctors, getHomepageData } from '@/sanity/lib/fetchData'
 import React, { cache } from 'react'
 
-export const revalidate = 600
+export const revalidate = 3600
 export const metadata = {
     title: 'Our Dental Team',
     description: 'Meet our experienced team of dental professionals dedicated to your smile.',

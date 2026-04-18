@@ -4,7 +4,7 @@ import PageHero from '@/components/ui/PageHero'
 import { getAllGalleryItems, getHomepageData } from '@/sanity/lib/fetchData'
 import { cache } from 'react'
 
-export const revalidate = 600
+export const revalidate = 3600
 
 export const metadata = {
     title: 'Clinic Gallery',

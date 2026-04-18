@@ -8,7 +8,7 @@ import { Clock, User } from 'lucide-react'
 import Link from 'next/link'
 import React, { cache } from 'react'
 
-export const revalidate = 600
+export const revalidate = 3600
 
 const getData = cache(getHomepageData)
 
