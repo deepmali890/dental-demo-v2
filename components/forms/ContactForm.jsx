@@ -1,7 +1,7 @@
 'use client'
 
 import Select from 'react-select'
-import { CheckCircle2, Loader2, Send } from 'lucide-react'
+import { AlertCircle, CheckCircle2, Loader2, Send } from 'lucide-react'
 import { useState } from 'react'
 
 const initialState = {
@@ -25,6 +25,7 @@ export default function ContactForm({
   const [errors, setErrors] = useState({})
   const [loading, setLoading] = useState(false)
   const [success, setSuccess] = useState(false)
+  const [formError, setFormError] = useState(null)
 
   const selectStyles = {
     control: (base, state) => ({
@@ -74,11 +75,14 @@ export default function ContactForm({
 
   async function handleSubmit(e) {
     e.preventDefault()
+
+
     const errs = validate()
     if (Object.keys(errs).length) return setErrors(errs)
 
     setLoading(true)
     setErrors({})
+    setFormError(null)
 
     try {
       const res = await fetch('/api/contact', {
@@ -94,16 +98,50 @@ export default function ContactForm({
 
       const data = await res.json();
 
-      if (!res.ok) {
-        throw new Error(data.message || "Failed")
+      if (res.ok) {
+        setSuccess(true)
+        setForm(initialState)
+        return
       }
 
-      setSuccess(true);
-      setForm(initialState);
+      switch (data.code) {
+        case 'VALIDATION_ERROR': {
+          const serverFieldErrors = {}
+          if (data.errors) {
+            Object.entries(data.errors).forEach(([field, messages]) => {
+              serverFieldErrors[field] = Array.isArray(messages)
+                ? messages[0]  // Pehla error message lo
+                : messages
+            })
+          }
+          setErrors(serverFieldErrors)
+          setFormError('Please fix the errors below and try again.')
+          break
+        }
+
+        case 'RATE_LIMIT_EXCEEDED':
+          setFormError(
+            'You have made too many requests. Please wait an hour before trying again.'
+          )
+          break
+
+        case 'EMAIL_DELIVERY_FAILED':
+          setFormError(
+            data.message ||
+            'Unable to send your request right now. Please call us directly.'
+          )
+          break
+
+        case 'INTERNAL_ERROR':
+        default:
+          setFormError(
+            data.message || 'Something went wrong. Please try again.'
+          )
+          break
+      }
 
     } catch (err) {
-      console.error(err);
-      setErrors({ form: "Something went wrong. Try again." });
+      setFormError('Unable to connect. Please check your internet and try again.')
     } finally {
       setLoading(false);
     }
@@ -111,10 +149,7 @@ export default function ContactForm({
 
   function handleChange(e) {
     const { name, value, type, checked } = e.target
-    setForm((f) => ({
-      ...f,
-      [name]: type === 'checkbox' ? checked : value,
-    }))
+    setForm((f) => ({ ...f, [name]: type === 'checkbox' ? checked : value }))
   }
 
   const serviceOptions = [
@@ -150,6 +185,13 @@ export default function ContactForm({
 
   return (
     <form onSubmit={handleSubmit} className="space-y-5">
+
+      {formError && (
+        <div className="flex items-start gap-3 bg-red-50 border border-red-200 text-red-700 text-sm rounded-xl px-4 py-3">
+          <AlertCircle size={16} className="mt-0.5 shrink-0" />
+          <span>{formError}</span>
+        </div>
+      )}
 
       {/* Name + Phone */}
       <div className="grid sm:grid-cols-2 gap-5">
