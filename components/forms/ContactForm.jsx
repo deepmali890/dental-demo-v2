@@ -19,7 +19,6 @@ const initialState = {
 export default function ContactForm({
   services,
   doctors,
-  slots,
   successMessage,
 }) {
   const [form, setForm] = useState(initialState)
@@ -57,13 +56,18 @@ export default function ContactForm({
 
   function validate() {
     const e = {}
+
     if (!form.name.trim()) e.name = 'Name is required'
+
     if (!form.phone.trim()) e.phone = 'Phone number is required'
     else if (!/^[6-9]\d{9}$/.test(form.phone.replace(/\s/g, '')))
       e.phone = 'Enter valid mobile number'
+
     if (form.email && !/^\S+@\S+\.\S+$/.test(form.email))
       e.email = 'Enter valid email'
+
     if (!form.service) e.service = 'Please select a service'
+
     if (!form.consent) e.consent = 'Please give your consent'
     return e
   }
@@ -82,6 +86,7 @@ export default function ContactForm({
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           ...form,
+          phone: form.phone.replace(/\s/g, ''),
           service: form.service?.value,
           doctor: form.doctor?.value,
         }),
@@ -90,7 +95,7 @@ export default function ContactForm({
       const data = await res.json();
 
       if (!res.ok) {
-        throw new Error(data.error || "Failed");
+        throw new Error(data.message || "Failed")
       }
 
       setSuccess(true);
@@ -112,7 +117,6 @@ export default function ContactForm({
     }))
   }
 
-  // ✅ OPTIONS
   const serviceOptions = [
     ...(services?.map((s) => ({
       value: s.title,
@@ -138,8 +142,7 @@ export default function ContactForm({
           Appointment Request Sent!
         </h3>
         <p className="text-sm text-gray-500 mt-2 max-w-sm">
-          {successMessage ||
-            'We will confirm your appointment shortly.'}
+          {successMessage || 'We will contact you shortly.'}
         </p>
       </div>
     )
@@ -156,6 +159,7 @@ export default function ContactForm({
           value={form.name}
           onChange={handleChange}
           error={errors.name}
+          disabled={loading}
         />
         <Input
           label="Phone Number"
@@ -163,6 +167,7 @@ export default function ContactForm({
           value={form.phone}
           onChange={handleChange}
           error={errors.phone}
+          disabled={loading}
         />
       </div>
 
@@ -173,6 +178,7 @@ export default function ContactForm({
         value={form.email}
         onChange={handleChange}
         error={errors.email}
+        disabled={loading}
       />
 
       {/* Service */}
@@ -183,6 +189,7 @@ export default function ContactForm({
           value={form.service}
           onChange={(v) => setForm((f) => ({ ...f, service: v }))}
           placeholder="Choose treatment..."
+          isDisabled={loading}
         />
       </Field>
 
@@ -196,14 +203,15 @@ export default function ContactForm({
             onChange={(v) => setForm((f) => ({ ...f, doctor: v }))}
             placeholder="No preference"
             isClearable
+            isDisabled={loading}
           />
         </Field>
       )}
 
       {/* Date + Time */}
       <div className="grid sm:grid-cols-2 gap-5">
-        <Input type="date" name="date" value={form.date} onChange={handleChange} label="Date" />
-        <Input type="time" name="time" value={form.time} onChange={handleChange} label="Time" />
+        <Input type="date" name="date" value={form.date} onChange={handleChange} label="Date" disabled={loading} />
+        <Input type="time" name="time" value={form.time} onChange={handleChange} label="Time" disabled={loading} />
       </div>
 
       {/* Message */}
@@ -214,14 +222,16 @@ export default function ContactForm({
           onChange={handleChange}
           className="field resize-none"
           rows={3}
+          disabled={loading}
         />
       </Field>
 
       {/* Consent */}
       <label className="flex gap-3 text-sm text-gray-600">
-        <input type="checkbox" name="consent" required checked={form.consent} onChange={handleChange} />
+        <input type="checkbox" name="consent" checked={form.consent} onChange={handleChange} disabled={loading} />
         I agree to be contacted
       </label>
+      {errors.consent && <p className="text-red-500 text-xs">{errors.consent}</p>}
 
       {/* Submit */}
       <button
@@ -236,7 +246,7 @@ export default function ContactForm({
   )
 }
 
-// 🔹 Reusable Components
+// Reusable Components
 function Input({ label, error, ...props }) {
   return (
     <div>
