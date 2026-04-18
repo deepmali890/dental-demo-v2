@@ -6,7 +6,7 @@ import PricingPlansSection from '@/components/pricing/PricingPlansSection'
 import PricingCTA from '@/components/pricing/PricingCTA'
 import { getAllPricingPlans, getAllServices } from '@/sanity/lib/fetchData'
 
-export const revalidate = 600
+export const revalidate = 3600
 
 export default async function page() {
   const [plans, services] = await Promise.all([

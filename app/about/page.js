@@ -11,7 +11,7 @@ import { cache } from 'react'
 import AboutAffiliations from '@/components/about/AboutAffiliations'
 import AboutTechnology from '@/components/about/AboutTechnology'
 
-export const revalidate = 600
+export const revalidate = 3600
 
 const getData = cache(getHomepageData)
 

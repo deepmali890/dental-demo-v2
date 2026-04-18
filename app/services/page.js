@@ -7,7 +7,7 @@ import { ArrowRight } from 'lucide-react'
 import Link from 'next/link'
 import React from 'react'
 
-export const revalidate = 600
+export const revalidate = 3600
 
 export const metadata = {
     title: 'Our Dental Services',

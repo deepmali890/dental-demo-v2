@@ -10,6 +10,8 @@ export const metadata = {
     robots: { index: true, follow: true },
 }
 
+
+
 const LAST_UPDATED = "January 1, 2025"
 const CLINIC_NAME = "SmileCare Dental Clinic"
 const CLINIC_EMAIL = "info@dentalpreview.online"

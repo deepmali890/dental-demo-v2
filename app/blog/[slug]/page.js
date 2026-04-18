@@ -8,7 +8,7 @@ import BlogContent from '@/components/blog/BlogContent'
 import BlogSidebar from '@/components/blog/BlogSidebar'
 import BlogRelatedPosts from '@/components/blog/BlogRelatedPosts'
 
-export const revalidate = 600
+export const revalidate = 3600
 
 export async function generateStaticParams() {
   const slugs = await getAllBlogSlugs()

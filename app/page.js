@@ -14,7 +14,7 @@ import BlogSection from '@/components/sections/BlogSection'
 import FAQSection from '@/components/sections/FAQSection'
 import OurTeamSection from '@/components/sections/OurTeamSection'
 
-export const revalidate = 600
+export const revalidate = 3600
 const getData = cache(getHomepageData)
 
 export async function generateMetadata() {

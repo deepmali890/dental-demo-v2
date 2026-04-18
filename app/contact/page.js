@@ -12,7 +12,7 @@ import ContactEmergency from '@/components/contact/ContactEmergency'
 import ContactFormSection from '@/components/contact/ContactFormSection'
 import ContactMap from '@/components/contact/ContactMap'
 
-export const revalidate = 600
+export const revalidate = 3600
 
 export default async function ContactPage() {
   const [clinicInfo, apptSettings, doctors, services] =

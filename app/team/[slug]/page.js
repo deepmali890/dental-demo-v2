@@ -6,17 +6,12 @@ import DoctorHero from '@/components/doctor/DoctorHero'
 import DoctorServices from '@/components/doctor/DoctorServices'
 import DoctorSocial from '@/components/doctor/DoctorSocial'
 import DoctorSpecializations from '@/components/doctor/DoctorSpecializations'
-import PortableTextRenderer from '@/components/PortableTextRenderer'
-import ServicesSection from '@/components/sections/ServicesSection'
-import SanityImage from '@/components/ui/SanityImage'
 import { getAllDoctors, getDoctorBySlug } from '@/sanity/lib/fetchData'
-import { Award, CheckCircle2, ChevronRight, Globe, GraduationCap } from 'lucide-react'
-import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import React from 'react'
 
 
-export const revalidate = 600
+export const revalidate = 3600
 
 export async function generateStaticParams() {
     const docs = await getAllDoctors()

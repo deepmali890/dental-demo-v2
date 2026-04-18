@@ -19,7 +19,7 @@ import ServiceRelated from '@/components/services/ServiceRelated'
 import ServiceBeforeAfter from '@/components/services/ServiceBeforeAfter'
 import TestimonialsCarousel from '@/components/services/TestimonialsCarousel '
 
-export const revalidate = 600
+export const revalidate = 3600
 
 export async function generateStaticParams() {
   const slugs = await getAllServiceSlugs()
