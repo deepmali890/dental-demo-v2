@@ -61,7 +61,8 @@ const HomePage = async () => {
     const isVisible = (section) => section?.isVisible !== false
 
     return (
-        <> {/* Announcement */}
+        <>
+            {/* Announcement */}
             {hp?.announcementBanner?.isActive && (
                 <AnnouncementBar data={hp.announcementBanner} />
             )}
@@ -79,7 +80,6 @@ const HomePage = async () => {
                 />
             )}
 
-
             {/* Why Us */}
             {hp?.highlights?.items?.length > 0 && (
                 <WhyUsSection data={hp.highlights} />
@@ -93,12 +93,10 @@ const HomePage = async () => {
                 />
             )}
 
-
             {/* About */}
             {hp?.aboutSnippet && (
                 <AboutSnippet data={hp.aboutSnippet} />
             )}
-
 
             {/* Our Team */}
             {hp?.ourTeamSection && (
@@ -107,7 +105,6 @@ const HomePage = async () => {
                     fallbackDoctors={allDoctors}
                 />
             )}
-
 
             {/* Testimonials */}
             {hp?.testimonialsSection && (
@@ -122,7 +119,6 @@ const HomePage = async () => {
                 <CTABanner data={hp.ctaBanner} />
             )}
 
-
             {/* Blog */}
             {isVisible(hp?.blogSection) && (
                 <BlogSection data={hp.blogSection} posts={latestPosts} />
@@ -132,9 +128,6 @@ const HomePage = async () => {
             {isVisible(hp?.faqSection) && hp?.faqSection?.faqs?.length > 0 && (
                 <FAQSection data={hp.faqSection} faqs={hp.faqSection.faqs} />
             )}
-
-
-
         </>
     )
 }
