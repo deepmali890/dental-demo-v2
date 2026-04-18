@@ -36,7 +36,7 @@ const TYPE_TO_PATHS = {
 
 export async function POST(request) {
     // 1. Verify webhook secret
-    const secret = request.headers.get('x-webhook-secret')
+    const secret = request.headers.get('x-sanity-webhook-secret')
 
     if (!process.env.SANITY_REVALIDATE_SECRET) {
         console.error('[Revalidate] SANITY_REVALIDATE_SECRET is not set!')
