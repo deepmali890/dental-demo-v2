@@ -33,9 +33,9 @@ async function sanityFetch(query, params = {}, tags = []) {
     try {
         return await client.fetch(query, params, {
             next: {
-                revalidate: 3600, // 1 hour
+                revalidate: 60, // Revalidate every 60 seconds
                 tags: tags.length ? tags : undefined,
-            }
+            },
         })
     } catch (error) {
         console.error('[Sanity Fetch Error]', error)
