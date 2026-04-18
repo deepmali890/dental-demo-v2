@@ -1,7 +1,7 @@
 'use client'
 
 import Select from 'react-select'
-import { CheckCircle2, Loader2, Send } from 'lucide-react'
+import { AlertCircle, CheckCircle2, Loader2, Send } from 'lucide-react'
 import { useState } from 'react'
 
 const initialState = {
@@ -19,13 +19,13 @@ const initialState = {
 export default function ContactForm({
   services,
   doctors,
-  slots,
   successMessage,
 }) {
   const [form, setForm] = useState(initialState)
   const [errors, setErrors] = useState({})
   const [loading, setLoading] = useState(false)
   const [success, setSuccess] = useState(false)
+  const [formError, setFormError] = useState(null)
 
   const selectStyles = {
     control: (base, state) => ({
@@ -57,24 +57,32 @@ export default function ContactForm({
 
   function validate() {
     const e = {}
+
     if (!form.name.trim()) e.name = 'Name is required'
+
     if (!form.phone.trim()) e.phone = 'Phone number is required'
     else if (!/^[6-9]\d{9}$/.test(form.phone.replace(/\s/g, '')))
       e.phone = 'Enter valid mobile number'
+
     if (form.email && !/^\S+@\S+\.\S+$/.test(form.email))
       e.email = 'Enter valid email'
+
     if (!form.service) e.service = 'Please select a service'
+
     if (!form.consent) e.consent = 'Please give your consent'
     return e
   }
 
   async function handleSubmit(e) {
     e.preventDefault()
+
+
     const errs = validate()
     if (Object.keys(errs).length) return setErrors(errs)
 
     setLoading(true)
     setErrors({})
+    setFormError(null)
 
     try {
       const res = await fetch('/api/contact', {
@@ -82,6 +90,7 @@ export default function ContactForm({
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           ...form,
+          phone: form.phone.replace(/\s/g, ''),
           service: form.service?.value,
           doctor: form.doctor?.value,
         }),
@@ -89,16 +98,50 @@ export default function ContactForm({
 
       const data = await res.json();
 
-      if (!res.ok) {
-        throw new Error(data.error || "Failed");
+      if (res.ok) {
+        setSuccess(true)
+        setForm(initialState)
+        return
       }
 
-      setSuccess(true);
-      setForm(initialState);
+      switch (data.code) {
+        case 'VALIDATION_ERROR': {
+          const serverFieldErrors = {}
+          if (data.errors) {
+            Object.entries(data.errors).forEach(([field, messages]) => {
+              serverFieldErrors[field] = Array.isArray(messages)
+                ? messages[0]  // Pehla error message lo
+                : messages
+            })
+          }
+          setErrors(serverFieldErrors)
+          setFormError('Please fix the errors below and try again.')
+          break
+        }
+
+        case 'RATE_LIMIT_EXCEEDED':
+          setFormError(
+            'You have made too many requests. Please wait an hour before trying again.'
+          )
+          break
+
+        case 'EMAIL_DELIVERY_FAILED':
+          setFormError(
+            data.message ||
+            'Unable to send your request right now. Please call us directly.'
+          )
+          break
+
+        case 'INTERNAL_ERROR':
+        default:
+          setFormError(
+            data.message || 'Something went wrong. Please try again.'
+          )
+          break
+      }
 
     } catch (err) {
-      console.error(err);
-      setErrors({ form: "Something went wrong. Try again." });
+      setFormError('Unable to connect. Please check your internet and try again.')
     } finally {
       setLoading(false);
     }
@@ -106,13 +149,9 @@ export default function ContactForm({
 
   function handleChange(e) {
     const { name, value, type, checked } = e.target
-    setForm((f) => ({
-      ...f,
-      [name]: type === 'checkbox' ? checked : value,
-    }))
+    setForm((f) => ({ ...f, [name]: type === 'checkbox' ? checked : value }))
   }
 
-  // ✅ OPTIONS
   const serviceOptions = [
     ...(services?.map((s) => ({
       value: s.title,
@@ -138,8 +177,7 @@ export default function ContactForm({
           Appointment Request Sent!
         </h3>
         <p className="text-sm text-gray-500 mt-2 max-w-sm">
-          {successMessage ||
-            'We will confirm your appointment shortly.'}
+          {successMessage || 'We will contact you shortly.'}
         </p>
       </div>
     )
@@ -147,6 +185,13 @@ export default function ContactForm({
 
   return (
     <form onSubmit={handleSubmit} className="space-y-5">
+
+      {formError && (
+        <div className="flex items-start gap-3 bg-red-50 border border-red-200 text-red-700 text-sm rounded-xl px-4 py-3">
+          <AlertCircle size={16} className="mt-0.5 shrink-0" />
+          <span>{formError}</span>
+        </div>
+      )}
 
       {/* Name + Phone */}
       <div className="grid sm:grid-cols-2 gap-5">
@@ -156,6 +201,7 @@ export default function ContactForm({
           value={form.name}
           onChange={handleChange}
           error={errors.name}
+          disabled={loading}
         />
         <Input
           label="Phone Number"
@@ -163,6 +209,7 @@ export default function ContactForm({
           value={form.phone}
           onChange={handleChange}
           error={errors.phone}
+          disabled={loading}
         />
       </div>
 
@@ -173,6 +220,7 @@ export default function ContactForm({
         value={form.email}
         onChange={handleChange}
         error={errors.email}
+        disabled={loading}
       />
 
       {/* Service */}
@@ -183,6 +231,7 @@ export default function ContactForm({
           value={form.service}
           onChange={(v) => setForm((f) => ({ ...f, service: v }))}
           placeholder="Choose treatment..."
+          isDisabled={loading}
         />
       </Field>
 
@@ -196,14 +245,15 @@ export default function ContactForm({
             onChange={(v) => setForm((f) => ({ ...f, doctor: v }))}
             placeholder="No preference"
             isClearable
+            isDisabled={loading}
           />
         </Field>
       )}
 
       {/* Date + Time */}
       <div className="grid sm:grid-cols-2 gap-5">
-        <Input type="date" name="date" value={form.date} onChange={handleChange} label="Date" />
-        <Input type="time" name="time" value={form.time} onChange={handleChange} label="Time" />
+        <Input type="date" name="date" value={form.date} onChange={handleChange} label="Date" disabled={loading} />
+        <Input type="time" name="time" value={form.time} onChange={handleChange} label="Time" disabled={loading} />
       </div>
 
       {/* Message */}
@@ -214,14 +264,16 @@ export default function ContactForm({
           onChange={handleChange}
           className="field resize-none"
           rows={3}
+          disabled={loading}
         />
       </Field>
 
       {/* Consent */}
       <label className="flex gap-3 text-sm text-gray-600">
-        <input type="checkbox" name="consent" required checked={form.consent} onChange={handleChange} />
+        <input type="checkbox" name="consent" checked={form.consent} onChange={handleChange} disabled={loading} />
         I agree to be contacted
       </label>
+      {errors.consent && <p className="text-red-500 text-xs">{errors.consent}</p>}
 
       {/* Submit */}
       <button
@@ -236,7 +288,7 @@ export default function ContactForm({
   )
 }
 
-// 🔹 Reusable Components
+// Reusable Components
 function Input({ label, error, ...props }) {
   return (
     <div>
