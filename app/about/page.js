@@ -12,6 +12,7 @@ import AboutAffiliations from '@/components/about/AboutAffiliations'
 import AboutTechnology from '@/components/about/AboutTechnology'
 
 export const revalidate = 600
+
 const getData = cache(getHomepageData)
 
 export const metadata = {
