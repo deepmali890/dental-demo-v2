@@ -1,11 +1,8 @@
 import { Cormorant_Garamond, DM_Sans } from "next/font/google";
 import "./globals.css";
-import Header from "@/components/layout/Header";
-import Footer from "@/components/layout/Footer";
 import { getLayoutData } from "@/sanity/lib/fetchData";
 import { cache } from "react";
 import clinicData from "@/config/clinicData";
-import WhatsAppButton from "@/components/ui/WhatsAppButton";
 import LayoutWrapper from "@/components/layout/LayoutWrapper";
 
 const getData = cache(getLayoutData);
@@ -25,7 +22,6 @@ const dmSans = DM_Sans({
   display: "swap",
 });
 
-// Minimal SEO (page handles real SEO)
 export const metadata = {
   title: clinicData.seo.title,
   description: clinicData.seo.description,
@@ -67,8 +63,6 @@ export default async function RootLayout({ children }) {
   } catch (error) {
     console.error("Layout Data Error:", error);
   }
-
-  console.log("Navigation Data:", navigation);
 
   return (
     <html

@@ -34,13 +34,27 @@ const TYPE_TO_PATHS = {
 }
 
 export async function POST(request) {
-    // Verify webhook secret
+    // 1. Verify webhook secret
     const secret = request.headers.get('x-webhook-secret')
-    if (secret !== process.env.SANITY_REVALIDATE_SECRET) {
-        console.warn('[Revalidate] Unauthorized webhook attempt')
-        return NextResponse.json({ message: 'Unauthorized' }, { status: 401 })
+
+    if (!process.env.SANITY_REVALIDATE_SECRET) {
+        console.error('[Revalidate] SANITY_REVALIDATE_SECRET is not set!')
+        return NextResponse.json(
+            { error: 'Server misconfigured' },
+            { status: 500 }
+        )
     }
 
+    if (secret !== process.env.SANITY_REVALIDATE_SECRET) {
+        console.warn('[Revalidate] Invalid secret received')
+        return NextResponse.json(
+            { error: 'Invalid secret' },
+            { status: 401 }
+        )
+    }
+
+
+    // 2. Parse request body
     let body
     try {
         body = await request.json()
@@ -50,8 +64,11 @@ export async function POST(request) {
 
     const docType = body?._type
     const slug = body?.slug?.current
+    const id = body?._id
 
-    console.log(`[Revalidate] Triggered for _type: ${docType}, slug: ${slug}`)
+    console.log(`[Revalidate] Triggered for _type: ${docType}, slug: ${slug}, id: ${id}`)
+
+
     try {
         if (docType && TYPE_TO_TAGS[docType]) {
             // Revalidate cache tags
@@ -69,14 +86,15 @@ export async function POST(request) {
 
             // Revalidate specific slug path if available
             if (slug) {
-                let slugPath = null
-                if (docType === 'service') slugPath = `/services/${slug}`
-                if (docType === 'blogPost') slugPath = `/blog/${slug}`
-                if (docType === 'doctor') slugPath = `/team/${slug}`
+                const slugPath =
+                    docType === 'service' ? `/services/${slug}` :
+                        docType === 'blogPost' ? `/blog/${slug}` :
+                            docType === 'doctor' ? `/team/${slug}` :
+                                null
 
                 if (slugPath) {
                     revalidatePath(slugPath)
-                    console.log(`[Revalidate] Slug path revalidated: ${slugPath}`)
+                    console.log(`[Revalidate] Slug path cleared: ${slugPath}`)
                 }
             }
         } else {
@@ -99,5 +117,9 @@ export async function POST(request) {
 
 // Health check
 export async function GET() {
-    return NextResponse.json({ status: 'Revalidation endpoint active ✅' })
+    return NextResponse.json({
+        status: 'ok',
+        endpoint: '/api/revalidate',
+        hasSecret: !!process.env.SANITY_REVALIDATE_SECRET,
+    })
 }

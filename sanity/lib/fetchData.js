@@ -33,7 +33,8 @@ async function sanityFetch(query, params = {}, tags = []) {
     try {
         return await client.fetch(query, params, {
             next: {
-                revalidate: 60,
+                revalidate: 3600, // 1 hour
+                tags: tags.length ? tags : undefined,
             }
         })
     } catch (error) {
