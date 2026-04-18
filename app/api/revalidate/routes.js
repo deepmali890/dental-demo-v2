@@ -1,3 +1,4 @@
+import { revalidatePath, revalidateTag } from "next/cache"
 import { NextResponse } from "next/server"
 
 const TYPE_TO_TAGS = {
