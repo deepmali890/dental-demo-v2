@@ -43,27 +43,49 @@ export default function FAQPageClient({ faqs }) {
       : faqs.filter(f => f.category === activeCategory)
 
   return (
-    <>
+    <div className="bg-white">
+
+      {/* HERO */}
       <PageHero
         title="Frequently Asked Questions"
         subtitle="Clear answers to help you understand treatments and care."
         badge="Patient Help Center"
       />
 
-      <FAQStatsBar total={faqs.length} categories={grouped.length} />
+      {/* MAIN WRAPPER */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-      <FAQCategoryGrid
-        grouped={grouped}
-        activeCategory={activeCategory}
-        onSelect={setActiveCategory}
-      />
+        {/* STATS */}
+        <div className="mt-10 sm:mt-12 md:mt-14">
+          <FAQStatsBar 
+            total={faqs.length} 
+            categories={grouped.length} 
+          />
+        </div>
 
-      <FAQSection
-        data={{ sectionTitle: 'All Questions' }}
-        faqs={filteredFaqs}
-      />
+        {/* CATEGORY GRID */}
+        <div className="mt-10 sm:mt-12">
+          <FAQCategoryGrid
+            grouped={grouped}
+            activeCategory={activeCategory}
+            onSelect={setActiveCategory}
+          />
+        </div>
 
-      <FAQCTA />
-    </>
+      </div>
+
+      <div className="mt-12 sm:mt-14 md:mt-16">
+        <FAQSection
+          data={{ sectionTitle: 'All Questions' }}
+          faqs={filteredFaqs}
+        />
+      </div>
+
+      {/* CTA */}
+      <div className="mt-12 sm:mt-14 md:mt-16">
+        <FAQCTA />
+      </div>
+
+    </div>
   )
 }

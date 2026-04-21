@@ -4,40 +4,40 @@ export default function AboutMission({ about }) {
   const mv = about.missionVision
 
   return (
-    <section className="py-16 md:py-20 bg-gray-50">
-      <div className="container mx-auto px-4">
+    <section className="bg-gray-50 py-14 sm:py-20">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Header */}
-        <div className="text-center max-w-2xl mx-auto mb-12">
-          <p className="text-[11px] uppercase tracking-[0.12em] text-brand-600 font-semibold mb-3">
+        <div className="text-center max-w-2xl mx-auto mb-12 sm:mb-16">
+          <p className="text-xs uppercase tracking-wider text-brand-600 font-semibold mb-3">
             What Drives Us
           </p>
 
-          <h2 className="text-2xl md:text-3xl font-semibold text-gray-900">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 leading-tight">
             Mission & Values
           </h2>
         </div>
 
-        {/* Mission + Vision */}
-        <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto mb-14">
+        {/* Mission + Vision (Card Style Upgrade) */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-5xl mx-auto mb-14">
 
           {mv.mission && (
-            <div className="bg-white border border-gray-100 rounded-2xl p-6">
+            <div className="relative bg-white rounded-2xl p-6 sm:p-8 shadow-sm border border-gray-100">
               <h3 className="text-lg font-semibold text-gray-900 mb-3">
                 Our Mission
               </h3>
-              <p className="text-gray-600 text-sm leading-relaxed">
+              <p className="text-sm text-gray-600 leading-relaxed">
                 {mv.mission}
               </p>
             </div>
           )}
 
           {mv.vision && (
-            <div className="bg-white border border-gray-100 rounded-2xl p-6">
+            <div className="relative bg-white rounded-2xl p-6 sm:p-8 shadow-sm border border-gray-100">
               <h3 className="text-lg font-semibold text-gray-900 mb-3">
                 Our Vision
               </h3>
-              <p className="text-gray-600 text-sm leading-relaxed">
+              <p className="text-sm text-gray-600 leading-relaxed">
                 {mv.vision}
               </p>
             </div>
@@ -45,28 +45,28 @@ export default function AboutMission({ about }) {
 
         </div>
 
-        {/* Core Values */}
+        {/* Core Values (Modern Grid) */}
         {mv.coreValues?.length > 0 && (
-          <div className="max-w-5xl mx-auto grid sm:grid-cols-2 md:grid-cols-3 gap-5">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
 
             {mv.coreValues.map((v, i) => (
               <div
                 key={i}
-                className="bg-white border border-gray-100 rounded-2xl p-5 transition hover:border-gray-200"
+                className="group bg-white rounded-2xl p-6 border border-gray-100 transition hover:shadow-md hover:-translate-y-1"
               >
 
                 {/* Icon */}
-                <div className="w-10 h-10 rounded-xl bg-brand-50 flex items-center justify-center mb-4 text-base">
+                <div className="w-12 h-12 rounded-xl bg-brand-50 flex items-center justify-center mb-4 text-lg text-brand-600">
                   {v.icon || '⭐'}
                 </div>
 
                 {/* Title */}
-                <h4 className="text-sm font-semibold text-gray-900 mb-1">
+                <h4 className="text-base font-semibold text-gray-900 mb-2 group-hover:text-brand-600 transition">
                   {v.title}
                 </h4>
 
                 {/* Description */}
-                <p className="text-xs text-gray-500 leading-relaxed">
+                <p className="text-sm text-gray-500 leading-relaxed">
                   {v.description}
                 </p>
 

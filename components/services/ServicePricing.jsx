@@ -6,21 +6,35 @@ const ServicePricing = ({ service }) => {
   const { priceRange, startingFrom, note } = service.pricing
 
   return (
-    <div className="rounded-2xl border border-gray-200 bg-white p-6 space-y-5">
+    <div className="
+      w-full
+      rounded-xl sm:rounded-2xl 
+      border border-gray-100 
+      bg-white 
+      p-4 sm:p-5 md:p-6 
+      space-y-4 sm:space-y-5
+    ">
 
       {/* Header */}
       <div>
-        <h3 className="text-base font-semibold text-gray-900">
+        <h3 className="
+          text-sm sm:text-base 
+          font-semibold text-gray-900
+        ">
           Treatment Cost
         </h3>
-        <p className="text-xs text-gray-500 mt-1">
+
+        <p className="
+          text-[11px] sm:text-xs 
+          text-gray-500 
+          mt-1
+        ">
           Transparent pricing with no hidden charges
         </p>
       </div>
 
       {/* Price */}
-      <div className="space-y-1">
-
+      <div className="space-y-1.5">
         {priceRange && (
           <p className="text-3xl font-semibold text-primary leading-tight">
             {priceRange}
@@ -28,9 +42,9 @@ const ServicePricing = ({ service }) => {
         )}
 
         {startingFrom && (
-          <p className="text-sm text-gray-600">
+          <p className="text-xs sm:text-sm text-gray-600">
             Starting from{' '}
-            <span className="font-medium text-gray-900">
+            <span className="font-semibold text-gray-900">
               ₹{startingFrom.toLocaleString()}
             </span>
           </p>
@@ -40,8 +54,15 @@ const ServicePricing = ({ service }) => {
 
       {/* Note */}
       {note && (
-        <div className="pt-4 border-t border-gray-100">
-          <p className="text-xs text-gray-500 leading-relaxed">
+        <div className="
+          pt-3 sm:pt-4 
+          border-t border-gray-100
+        ">
+          <p className="
+            text-[11px] sm:text-xs 
+            text-gray-500 
+            leading-relaxed
+          ">
             {note}
           </p>
         </div>
