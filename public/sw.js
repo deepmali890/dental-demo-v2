@@ -1,4 +1,4 @@
-const CACHE_NAME = "dental-cache-v1";
+const CACHE_NAME = "dental-cache-v2";
 
 // install
 self.addEventListener("install", (event) => {
@@ -10,6 +10,7 @@ self.addEventListener("install", (event) => {
       ]);
     })
   );
+  self.skipWaiting();
 });
 
 // activate
@@ -25,21 +26,33 @@ self.addEventListener("activate", (event) => {
       )
     )
   );
+  self.clients.claim();
 });
 
 // fetch
 self.addEventListener("fetch", (event) => {
   const request = event.request;
 
-  // navigation requests → network first
   if (request.mode === "navigate") {
     event.respondWith(
-      fetch(request).catch(() => caches.match("/offline.html"))
+      fetch(request)
+        .then((response) => {
+          return response;
+        })
+        .catch(async () => {
+          const cache = await caches.open(CACHE_NAME);
+          const cached = await cache.match("/");
+
+          // homepage fallback
+          if (cached) return cached;
+
+          // final fallback
+          return cache.match("/offline.html");
+        })
     );
     return;
   }
 
-  // images → cache first
   if (request.destination === "image") {
     event.respondWith(
       caches.match(request).then((response) => {
@@ -58,7 +71,7 @@ self.addEventListener("fetch", (event) => {
     return;
   }
 
-  // default → network first
+  // 🌐 DEFAULT
   event.respondWith(
     fetch(request).catch(() => caches.match(request))
   );
