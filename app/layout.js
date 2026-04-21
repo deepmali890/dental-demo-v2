@@ -4,6 +4,7 @@ import { getLayoutData } from "@/sanity/lib/fetchData";
 import { cache } from "react";
 import clinicData from "@/config/clinicData";
 import LayoutWrapper from "@/components/layout/LayoutWrapper";
+import PWARegister from "@/components/PWARegister";
 
 const getData = cache(getLayoutData);
 
@@ -22,10 +23,12 @@ const dmSans = DM_Sans({
   display: "swap",
 });
 
+
 export const metadata = {
   title: clinicData.seo.title,
   description: clinicData.seo.description,
   keywords: clinicData.seo.keywords,
+  manifest: "/manifest.json",
   openGraph: {
     title: clinicData.seo.title,
     description: clinicData.seo.description,
@@ -33,6 +36,9 @@ export const metadata = {
   },
 };
 
+export const viewport = {
+  themeColor: "#0ea5e9",
+};
 
 const localBusinessSchema = {
   "@context": "https://schema.org",
@@ -70,6 +76,7 @@ export default async function RootLayout({ children }) {
       className={`${cormorant.variable} ${dmSans.variable} h-full`}
     >
       <body className="min-h-screen flex flex-col antialiased">
+        <PWARegister />
 
         {/* Structured Data */}
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }} />
