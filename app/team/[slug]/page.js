@@ -10,58 +10,81 @@ import { getAllDoctors, getDoctorBySlug } from '@/sanity/lib/fetchData'
 import { notFound } from 'next/navigation'
 import React from 'react'
 
-
 export const revalidate = 3600
 
 export async function generateStaticParams() {
-    const docs = await getAllDoctors()
-    return docs?.map((doc) => ({
-        slug: doc.slug,
-    }))
+  const docs = await getAllDoctors()
+  return docs?.map((doc) => ({
+    slug: doc.slug,
+  }))
 }
 
 export async function generateMetadata({ params }) {
-    const { slug } = await params
-    const doctor = await getDoctorBySlug(slug)
-    if (!doctor) return { title: 'Doctor Not Found' }
-    return {
-        title: doctor.seo?.metaTitle || `${doctor.name} — ${doctor.designation}`,
-        description: doctor.seo?.metaDescription || doctor.shortBio,
-    }
+  const { slug } = await params
+  const doctor = await getDoctorBySlug(slug)
+
+  if (!doctor) return { title: 'Doctor Not Found' }
+
+  return {
+    title: doctor.seo?.metaTitle || `${doctor.name} — ${doctor.designation}`,
+    description: doctor.seo?.metaDescription || doctor.shortBio,
+  }
 }
 
 export default async function DoctorDetailPage({ params }) {
-    const { slug } = await params
-    const doctor = await getDoctorBySlug(slug)
-    if (!doctor) notFound()
+  const { slug } = await params
+  const doctor = await getDoctorBySlug(slug)
 
-    return (
-        <>
-            <DoctorHero doctor={doctor} />
+  if (!doctor) notFound()
 
-            <section className="section bg-white">
-                <div className="container mx-auto px-4 grid lg:grid-cols-3 gap-12">
+  return (
+    <>
+      {/* HERO */}
+      <DoctorHero doctor={doctor} />
 
-                    {/* LEFT */}
-                    <div className="lg:col-span-2">
-                        <DoctorBio doctor={doctor} />
-                        <DoctorSpecializations doctor={doctor} />
-                        <DoctorAchievements doctor={doctor} />
-                    </div>
+      {/* MAIN */}
+      <section className="bg-white py-10 sm:py-12 md:py-16">
 
-                    {/* RIGHT */}
-                    <aside className="space-y-5 sticky top-24">
-                        <DoctorAvailability doctor={doctor} />
-                        <DoctorCTA doctor={doctor} />
-                        <DoctorSocial doctor={doctor} />
-                    </aside>
+        <div className="
+          max-w-7xl mx-auto 
+          px-4 sm:px-6 lg:px-8
+          grid grid-cols-1 lg:grid-cols-3 
+          gap-8 md:gap-10 lg:gap-12
+        ">
 
-                </div>
+          {/* LEFT CONTENT */}
+          <div className="
+            lg:col-span-2 
+            space-y-8 sm:space-y-10 md:space-y-12
+          ">
+            <DoctorBio doctor={doctor} />
+            <DoctorSpecializations doctor={doctor} />
+            <DoctorAchievements doctor={doctor} />
+          </div>
 
-                <DoctorServices doctor={doctor} />
-            </section>
-            
-        </>
+          {/* RIGHT SIDEBAR */}
+          <aside className="
+            space-y-4 sm:space-y-5
+            lg:sticky lg:top-24
+            h-fit
+          ">
+            <DoctorAvailability doctor={doctor} />
+            <DoctorCTA doctor={doctor} />
+            <DoctorSocial doctor={doctor} />
+          </aside>
 
-    )
+        </div>
+
+        {/* SERVICES */}
+        <div className="
+          mt-12 sm:mt-14 md:mt-16
+          max-w-7xl mx-auto 
+          px-4 sm:px-6 lg:px-8
+        ">
+          <DoctorServices doctor={doctor} />
+        </div>
+
+      </section>
+    </>
+  )
 }

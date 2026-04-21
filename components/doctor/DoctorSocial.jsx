@@ -3,12 +3,21 @@ export default function DoctorSocial({ doctor }) {
 
   return (
     <section className="bg-white">
-      <div className="container mx-auto px-4 max-w-3xl">
+      <div className="max-w-3xl mx-auto px-4 sm:px-6">
 
-        <div className="rounded-2xl border border-gray-100 p-5 space-y-4">
+        <div className="
+          rounded-xl sm:rounded-2xl 
+          border border-gray-100 
+          p-4 sm:p-5 
+          space-y-3 sm:space-y-4
+        ">
 
           {/* Header */}
-          <h3 className="text-sm font-semibold text-gray-900">
+          <h3 className="
+            text-xs sm:text-sm 
+            font-semibold 
+            text-gray-900
+          ">
             Connect with Doctor
           </h3>
 
@@ -17,11 +26,25 @@ export default function DoctorSocial({ doctor }) {
             href={doctor.socialLinks.linkedin}
             target="_blank"
             rel="noopener noreferrer"
-            className="group flex items-center gap-3 p-3 rounded-lg hover:bg-gray-50 transition"
+            className="
+              group 
+              flex items-center gap-3 
+              p-3 
+              rounded-lg 
+              hover:bg-gray-50 
+              active:scale-[0.98]
+              transition
+            "
           >
 
             {/* Icon */}
-            <div className="w-9 h-9 rounded-lg bg-gray-100 flex items-center justify-center">
+            <div className="
+              w-8 h-8 sm:w-9 sm:h-9 
+              rounded-lg 
+              bg-gray-100 
+              flex items-center justify-center 
+              flex-shrink-0
+            ">
               <svg
                 viewBox="0 0 24 24"
                 className="w-4 h-4 fill-current text-gray-700"
@@ -35,11 +58,22 @@ export default function DoctorSocial({ doctor }) {
             </div>
 
             {/* Text */}
-            <div className="flex-1">
-              <p className="text-sm text-gray-800 group-hover:text-gray-900">
+            <div className="flex-1 min-w-0">
+              <p className="
+                text-xs sm:text-sm 
+                text-gray-800 
+                group-hover:text-gray-900 
+                transition
+                leading-tight
+              ">
                 LinkedIn Profile
               </p>
-              <p className="text-xs text-gray-500">
+
+              <p className="
+                text-[11px] sm:text-xs 
+                text-gray-500 
+                leading-tight
+              ">
                 View professional profile
               </p>
             </div>

@@ -33,9 +33,10 @@ export default function ContactForm({
       borderRadius: '12px',
       borderColor: state.isFocused ? '#2563eb' : '#e5e7eb',
       boxShadow: 'none',
-      padding: '2px 4px',
-      '&:hover': { borderColor: '#d1d5db' },
+      padding: '4px 6px',
       minHeight: '44px',
+      fontSize: '14px',
+      '&:hover': { borderColor: '#d1d5db' },
     }),
     option: (base, state) => ({
       ...base,
@@ -43,15 +44,11 @@ export default function ContactForm({
       color: '#111827',
       fontSize: '14px',
     }),
-    placeholder: (base) => ({
-      ...base,
-      color: '#9ca3af',
-      fontSize: '14px',
-    }),
     menu: (base) => ({
       ...base,
       borderRadius: '12px',
       overflow: 'hidden',
+      zIndex: 20,
     }),
   }
 
@@ -68,14 +65,13 @@ export default function ContactForm({
       e.email = 'Enter valid email'
 
     if (!form.service) e.service = 'Please select a service'
-
     if (!form.consent) e.consent = 'Please give your consent'
+
     return e
   }
 
   async function handleSubmit(e) {
     e.preventDefault()
-
 
     const errs = validate()
     if (Object.keys(errs).length) return setErrors(errs)
@@ -94,9 +90,9 @@ export default function ContactForm({
           service: form.service?.value,
           doctor: form.doctor?.value,
         }),
-      });
+      })
 
-      const data = await res.json();
+      const data = await res.json()
 
       if (res.ok) {
         setSuccess(true)
@@ -110,7 +106,7 @@ export default function ContactForm({
           if (data.errors) {
             Object.entries(data.errors).forEach(([field, messages]) => {
               serverFieldErrors[field] = Array.isArray(messages)
-                ? messages[0]  // Pehla error message lo
+                ? messages[0]
                 : messages
             })
           }
@@ -120,30 +116,17 @@ export default function ContactForm({
         }
 
         case 'RATE_LIMIT_EXCEEDED':
-          setFormError(
-            'You have made too many requests. Please wait an hour before trying again.'
-          )
+          setFormError('Too many requests. Please try later.')
           break
 
-        case 'EMAIL_DELIVERY_FAILED':
-          setFormError(
-            data.message ||
-            'Unable to send your request right now. Please call us directly.'
-          )
-          break
-
-        case 'INTERNAL_ERROR':
         default:
-          setFormError(
-            data.message || 'Something went wrong. Please try again.'
-          )
-          break
+          setFormError(data.message || 'Something went wrong.')
       }
 
-    } catch (err) {
-      setFormError('Unable to connect. Please check your internet and try again.')
+    } catch {
+      setFormError('Network error. Please try again.')
     } finally {
-      setLoading(false);
+      setLoading(false)
     }
   }
 
@@ -166,14 +149,13 @@ export default function ContactForm({
       label: `${d.name} — ${d.designation}`,
     })) || []
 
-  // ✅ SUCCESS UI
   if (success) {
     return (
       <div className="flex flex-col items-center text-center py-12">
-        <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mb-4">
-          <CheckCircle2 className="text-green-600" size={32} />
+        <div className="w-14 h-14 bg-green-100 rounded-full flex items-center justify-center mb-4">
+          <CheckCircle2 className="text-green-600" size={28} />
         </div>
-        <h3 className="text-lg font-semibold text-gray-900">
+        <h3 className="text-base font-semibold text-gray-900">
           Appointment Request Sent!
         </h3>
         <p className="text-sm text-gray-500 mt-2 max-w-sm">
@@ -184,44 +166,23 @@ export default function ContactForm({
   }
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-5">
+    <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-5">
 
       {formError && (
-        <div className="flex items-start gap-3 bg-red-50 border border-red-200 text-red-700 text-sm rounded-xl px-4 py-3">
+        <div className="flex gap-3 bg-red-50 border border-red-200 text-red-700 text-sm rounded-xl px-4 py-3">
           <AlertCircle size={16} className="mt-0.5 shrink-0" />
           <span>{formError}</span>
         </div>
       )}
 
       {/* Name + Phone */}
-      <div className="grid sm:grid-cols-2 gap-5">
-        <Input
-          label="Full Name"
-          name="name"
-          value={form.name}
-          onChange={handleChange}
-          error={errors.name}
-          disabled={loading}
-        />
-        <Input
-          label="Phone Number"
-          name="phone"
-          value={form.phone}
-          onChange={handleChange}
-          error={errors.phone}
-          disabled={loading}
-        />
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
+        <Input label="Full Name" name="name" value={form.name} onChange={handleChange} error={errors.name} disabled={loading} />
+        <Input label="Phone Number" name="phone" value={form.phone} onChange={handleChange} error={errors.phone} disabled={loading} />
       </div>
 
       {/* Email */}
-      <Input
-        label="Email"
-        name="email"
-        value={form.email}
-        onChange={handleChange}
-        error={errors.email}
-        disabled={loading}
-      />
+      <Input label="Email" name="email" value={form.email} onChange={handleChange} error={errors.email} disabled={loading} />
 
       {/* Service */}
       <Field label="Select Service" error={errors.service}>
@@ -251,7 +212,7 @@ export default function ContactForm({
       )}
 
       {/* Date + Time */}
-      <div className="grid sm:grid-cols-2 gap-5">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
         <Input type="date" name="date" value={form.date} onChange={handleChange} label="Date" disabled={loading} />
         <Input type="time" name="time" value={form.time} onChange={handleChange} label="Time" disabled={loading} />
       </div>
@@ -262,23 +223,38 @@ export default function ContactForm({
           name="message"
           value={form.message}
           onChange={handleChange}
-          className="field resize-none"
-          rows={3}
+          className="field resize-none min-h-[90px]"
           disabled={loading}
         />
       </Field>
 
       {/* Consent */}
-      <label className="flex gap-3 text-sm text-gray-600">
-        <input type="checkbox" name="consent" checked={form.consent} onChange={handleChange} disabled={loading} />
-        I agree to be contacted
+      <label className="flex items-start gap-3 text-sm text-gray-600">
+        <input
+          type="checkbox"
+          name="consent"
+          checked={form.consent}
+          onChange={handleChange}
+          disabled={loading}
+          className="mt-1"
+        />
+        <span>I agree to be contacted</span>
       </label>
       {errors.consent && <p className="text-red-500 text-xs">{errors.consent}</p>}
 
       {/* Submit */}
       <button
         disabled={loading}
-        className="w-full bg-brand-600 text-white py-3 rounded-xl flex items-center justify-center gap-2"
+        className="
+          w-full 
+          bg-brand-600 hover:bg-brand-700 active:scale-[0.98]
+          text-white 
+          py-3 sm:py-3.5 
+          rounded-xl 
+          flex items-center justify-center gap-2 
+          text-sm sm:text-base font-semibold
+          transition-all
+        "
       >
         {loading ? <Loader2 className="animate-spin" size={18} /> : <Send size={16} />}
         {loading ? 'Sending...' : 'Book Appointment'}
@@ -288,12 +264,13 @@ export default function ContactForm({
   )
 }
 
-// Reusable Components
+/* ---------- Components ---------- */
+
 function Input({ label, error, ...props }) {
   return (
     <div>
-      <p className="text-xs text-gray-400 mb-1">{label}</p>
-      <input {...props} className="field" />
+      <p className="text-[11px] text-gray-400 mb-1">{label}</p>
+      <input {...props} className="field w-full h-[44px] text-sm" />
       {error && <p className="text-red-500 text-xs mt-1">{error}</p>}
     </div>
   )
@@ -302,7 +279,7 @@ function Input({ label, error, ...props }) {
 function Field({ label, children, error }) {
   return (
     <div>
-      <p className="text-xs text-gray-400 mb-1">{label}</p>
+      <p className="text-[11px] text-gray-400 mb-1">{label}</p>
       {children}
       {error && <p className="text-red-500 text-xs mt-1">{error}</p>}
     </div>

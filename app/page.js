@@ -55,9 +55,7 @@ const HomePage = async () => {
         latestPosts,
         allDoctors
     } = data
-
-
-
+    
     const isVisible = (section) => section?.isVisible !== false
 
     return (
@@ -118,6 +116,8 @@ const HomePage = async () => {
             {hp?.ctaBanner?.heading && (
                 <CTABanner data={hp.ctaBanner} />
             )}
+
+            
 
             {/* Blog */}
             {isVisible(hp?.blogSection) && (

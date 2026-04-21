@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from 'react'
 import * as Icons from 'lucide-react'
 
-/* ---------------- CountUp (Improved) ---------------- */
+/* ---------------- CountUp ---------------- */
 function CountUp({ target, duration = 2000 }) {
   const [count, setCount] = useState(0)
   const ref = useRef(null)
@@ -15,25 +15,31 @@ function CountUp({ target, duration = 2000 }) {
     const numeric = parseInt(target.replace(/\D/g, ''), 10) || 0
     const suffix = target.replace(/[0-9]/g, '')
 
-    const observer = new IntersectionObserver(([entry]) => {
-      if (entry.isIntersecting && !started.current) {
-        started.current = true
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting && !started.current) {
+          started.current = true
 
-        const startTime = Date.now()
+          const startTime = Date.now()
 
-        const animate = () => {
-          const progress = Math.min((Date.now() - startTime) / duration, 1)
-          const value = Math.floor(progress * numeric)
+          const animate = () => {
+            const progress = Math.min(
+              (Date.now() - startTime) / duration,
+              1
+            )
 
-          setCount(value + suffix)
+            const value = Math.floor(progress * numeric)
+            setCount(value + suffix)
 
-          if (progress < 1) requestAnimationFrame(animate)
-          else setCount(target)
+            if (progress < 1) requestAnimationFrame(animate)
+            else setCount(target)
+          }
+
+          requestAnimationFrame(animate)
         }
-
-        requestAnimationFrame(animate)
-      }
-    }, { threshold: 0.4 })
+      },
+      { threshold: 0.4 }
+    )
 
     if (ref.current) observer.observe(ref.current)
 
@@ -43,7 +49,7 @@ function CountUp({ target, duration = 2000 }) {
   return <span ref={ref}>{count || '0'}</span>
 }
 
-/* ---------------- Icon Resolver ---------------- */
+/* ---------------- Icon ---------------- */
 function Icon({ name }) {
   const LucideIcon = Icons[name]
 
@@ -51,18 +57,19 @@ function Icon({ name }) {
     return <Icons.HelpCircle className="text-brand-600" />
   }
 
-  return <LucideIcon />
+  return <LucideIcon size={24} />
 }
 
-/* ---------------- Grid Fix ---------------- */
+/* ---------------- Grid Logic ---------------- */
 function getGridCols(count) {
-  if (count === 1) return 'md:grid-cols-1'
-  if (count === 2) return 'md:grid-cols-2'
-  if (count === 3) return 'md:grid-cols-3'
-  return 'md:grid-cols-4'
+  if (count === 1) return 'sm:grid-cols-1'
+  if (count === 2) return 'sm:grid-cols-2'
+  if (count === 3) return 'sm:grid-cols-2 lg:grid-cols-3'
+  if (count === 4) return 'sm:grid-cols-2 lg:grid-cols-4'
+  return 'sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4'
 }
 
-/* ---------------- Main Section ---------------- */
+/* ---------------- Main ---------------- */
 export default function StatsSection({ data, clinicStats }) {
   const stats =
     data?.useClinicStats === false
@@ -72,34 +79,34 @@ export default function StatsSection({ data, clinicStats }) {
   if (!stats.length) return null
 
   return (
-    <section className="relative bg-white py-14 md:py-20">
+    <section className="relative bg-white py-12 sm:py-16 lg:py-20">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-      <div className="max-w-7xl mx-auto px-4">
-
-        {/* Grid */}
         <div
-          className={`grid grid-cols-2 ${getGridCols(stats.length)} gap-6 md:gap-8`}
+          className={`grid grid-cols-2 ${getGridCols(
+            stats.length
+          )} gap-4 sm:gap-6 lg:gap-8`}
         >
           {stats.map((stat, idx) => (
             <div
               key={idx}
-              className="group relative bg-white border border-gray-100 rounded-2xl p-2 text-center"
+              className="group relative bg-white border border-gray-100 rounded-xl sm:rounded-2xl p-4 sm:p-6 text-center"
             >
 
               {/* Icon */}
               {stat.icon && (
-                <div className="w-14 h-14 mx-auto mb-4 flex items-center justify-center rounded-xl bg-brand-50 text-brand-600  transition">
-                  <Icon name={stat.icon} size={24} />
+                <div className="w-12 h-12 sm:w-14 sm:h-14 mx-auto mb-3 sm:mb-4 flex items-center justify-center rounded-lg sm:rounded-xl bg-brand-50 text-brand-600">
+                  <Icon name={stat.icon} />
                 </div>
               )}
 
               {/* Number */}
-              <div className="text-2xl md:text-3xl font-bold text-gray-900 mb-1">
+              <div className="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-900 mb-1">
                 <CountUp target={stat.value} />
               </div>
 
               {/* Label */}
-              <div className="text-sm text-gray-500 font-medium">
+              <div className="text-xs sm:text-sm text-gray-500 font-medium leading-tight">
                 {stat.label}
               </div>
 

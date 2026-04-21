@@ -4,45 +4,80 @@ export default function DoctorAchievements({ doctor }) {
   if (!doctor.achievements?.length) return null
 
   return (
-    <section className="bg-white">
-      <div className="container mx-auto md:px-6">
+    <section className="space-y-6 sm:space-y-8">
 
-          <h2 className="text-2xl md:text-3xl font-semibold text-gray-900">
-            Awards & Achievements
-          </h2>
+      {/* Header */}
+      <div>
+        <h2 className="
+          text-lg sm:text-xl md:text-2xl 
+          font-semibold 
+          text-gray-900
+        ">
+          Awards & Achievements
+        </h2>
+      </div>
 
-        {/* List */}
-        <div className="space-y-4">
-          {doctor.achievements.map((a, i) => (
-            <div
-              key={i}
-              className="flex items-start gap-3 p-4 border border-gray-100 rounded-2xl"
-            >
+      {/* List */}
+      <div className="
+        space-y-3 sm:space-y-4
+      ">
 
-              {/* Icon */}
-              <div className="w-9 h-9 rounded-lg bg-gray-100 flex items-center justify-center flex-shrink-0">
-                <Award size={16} className="text-gray-700" />
-              </div>
+        {doctor.achievements.map((a, i) => (
+          <div
+            key={i}
+            className="
+              flex items-start gap-3 
+              p-4 sm:p-5
+              rounded-xl sm:rounded-2xl
+              bg-gray-50
+              border border-gray-100
+              transition
+              hover:bg-gray-100
+            "
+          >
 
-              {/* Content */}
-              <div>
-                <p className="text-sm font-semibold text-gray-900">
-                  {a.title}
+            {/* Icon */}
+            <div className="
+              w-9 h-9 sm:w-10 sm:h-10
+              rounded-xl 
+              bg-white 
+              flex items-center justify-center 
+              flex-shrink-0
+              shadow-sm
+            ">
+              <Award size={16} className="text-brand-600" />
+            </div>
+
+            {/* Content */}
+            <div className="flex-1 min-w-0">
+
+              <p className="
+                text-sm sm:text-base 
+                font-semibold 
+                text-gray-900
+                leading-snug
+              ">
+                {a.title}
+              </p>
+
+              {(a.organization || a.year) && (
+                <p className="
+                  text-xs sm:text-sm 
+                  text-gray-500 
+                  mt-1
+                ">
+                  {a.organization}
+                  {a.year && ` · ${a.year}`}
                 </p>
-
-                {(a.organization || a.year) && (
-                  <p className="text-xs text-gray-500 mt-1">
-                    {a.organization}
-                    {a.year && ` · ${a.year}`}
-                  </p>
-                )}
-              </div>
+              )}
 
             </div>
-          ))}
-        </div>
+
+          </div>
+        ))}
 
       </div>
+
     </section>
   )
 }
