@@ -7,6 +7,7 @@ import { usePathname } from 'next/navigation'
 import { Menu, X, Phone, ChevronDown, Calendar, PhoneCall, MapPin, Clock } from 'lucide-react'
 import * as Icons from 'lucide-react'
 import { urlFor } from '@/sanity/lib/client'
+import InstallPWA from '../ui/InstallPWA'
 
 export default function Header({ clinicInfo, navigation }) {
   const [isOpen, setIsOpen] = useState(false)
@@ -90,8 +91,8 @@ export default function Header({ clinicInfo, navigation }) {
       {/* ── MAIN HEADER ─────────────────────────────────────────── */}
       <header
         className={`sticky top-0 z-[100]  transition-all duration-300 ${scrolled
-            ? 'bg-white/70 backdrop-blur-xl  shadow-md border-b border-white/20'
-            : 'bg-white shadow-sm'
+          ? 'bg-white/70 backdrop-blur-xl  shadow-md border-b border-white/20'
+          : 'bg-white shadow-sm'
           }`}
       >
         <div className="px-4 min-h-[70px] max-w-7xl mx-auto">
@@ -129,8 +130,8 @@ export default function Header({ clinicInfo, navigation }) {
                     <Link
                       href={item.url || '#'}
                       className={`flex items-center gap-1 px-3 py-2 text-[15px] font-medium transition rounded-md ${isActive
-                          ? 'text-brand-900'
-                          : 'text-slate-700 hover:text-brand-900 hover:bg-slate-50'
+                        ? 'text-brand-900'
+                        : 'text-slate-700 hover:text-brand-900 hover:bg-slate-50'
                         }`}
                     >
                       {item.label}
@@ -145,8 +146,8 @@ export default function Header({ clinicInfo, navigation }) {
                     {hasChildren && (
                       <div
                         className={`absolute left-0 top-full mt-3 w-72 bg-white/95 backdrop-blur-md border border-slate-100 rounded-xl p-2 shadow-xl transition-all duration-200 ${activeDropdown === idx
-                            ? 'opacity-100 visible translate-y-0'
-                            : 'opacity-0 invisible translate-y-2'
+                          ? 'opacity-100 visible translate-y-0'
+                          : 'opacity-0 invisible translate-y-2'
                           }`}
                       >
                         {item.children.map((child, cIdx) => {
@@ -187,6 +188,15 @@ export default function Header({ clinicInfo, navigation }) {
 
             {/* ── RIGHT ACTIONS ── */}
             <div className="flex items-center gap-3 shrink-0">
+
+              <div className="hidden lg:block">
+                <InstallPWA />
+              </div>
+
+              <div className="lg:hidden">
+                <InstallPWA />
+              </div>
+
 
               {/* Book Appointment — desktop only */}
               <Link
@@ -259,8 +269,8 @@ export default function Header({ clinicInfo, navigation }) {
                 key={idx}
                 href={item.url || '#'}
                 className={`block px-3 py-2.5 rounded-lg text-base font-medium transition ${pathname === item.url
-                    ? 'bg-brand-50 text-brand-900'
-                    : 'text-slate-700 hover:bg-slate-50 hover:text-brand-900'
+                  ? 'bg-brand-50 text-brand-900'
+                  : 'text-slate-700 hover:bg-slate-50 hover:text-brand-900'
                   }`}
               >
                 {item.label}
