@@ -5,7 +5,6 @@ import { buildServiceSchema } from '@/lib/utils'
 import { getAllServiceSlugs, getServiceBySlug } from '@/sanity/lib/fetchData'
 
 import FAQSection from '@/components/sections/FAQSection'
-import TestimonialsSection from '@/components/sections/TestimonialsSection'
 
 import ServiceHero from '@/components/services/ServiceHero'
 import ServiceContent from '@/components/services/ServiceContent'

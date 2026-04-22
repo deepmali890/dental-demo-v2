@@ -2,7 +2,7 @@
 
 import { getSitemapData } from '@/sanity/lib/fetchData'
 
-const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://yourdomain.com'
+const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.dentalpreview.online'
 
 export default async function sitemap() {
   const data = await getSitemapData()

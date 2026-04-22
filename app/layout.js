@@ -2,7 +2,6 @@ import { Cormorant_Garamond, DM_Sans } from "next/font/google";
 import "./globals.css";
 import { getLayoutData } from "@/sanity/lib/fetchData";
 import { cache } from "react";
-import clinicData from "@/config/clinicData";
 import LayoutWrapper from "@/components/layout/LayoutWrapper";
 import PWARegister from "@/components/PWARegister";
 import AppLoader from "@/components/AppLoader";
@@ -26,13 +25,13 @@ const dmSans = DM_Sans({
 
 
 export const metadata = {
-  title: clinicData.seo.title,
-  description: clinicData.seo.description,
-  keywords: clinicData.seo.keywords,
+  title: "Smile Care Dental Clinic",
+  description: "Comprehensive dental care in Noida. Expert dentists, modern technology, and personalized treatments for your perfect smile.",
+  keywords: "dentist in Noida, dental clinic Noida, best dentist Noida, dental care Noida, cosmetic dentistry Noida, dental implants Noida, teeth whitening Noida",
   manifest: "/manifest.json",
   openGraph: {
-    title: clinicData.seo.title,
-    description: clinicData.seo.description,
+    title: "Smile Care Dental Clinic",
+    description: "Comprehensive dental care in Noida. Expert dentists, modern technology, and personalized treatments for your perfect smile.",
     type: "website",
   },
 };
