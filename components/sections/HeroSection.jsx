@@ -6,22 +6,18 @@ import CTAButton from '../ui/CTAButton'
 
 export default function HeroSection({ data, clinicInfo }) {
   const phone =
-    clinicInfo?.contact?.whatsapp ||
-    clinicInfo?.contact?.primaryPhone
+    clinicInfo?.contact?.whatsapp || clinicInfo?.contact?.primaryPhone
 
   const stats = clinicInfo?.stats?.slice(0, 3) || []
 
   return (
     <section className="relative overflow-hidden bg-slate-50 pt-8 sm:pt-10 md:pt-12 lg:pt-14 pb-16 sm:pb-20 lg:pb-24">
 
-      {/* BACKGROUND */}
+      {/* BACKGROUND — decorative only, no priority needed */}
       <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
-
         <div className="absolute top-[-10%] right-[-10%] w-[60%] h-[60%] rounded-full bg-blue-100/50 blur-[120px] animate-pulse" />
         <div className="absolute bottom-[10%] left-[-5%] w-[50%] h-[50%] rounded-full bg-cyan-50/60 blur-[100px]" />
-
         <div className="absolute inset-0 opacity-[0.03] bg-[linear-gradient(to_right,#00000010_1px,transparent_1px),linear-gradient(to_bottom,#00000010_1px,transparent_1px)] bg-[size:60px_60px]" />
-
         <div className="absolute top-0 right-0 h-full w-[35%] bg-white skew-x-[-12deg] translate-x-40 shadow-[0_0_80px_rgba(0,0,0,0.02)] hidden xl:block" />
       </div>
 
@@ -52,6 +48,7 @@ export default function HeroSection({ data, clinicInfo }) {
                         className="absolute -bottom-1 sm:-bottom-2 left-0 w-full opacity-30"
                         viewBox="0 0 358 12"
                         fill="none"
+                        aria-hidden="true"
                       >
                         <path
                           d="M3 9C118.957 4.47226 238.497 2.4933 355 9"
@@ -73,7 +70,7 @@ export default function HeroSection({ data, clinicInfo }) {
               </p>
             )}
 
-            {/* Trust */}
+            {/* Trust indicators */}
             {data.trustIndicators?.length > 0 && (
               <div className="mt-8 sm:mt-10 grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 w-full max-w-lg">
                 {data.trustIndicators.map((item, idx) => (
@@ -89,9 +86,8 @@ export default function HeroSection({ data, clinicInfo }) {
               </div>
             )}
 
-            {/* CTA */}
+            {/* CTA Buttons */}
             <div className="mt-10 sm:mt-12 flex flex-col sm:flex-row gap-4 sm:gap-5 w-full sm:w-auto">
-
               {data.primaryCta && (
                 <div className="relative group w-full sm:w-auto">
                   <div className="absolute -inset-0.5 bg-blue-600 rounded-xl blur opacity-25 group-hover:opacity-40 transition" />
@@ -121,8 +117,8 @@ export default function HeroSection({ data, clinicInfo }) {
                 <div className="relative flex h-9 w-9 sm:h-10 sm:w-10 items-center justify-center rounded-full bg-green-100 text-green-600">
                   <MessageCircle size={18} />
                   <span className="absolute -top-1 -right-1 flex h-3 w-3">
-                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
-                    <span className="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span>
+                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75" />
+                    <span className="relative inline-flex rounded-full h-3 w-3 bg-green-500" />
                   </span>
                 </div>
                 <span className="text-sm font-bold text-slate-700 group-hover:text-blue-600 break-all">
@@ -130,23 +126,23 @@ export default function HeroSection({ data, clinicInfo }) {
                 </span>
               </a>
             )}
-
           </div>
 
-          {/* RIGHT */}
+          {/* RIGHT — Hero image */}
           <div className="relative lg:col-span-5 xl:col-span-6 flex justify-center lg:justify-end">
             <div className="relative w-full max-w-[320px] sm:max-w-[420px] lg:max-w-[500px]">
 
-              {/* Image */}
+              {/* Image — priority=true because it's LCP element */}
               <div className="relative overflow-hidden rounded-[2.5rem] sm:rounded-[3rem] border-[10px] sm:border-[12px] border-white shadow-xl aspect-[4/5]">
                 {data.heroImage?.asset ? (
                   <Image
                     src={urlFor(data.heroImage).width(1000).height(1250).url()}
-                    alt={data.heroImage.alt || 'Dental'}
+                    alt={data.heroImage.alt || 'Dental Clinic'}
                     fill
-                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 500px"
+                    sizes="(max-width: 640px) 320px, (max-width: 1024px) 420px, 500px"
                     className="object-cover"
-                    priority
+                    priority  
+                    fetchPriority="high"
                   />
                 ) : (
                   <div className="flex h-full items-center justify-center text-5xl sm:text-6xl">
@@ -155,11 +151,14 @@ export default function HeroSection({ data, clinicInfo }) {
                 )}
               </div>
 
-              {/* Stats */}
+              {/* Stats floating card */}
               {stats.length > 0 && (
                 <div className="absolute -bottom-6 sm:-bottom-8 left-1/2 -translate-x-1/2 sm:left-auto sm:translate-x-0 sm:-left-4 flex gap-4 sm:gap-6 bg-white/90 backdrop-blur-xl px-4 py-3 sm:p-5 rounded-2xl shadow-xl">
                   {stats.map((stat, idx) => (
-                    <div key={idx} className="text-center px-2 sm:px-3 border-r last:border-0">
+                    <div
+                      key={idx}
+                      className="text-center px-2 sm:px-3 border-r last:border-0"
+                    >
                       <div className="text-base sm:text-xl font-bold text-blue-600">
                         {stat.value}
                       </div>
@@ -170,13 +169,11 @@ export default function HeroSection({ data, clinicInfo }) {
                   ))}
                 </div>
               )}
-
             </div>
           </div>
 
         </div>
       </div>
-
     </section>
   )
 }
