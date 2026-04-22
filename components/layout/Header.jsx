@@ -9,6 +9,18 @@ import * as Icons from 'lucide-react'
 import { urlFor } from '@/sanity/lib/client'
 import InstallPWA from '../ui/InstallPWA'
 
+function getIcon(name) {
+  if (!name) return Sparkles
+
+  const formatted =
+    name.charAt(0).toUpperCase() + name.slice(1)
+
+  return dynamic(() =>
+    import('lucide-react').then(mod => mod[formatted] || mod.Sparkles)
+  )
+}
+
+
 export default function Header({ clinicInfo, navigation }) {
   const [isOpen, setIsOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)

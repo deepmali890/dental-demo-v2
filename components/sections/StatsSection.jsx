@@ -1,7 +1,8 @@
 'use client'
 
 import { useEffect, useRef, useState } from 'react'
-import * as Icons from 'lucide-react'
+import dynamic from 'next/dynamic'
+import { HelpCircle } from 'lucide-react'
 
 /* ---------------- CountUp ---------------- */
 function CountUp({ target, duration = 2000 }) {
@@ -51,11 +52,14 @@ function CountUp({ target, duration = 2000 }) {
 
 /* ---------------- Icon ---------------- */
 function Icon({ name }) {
-  const LucideIcon = Icons[name]
+  if (!name) return <HelpCircle className="text-brand-600" />
 
-  if (!LucideIcon) {
-    return <Icons.HelpCircle className="text-brand-600" />
-  }
+  const formatted =
+    name.charAt(0).toUpperCase() + name.slice(1)
+
+  const LucideIcon = dynamic(() =>
+    import('lucide-react').then(mod => mod[formatted] || mod.HelpCircle)
+  )
 
   return <LucideIcon size={24} />
 }

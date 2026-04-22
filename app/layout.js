@@ -7,20 +7,20 @@ import PWARegister from "@/components/PWARegister";
 
 const getData = cache(getLayoutData);
 
+// Fonts
 const cormorant = Cormorant_Garamond({
   subsets: ["latin"],
-  weight: ["400", "600", "700"],
+  weight: ["300", "400", "500", "600", "700"],
   variable: "--font-cormorant",
   display: "swap",
-  preload: true,
+  
 });
 
 const dmSans = DM_Sans({
   subsets: ["latin"],
-  weight: ["400", "500"],
+  weight: ["300", "400", "500", "600"],
   variable: "--font-dm-sans",
   display: "swap",
-  preload: true,
 });
 
 export const metadata = {

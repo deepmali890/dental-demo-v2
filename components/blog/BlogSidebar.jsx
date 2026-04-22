@@ -1,6 +1,20 @@
+'use client'
 import Link from 'next/link'
-import { Calendar, ChevronRight, Phone } from 'lucide-react'
-import * as Icons from 'lucide-react'
+import { Calendar, ChevronRight, Phone, Stethoscope } from 'lucide-react'
+import dynamic from 'next/dynamic'
+
+function getIcon(name) {
+  if (!name) return Stethoscope
+
+  const formatted = name
+    .replace(/[-_]/g, ' ')
+    .replace(/\b\w/g, c => c.toUpperCase())
+    .replace(/\s/g, '')
+
+  return dynamic(() =>
+    import('lucide-react').then(mod => mod[formatted] || mod.Stethoscope)
+  )
+}
 
 export default function BlogSidebar({ post }) {
   return (
@@ -31,7 +45,7 @@ export default function BlogSidebar({ post }) {
             <div className="space-y-1">
 
               {post.relatedServices.map((s) => {
-                const Icon = Icons[s.icon] || Icons.Stethoscope
+                const Icon = getIcon(s.icon)
 
                 return (
                   <Link
@@ -56,7 +70,7 @@ export default function BlogSidebar({ post }) {
                       flex items-center justify-center 
                       flex-shrink-0
                     ">
-                      <Icon size={16} className="text-brand-600" />
+                      {Icon && <Icon size={16} className="text-brand-600" />}
                     </div>
 
                     {/* Title */}

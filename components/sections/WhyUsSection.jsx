@@ -1,17 +1,19 @@
 'use client'
 import React from 'react'
-import * as Icons from "lucide-react"
+import dynamic from 'next/dynamic'
 
-/* ---------- Icon Resolver ---------- */
-function resolveIcon(name) {
-  if (!name) return Icons.HelpCircle
+/* ---------- Dynamic Icon Loader ---------- */
+function getIcon(name) {
+  if (!name) return null
 
   const formatted =
     name
       .replace(/[-_\s]+(.)?/g, (_, c) => c ? c.toUpperCase() : '')
       .replace(/^(.)/, (c) => c.toUpperCase())
 
-  return Icons[formatted] || Icons.HelpCircle
+  return dynamic(() =>
+    import('lucide-react').then((mod) => mod[formatted] || mod.HelpCircle)
+  )
 }
 
 /* ---------- Grid Columns ---------- */
@@ -55,7 +57,7 @@ export default function WhyUsSection({ data }) {
         <div className={`grid grid-cols-1 sm:grid-cols-2 ${getGridCols(items.length)} gap-4 sm:gap-6 lg:gap-8`}>
 
           {items.map((item, idx) => {
-            const Icon = resolveIcon(item.icon)
+            const Icon = getIcon(item.icon)
 
             return (
               <div
@@ -65,10 +67,12 @@ export default function WhyUsSection({ data }) {
 
                 {/* Icon */}
                 <div className="w-10 h-10 sm:w-12 sm:h-12 mx-auto mb-4 sm:mb-5 rounded-lg sm:rounded-xl bg-brand-50 flex items-center justify-center transition group-hover:bg-white">
-                  <Icon
-                    size={18}
-                    className="text-brand-600 transition-transform duration-300 group-hover:scale-110"
-                  />
+                  {Icon && (
+                    <Icon
+                      size={18}
+                      className="text-brand-600 transition-transform duration-300 group-hover:scale-110"
+                    />
+                  )}
                 </div>
 
                 {/* Title */}
