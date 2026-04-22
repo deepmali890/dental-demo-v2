@@ -136,12 +136,12 @@ export default function HeroSection({ data, clinicInfo }) {
               <div className="relative overflow-hidden rounded-[2.5rem] sm:rounded-[3rem] border-[10px] sm:border-[12px] border-white shadow-xl aspect-[4/5]">
                 {data.heroImage?.asset ? (
                   <Image
-                    src={urlFor(data.heroImage).width(1000).height(1250).url()}
+                    src={urlFor(data.heroImage).width(700).auto('format').url()}
                     alt={data.heroImage.alt || 'Dental Clinic'}
                     fill
                     sizes="(max-width: 640px) 320px, (max-width: 1024px) 420px, 500px"
                     className="object-cover"
-                    priority  
+                    priority
                     fetchPriority="high"
                   />
                 ) : (

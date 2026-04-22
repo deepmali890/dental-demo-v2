@@ -1,20 +1,24 @@
-import * as Icons from 'lucide-react'
+'use client'
+import React from 'react'
+import dynamic from 'next/dynamic'
+
+function getLucideIcon(name) {
+  if (!name) return null
+
+  const formattedName = name
+    .replace(/[-_]/g, ' ')
+    .replace(/\b\w/g, char => char.toUpperCase())
+    .replace(/\s/g, '')
+
+  return dynamic(() =>
+    import('lucide-react').then(mod => mod[formattedName] || mod.Star)
+  )
+}
 
 export default function AboutMission({ about }) {
   if (!about?.missionVision) return null
 
   const mv = about.missionVision
-
-  function getLucideIcon(name) {
-    if (!name) return null
-
-    const formattedName = name
-      .replace(/[-_]/g, ' ')
-      .replace(/\b\w/g, char => char.toUpperCase())
-      .replace(/\s/g, '')
-
-    return Icons[formattedName] || null
-  }
 
   return (
     <section className="bg-gray-50 py-12 sm:py-16 md:py-20">

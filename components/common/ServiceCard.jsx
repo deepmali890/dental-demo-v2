@@ -1,19 +1,20 @@
-import { ArrowRight, Plus } from "lucide-react"
+import { ArrowRight, FileQuestionIcon, PanelTopBottomDashedIcon, Plus } from "lucide-react"
 import Link from "next/link"
-import * as Icons from 'lucide-react'
+import dynamic from "next/dynamic"
 import SanityImage from "@/components/ui/SanityImage"
 
 function getLucideIcon(name) {
-    if (!name) return Icons.FileQuestion
+    if (!name) return FileQuestionIcon
 
     const formatted =
         name.charAt(0).toUpperCase() + name.slice(1)
 
-    return Icons[formatted] || Icons.Tooth
+    return dynamic(() =>
+        import("lucide-react").then(mod => mod[formatted] || PanelTopBottomDashedIcon)
+    )
 }
 
 export default function ServiceCard({ service, highlighted = false }) {
-
 
     const price =
         service?.pricing?.showPrice &&

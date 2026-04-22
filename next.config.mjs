@@ -1,5 +1,12 @@
-/** @type {import('next').NextConfig} */
+import withBundleAnalyzer from '@next/bundle-analyzer'
 
+const bundleAnalyzer = withBundleAnalyzer({
+  enabled: process.env.ANALYZE === 'true',
+})
+
+const isDev = process.env.NODE_ENV === 'development'
+
+/** @type {import('next').NextConfig} */
 const nextConfig = {
   // ─── Image Optimization ─────────────────────────────────
   images: {
@@ -21,7 +28,6 @@ const nextConfig = {
 
   // ─── Experimental Optimizations ──────────────────────────
   experimental: {
-    // Auto tree-shake heavy packages
     optimizePackageImports: [
       'lucide-react',
       '@sanity/icons',
@@ -30,10 +36,11 @@ const nextConfig = {
     ],
   },
 
-  // ─── Cache & Security Headers ─────────────────────────────
+  // ─── Headers (Dev me disable for warning fix) ─────────────
   async headers() {
+    if (isDev) return []
+
     return [
-      // Static assets — 1 year immutable
       {
         source: '/_next/static/(.*)',
         headers: [
@@ -52,7 +59,6 @@ const nextConfig = {
           },
         ],
       },
-      // Fonts — 1 year
       {
         source: '/fonts/(.*)',
         headers: [
@@ -62,7 +68,6 @@ const nextConfig = {
           },
         ],
       },
-      // HTML pages — no store, always fresh
       {
         source: '/(.*)',
         headers: [
@@ -84,4 +89,4 @@ const nextConfig = {
   },
 }
 
-export default nextConfig
+export default bundleAnalyzer(nextConfig)

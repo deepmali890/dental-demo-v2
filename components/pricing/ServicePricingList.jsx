@@ -1,15 +1,23 @@
+'use client'
 import React from 'react'
 import Link from 'next/link'
-import * as Icons from 'lucide-react'
+import dynamic from 'next/dynamic'
 
-function resolveIcon(name) {
-  if (!name) return Icons.Stethoscope
+/* ---------- Dynamic Icon Resolver ---------- */
+function getIcon(name) {
+  if (!name) {
+    return dynamic(() =>
+      import('lucide-react').then(mod => mod.Stethoscope)
+    )
+  }
 
   const formatted = name
     .replace(/[-_\s]+(.)?/g, (_, c) => (c ? c.toUpperCase() : ''))
     .replace(/^(.)/, c => c.toUpperCase())
 
-  return Icons[formatted] || Icons.Stethoscope
+  return dynamic(() =>
+    import('lucide-react').then(mod => mod[formatted] || mod.Stethoscope)
+  )
 }
 
 export default function ServicePricingList({ services }) {
@@ -21,11 +29,10 @@ export default function ServicePricingList({ services }) {
     <section className="py-16 bg-white">
       <div className="max-w-6xl mx-auto px-4">
 
-        {/* Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
 
           {filtered.map(service => {
-            const Icon = resolveIcon(service.icon)
+            const Icon = getIcon(service.icon)
 
             return (
               <Link
@@ -39,7 +46,7 @@ export default function ServicePricingList({ services }) {
 
                   {/* Icon */}
                   <div className="w-10 h-10 rounded-xl bg-brand-50 flex items-center justify-center text-brand-600 shrink-0">
-                    <Icon size={18} />
+                    {Icon && <Icon size={18} />}
                   </div>
 
                   {/* Text */}
@@ -57,7 +64,7 @@ export default function ServicePricingList({ services }) {
 
                 </div>
 
-                {/* BOTTOM (PRICE FIXED) */}
+                {/* BOTTOM */}
                 <div className="mt-4 pt-4 border-t border-gray-100 flex justify-end">
 
                   {service.pricing.priceRange ? (

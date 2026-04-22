@@ -1,7 +1,18 @@
-import * as Icons from 'lucide-react'
-import { ChevronRight } from 'lucide-react'
+import { ChevronRight, Stethoscope } from 'lucide-react'
+import dynamic from 'next/dynamic'
 import Link from 'next/link'
 import React from 'react'
+
+function getIcon(name) {
+  if (!name) return Stethoscope
+
+  const formatted =
+    name.charAt(0).toUpperCase() + name.slice(1)
+
+  return dynamic(() =>
+    import('lucide-react').then(mod => mod[formatted] || mod.Stethoscope)
+  )
+}
 
 const ServiceRelated = ({ service }) => {
   if (!service.relatedServices?.length) return null
@@ -38,7 +49,7 @@ const ServiceRelated = ({ service }) => {
       <div className="space-y-2">
 
         {service.relatedServices.map((s) => {
-          const Icon = Icons[s.icon] || Icons.Stethoscope
+          const Icon = getIcon(s.icon)
 
           return (
             <Link
@@ -66,7 +77,7 @@ const ServiceRelated = ({ service }) => {
                 flex items-center justify-center 
                 flex-shrink-0
               ">
-                <Icon size={16} className="text-brand-600" />
+                {Icon && <Icon size={16} className="text-brand-600" />}
               </div>
 
               {/* Title */}
