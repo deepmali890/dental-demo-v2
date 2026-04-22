@@ -5,10 +5,8 @@ export default function AboutAffiliations({ about }) {
 
   if (!affiliations?.length) return null
 
-  const items = [...affiliations, ...affiliations]
-
   return (
-    <section className="bg-white py-12 sm:py-16 md:py-20 overflow-hidden">
+    <section className="bg-white py-12 sm:py-16 md:py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Header */}
@@ -23,7 +21,7 @@ export default function AboutAffiliations({ about }) {
         </div>
 
         {/* SCROLL WRAPPER */}
-        <div className="relative overflow-hidden">
+        <div className="relative">
 
           {/* LEFT FADE */}
           <div className="pointer-events-none absolute left-0 top-0 h-full w-12 sm:w-20 bg-gradient-to-r from-white to-transparent z-10" />
@@ -32,15 +30,29 @@ export default function AboutAffiliations({ about }) {
           <div className="pointer-events-none absolute right-0 top-0 h-full w-12 sm:w-20 bg-gradient-to-l from-white to-transparent z-10" />
 
           {/* SCROLL CONTENT */}
-          <div className="marquee flex gap-4 sm:gap-6">
+          <div className="
+            flex gap-4 sm:gap-6
+            overflow-x-auto
+            snap-x snap-mandatory
+            scroll-smooth
+            pb-2
+            scrollbar-hide
+          ">
 
-            {items.map((a, i) => (
+            {affiliations.map((a, i) => (
               <a
                 key={i}
                 href={a.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="min-w-[140px] sm:min-w-[160px] md:min-w-[180px] group border border-gray-100 rounded-xl sm:rounded-2xl p-4 sm:p-5 flex flex-col items-center justify-center text-center transition hover:border-gray-200 bg-white"
+                className="
+                  min-w-[140px] sm:min-w-[160px] md:min-w-[180px]
+                  snap-start
+                  group border border-gray-100 rounded-xl sm:rounded-2xl
+                  p-4 sm:p-5
+                  flex flex-col items-center justify-center text-center
+                  transition hover:border-gray-200 bg-white
+                "
               >
 
                 {/* Logo */}

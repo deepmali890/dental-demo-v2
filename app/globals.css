@@ -358,79 +358,11 @@ h1, h2, h3 {
   }
 }
 
-
-@keyframes marquee {
-  0% {
-    transform: translateX(0%);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
+/* Hide scrollbar (mobile + chrome) */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
 }
-
-.marquee {
-  display: flex;
-  width: max-content;
-  animation: marquee 25s linear infinite;
-}
-
-.marquee:hover {
-  animation-play-state: paused;
-}
-
-/* 🔥 fade in text */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes fadeOut {
-  0% {
-    opacity: 1;
-  }
-  80% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
-}
-
-@keyframes bounceLogo {
-  0% {
-    transform: scale(0.8);
-    opacity: 0;
-  }
-  40% {
-    transform: scale(1.15);
-    opacity: 1;
-  }
-  60% {
-    transform: scale(0.95);
-  }
-  80% {
-    transform: scale(1.05);
-  }
-  100% {
-    transform: scale(1);
-  }
-}
-
-
-.animate-fadeIn {
-  animation: fadeIn 0.8s ease forwards;
-}
-
-.animate-fadeOut {
-  animation: fadeOut 1.8s ease forwards;
-}
-
-.animate-bounceLogo {
-  animation: bounceLogo 0.9s ease-in-out;
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
