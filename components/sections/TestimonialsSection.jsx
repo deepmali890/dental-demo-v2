@@ -1,5 +1,5 @@
 'use client'
-import React from 'react'
+import React, { useState, useCallback } from 'react'
 import Image from 'next/image'
 import { Star, Quote } from 'lucide-react'
 import { urlFor } from '@/sanity/lib/client'
@@ -8,14 +8,12 @@ import { urlFor } from '@/sanity/lib/client'
 function TestimonialCard({ testimonial }) {
   return (
     <div className="group relative bg-white border border-gray-100 rounded-xl sm:rounded-2xl p-4 sm:p-5 md:p-6 transition-all duration-300 hover:-translate-y-1">
-
       <Quote
         size={24}
         className="absolute top-3 right-3 sm:top-4 sm:right-4 text-gray-100 group-hover:text-brand-50 transition"
       />
 
       <div className="relative z-10">
-
         {/* Rating */}
         <div className="flex gap-1 mb-2 sm:mb-3">
           {[...Array(5)].map((_, i) => (
@@ -24,8 +22,8 @@ function TestimonialCard({ testimonial }) {
               size={12}
               className={
                 i < (testimonial.rating || 5)
-                  ? "fill-amber-400 text-amber-400"
-                  : "text-gray-200"
+                  ? 'fill-amber-400 text-amber-400'
+                  : 'text-gray-200'
               }
             />
           ))}
@@ -63,33 +61,50 @@ function TestimonialCard({ testimonial }) {
             </p>
           </div>
         </div>
-
       </div>
     </div>
   )
 }
 
-/* ---------- Column ---------- */
+/* ---------- Column — GPU optimized ---------- */
 function Column({ items, reverse, mobile = false }) {
+  const [paused, setPaused] = useState(false)
   const doubled = [...items, ...items]
+
+  const handleMouseEnter = useCallback(() => setPaused(true), [])
+  const handleMouseLeave = useCallback(() => setPaused(false), [])
 
   return (
     <div
       className={`relative overflow-hidden 
         ${mobile ? 'h-[420px] sm:h-[500px]' : 'h-[420px] md:h-[520px] lg:h-[600px]'}`}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
     >
+      {/* Gradient top */}
+      <div className="absolute top-0 left-0 w-full h-12 sm:h-16 bg-gradient-to-b from-white to-transparent z-10 pointer-events-none" />
+      {/* Gradient bottom */}
+      <div className="absolute bottom-0 left-0 w-full h-12 sm:h-16 bg-gradient-to-t from-white to-transparent z-10 pointer-events-none" />
 
-      {/* Gradient */}
-      <div className="absolute top-0 left-0 w-full h-12 sm:h-16 bg-gradient-to-b from-white to-transparent z-10" />
-      <div className="absolute bottom-0 left-0 w-full h-12 sm:h-16 bg-gradient-to-t from-white to-transparent z-10" />
-
+      {/*
+        will-change: transform — GPU layer pe promote karo
+        contain: layout style — repaints isolate karo
+        transform: translateZ(0) — force GPU compositing
+      */}
       <div
-        className={`flex flex-col gap-3 sm:gap-4 ${mobile
+        className={`flex flex-col gap-3 sm:gap-4 ${
+          mobile
             ? 'animate-scroll-mobile'
             : reverse
-              ? 'animate-scroll-reverse'
-              : 'animate-scroll'
-          }`}
+            ? 'animate-scroll-reverse'
+            : 'animate-scroll'
+        }`}
+        style={{
+          willChange: 'transform',
+          contain: 'layout style',
+          transform: 'translateZ(0)',
+          animationPlayState: paused ? 'paused' : 'running',
+        }}
       >
         {doubled.map((item, i) => (
           <TestimonialCard key={i} testimonial={item} />
@@ -113,7 +128,10 @@ export default function TestimonialsSection({ data, fallbackTestimonials }) {
   const col2 = list.slice(half)
 
   return (
-    <section className="py-12 sm:py-16 md:py-20 bg-white overflow-hidden" id="testimonials">
+    <section
+      className="py-12 sm:py-16 md:py-20 bg-white overflow-hidden"
+      id="testimonials"
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Header */}
@@ -121,11 +139,9 @@ export default function TestimonialsSection({ data, fallbackTestimonials }) {
           <p className="text-[10px] sm:text-[11px] uppercase tracking-[0.12em] text-brand-600 font-semibold mb-2 sm:mb-3">
             Patient Stories
           </p>
-
           <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold text-gray-900">
             Real Smiles, Real Experiences
           </h2>
-
           <p className="text-gray-500 text-xs sm:text-sm md:text-base mt-2 sm:mt-3">
             Trusted by hundreds of happy patients across all treatments.
           </p>
@@ -133,13 +149,12 @@ export default function TestimonialsSection({ data, fallbackTestimonials }) {
 
         {/* Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
-
-          {/* Mobile */}
+          {/* Mobile — single column */}
           <div className="md:hidden">
             <Column items={list} mobile />
           </div>
 
-          {/* Desktop */}
+          {/* Desktop — two columns */}
           <div className="hidden md:block">
             <Column items={col1} />
           </div>
@@ -147,9 +162,7 @@ export default function TestimonialsSection({ data, fallbackTestimonials }) {
           <div className="hidden md:block mt-6 md:mt-10">
             <Column items={col2} reverse />
           </div>
-
         </div>
-
       </div>
     </section>
   )

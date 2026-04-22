@@ -36,12 +36,12 @@ const ServiceHero = ({ service, jsonLd }) => {
             <SanityImage
               image={service.coverImage}
               fill
+              context="hero"
               className="object-cover"
-              priority
+              priority  // ✅ LCP — must have priority
             />
           )}
-
-          {/* Clean overlay (premium look) */}
+          {/* Clean overlay */}
           <div className="absolute inset-0 bg-black/60" />
         </div>
 
@@ -49,15 +49,18 @@ const ServiceHero = ({ service, jsonLd }) => {
         <div className="relative w-full container mx-auto px-4 pb-12 md:pb-16 pt-32 md:pt-40">
 
           {/* Breadcrumb */}
-          <nav className="flex items-center gap-2 text-[11px] uppercase tracking-widest text-white/50 mb-6 font-medium">
+          <nav
+            className="flex items-center gap-2 text-[11px] uppercase tracking-widest text-white/50 mb-6 font-medium"
+            aria-label="Breadcrumb"
+          >
             <Link href="/" className="hover:text-white transition-colors">
               Home
             </Link>
-            <ChevronRight size={10} className="opacity-40" />
+            <ChevronRight size={10} className="opacity-40" aria-hidden="true" />
             <Link href="/services" className="hover:text-white transition-colors">
               Services
             </Link>
-            <ChevronRight size={10} className="opacity-40" />
+            <ChevronRight size={10} className="opacity-40" aria-hidden="true" />
             <span className="text-white/80">{service.title}</span>
           </nav>
 
@@ -75,7 +78,6 @@ const ServiceHero = ({ service, jsonLd }) => {
 
           {/* Meta + CTA */}
           <div className="flex flex-wrap items-center gap-3">
-
             {service.duration && (
               <span className="flex items-center gap-2 bg-white/10 border border-white/10 px-4 py-2 rounded-full text-[13px] text-white/80">
                 <Clock size={14} className="opacity-60" />
@@ -84,7 +86,9 @@ const ServiceHero = ({ service, jsonLd }) => {
             )}
 
             {pain && (
-              <span className={`flex items-center gap-2 px-4 py-2 rounded-full text-[13px] ${pain.cls}`}>
+              <span
+                className={`flex items-center gap-2 px-4 py-2 rounded-full text-[13px] ${pain.cls}`}
+              >
                 <CheckCircle2 size={14} />
                 {pain.label}
               </span>
@@ -105,7 +109,6 @@ const ServiceHero = ({ service, jsonLd }) => {
               <CalendarDays size={16} />
               Book Appointment
             </Link>
-
           </div>
         </div>
       </section>

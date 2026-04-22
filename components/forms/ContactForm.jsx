@@ -1,7 +1,18 @@
 'use client'
 
-import Select from 'react-select'
+const Select = dynamic(
+  () => import('react-select'),
+  {
+    ssr: false,
+    loading: () => (
+      <select className="field w-full h-11 text-sm">
+        <option>Loading...</option>
+      </select>
+    )
+  }
+)
 import { AlertCircle, CheckCircle2, Loader2, Send } from 'lucide-react'
+import dynamic from 'next/dynamic'
 import { useState } from 'react'
 
 const initialState = {
