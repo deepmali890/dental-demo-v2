@@ -17,9 +17,10 @@ export default function DoctorCard({ doctor }) {
 
                 {doctor.profilePhoto?.asset ? (
                     <Image
-                        src={urlFor(doctor.profilePhoto).width(500).height(600).url()}
+                        src={urlFor(doctor.profilePhoto).width(600).auto('format').url()}
                         alt={doctor.profilePhoto?.alt || doctor.name}
                         fill
+                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 300px"
                         className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
                     />
                 ) : (

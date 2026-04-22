@@ -144,6 +144,7 @@ export default function HeroSection({ data, clinicInfo }) {
                     src={urlFor(data.heroImage).width(1000).height(1250).url()}
                     alt={data.heroImage.alt || 'Dental'}
                     fill
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 500px"
                     className="object-cover"
                     priority
                   />

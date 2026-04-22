@@ -41,9 +41,10 @@ function TestimonialCard({ testimonial }) {
           {testimonial.patientPhoto?.asset ? (
             <div className="relative w-9 h-9 sm:w-10 sm:h-10 rounded-full overflow-hidden shrink-0">
               <Image
-                src={urlFor(testimonial.patientPhoto).width(80).height(80).url()}
+                src={urlFor(testimonial.patientPhoto).width(80).auto('format').url()}
                 alt={testimonial.patientName}
                 fill
+                sizes="40px"
                 className="object-cover"
               />
             </div>
@@ -83,13 +84,12 @@ function Column({ items, reverse, mobile = false }) {
       <div className="absolute bottom-0 left-0 w-full h-12 sm:h-16 bg-gradient-to-t from-white to-transparent z-10" />
 
       <div
-        className={`flex flex-col gap-3 sm:gap-4 ${
-          mobile
+        className={`flex flex-col gap-3 sm:gap-4 ${mobile
             ? 'animate-scroll-mobile'
             : reverse
-            ? 'animate-scroll-reverse'
-            : 'animate-scroll'
-        }`}
+              ? 'animate-scroll-reverse'
+              : 'animate-scroll'
+          }`}
       >
         {doubled.map((item, i) => (
           <TestimonialCard key={i} testimonial={item} />

@@ -8,9 +8,10 @@ export default function PageHero({ title, subtitle, image, badge, children }) {
       {image?.asset && (
         <>
           <Image
-            src={urlFor(image).width(1440).height(500).url()}
+            src={urlFor(image).width(1200).auto('format').url()}
             alt={image.alt || title}
             fill
+            sizes="100vw"
             className="object-cover opacity-20"
           />
           <div className="absolute inset-0 bg-brand-900/60" />

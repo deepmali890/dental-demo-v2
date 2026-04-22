@@ -15,9 +15,10 @@ export default function CTABanner({ data }) {
         {/* Background Image */}
         {data.backgroundImage?.asset && (
           <Image
-            src={urlFor(data.backgroundImage).width(1600).height(600).url()}
+            src={urlFor(data.backgroundImage).width(1200).auto('format').url()}
             alt={data.backgroundImage?.alt || 'CTA'}
             fill
+            sizes="100vw"
             className="object-cover opacity-25"
             priority
           />
