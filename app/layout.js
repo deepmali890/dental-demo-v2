@@ -4,7 +4,6 @@ import { getLayoutData } from "@/sanity/lib/fetchData";
 import { cache } from "react";
 import LayoutWrapper from "@/components/layout/LayoutWrapper";
 import PWARegister from "@/components/PWARegister";
-import AppLoader from "@/components/AppLoader";
 
 const getData = cache(getLayoutData);
 
@@ -80,12 +79,9 @@ export default async function RootLayout({ children }) {
 
         {/* Structured Data */}
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }} />
-        <AppLoader>
           <LayoutWrapper clinicInfo={clinicInfo} navigation={navigation}>
             {children}
           </LayoutWrapper>
-        </AppLoader>
-
       </body>
     </html>
   );
