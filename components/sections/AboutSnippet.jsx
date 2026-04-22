@@ -59,9 +59,10 @@ export default function AboutSnippet({ data }) {
                 <div className="absolute -inset-4 bg-brand-100 rounded-[2.5rem] rotate-3 -z-10" />
                 <div className="relative aspect-square md:aspect-[4/4] rounded-[2rem] overflow-hidden border-8 border-white shadow-2xl">
                   <Image
-                    src={urlFor(data.image).width(800).height(800).url()}
+                    src={urlFor(data.image).width(800).auto('format').url()}
                     alt={data.image.alt || 'About Deeprise'}
                     fill
+                    sizes="(max-width: 768px) 100vw, 50vw"
                     className="object-cover"
                   />
                 </div>

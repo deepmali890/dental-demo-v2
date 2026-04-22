@@ -102,10 +102,10 @@ const portableTextComponents = {
         type === 'service'
           ? `/services/${slug}`
           : type === 'blogPost'
-          ? `/blog/${slug}`
-          : type === 'doctor'
-          ? `/team/${slug}`
-          : `/${slug}`
+            ? `/blog/${slug}`
+            : type === 'doctor'
+              ? `/team/${slug}`
+              : `/${slug}`
 
       return (
         <Link
@@ -126,9 +126,10 @@ const portableTextComponents = {
         <figure className="my-10">
           <div className="relative w-full aspect-video rounded-2xl overflow-hidden border border-gray-100">
             <Image
-              src={urlFor(value).width(900).url()}
+              src={urlFor(value).width(900).auto('format').url()}
               alt={value.alt || ''}
               fill
+              sizes="100vw"
               className="object-cover"
             />
           </div>

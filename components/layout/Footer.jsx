@@ -117,7 +117,7 @@ export default function Footer({ clinicInfo, navigation }) {
           <div className="max-w-sm">
             {clinic.logo?.asset ? (
               <Image
-                src={urlFor(clinic.logo).height(48).url()}
+                src={urlFor(clinic.logo).height(48).auto('format').url()}
                 alt={clinic.clinicName}
                 width={140}
                 height={48}

@@ -102,11 +102,12 @@ export default function Header({ clinicInfo, navigation }) {
             <Link href="/" className="shrink-0">
               {logo?.asset ? (
                 <Image
-                  src={urlFor(logo).width(140).url()}
+                  src={urlFor(logo).width(160).auto('format').url()}
                   alt={clinicName}
                   width={160}
                   height={50}
-                  className="w-32 sm:w-40 h-auto object-contain"
+                  style={{ height: 'auto' }}
+                  className="w-32 sm:w-40 object-contain"
                   priority
                 />
               ) : (
@@ -250,11 +251,11 @@ export default function Header({ clinicInfo, navigation }) {
             <Link href="/" onClick={() => setIsOpen(false)}>
               {logo?.asset ? (
                 <Image
-                  src={urlFor(logo).width(120).url()}
+                  src={urlFor(logo).width(120).auto('format').url()}
                   alt={clinicName}
                   width={120}
                   height={30}
-                  className="w-28 object-contain"
+                  className="h-auto w-28 object-contain"
                 />
               ) : (
                 <span className="font-semibold text-lg">{clinicName}</span>

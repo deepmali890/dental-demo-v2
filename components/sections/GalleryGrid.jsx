@@ -37,11 +37,10 @@ export default function GalleryGrid({ items }) {
               <button
                 key={cat.value}
                 onClick={() => setActive(cat.value)}
-                className={`whitespace-nowrap pb-2 transition ${
-                  isActive
-                    ? 'text-gray-900 border-b-2 border-gray-900 font-semibold'
-                    : 'text-gray-500 hover:text-gray-900'
-                }`}
+                className={`whitespace-nowrap pb-2 transition ${isActive
+                  ? 'text-gray-900 border-b-2 border-gray-900 font-semibold'
+                  : 'text-gray-500 hover:text-gray-900'
+                  }`}
               >
                 {cat.label}
               </button>
@@ -73,11 +72,11 @@ export default function GalleryGrid({ items }) {
                   >
                     {item.videoThumbnail?.asset ? (
                       <Image
-                        src={urlFor(item.videoThumbnail).width(500).url()}
+                        src={urlFor(item.videoThumbnail).width(500).auto('format').url()}
                         alt={item.title}
                         width={500}
                         height={300}
-                        className="w-full object-cover"
+                        className="w-full h-auto object-cover"
                       />
                     ) : (
                       <div className="aspect-video bg-gray-100 flex items-center justify-center">
@@ -95,11 +94,12 @@ export default function GalleryGrid({ items }) {
                   <>
                     {/* IMAGE */}
                     <Image
-                      src={urlFor(item.image).width(500).url()}
+                      src={urlFor(item.image).width(500).auto('format').url()}
                       alt={item.image?.alt || item.title}
                       width={500}
                       height={400}
-                      className="w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+                      sizes="(max-width: 768px) 100vw, 33vw"
+                      className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-[1.03]"
                     />
 
                     {/* HOVER */}

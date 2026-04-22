@@ -28,6 +28,7 @@ export default function BlogCard({ post, variant = "default" }) {
             src={imageUrl}
             alt={post.title}
             fill
+            sizes="(max-width: 768px) 100vw, 300px"
             className="object-cover group-hover:scale-105 transition-transform duration-500"
           />
         ) : null}
