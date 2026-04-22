@@ -1,6 +1,15 @@
+import withBundleAnalyzer from '@next/bundle-analyzer';
+
+const bundleAnalyzer = withBundleAnalyzer({
+  enabled: process.env.ANALYZE === 'true',
+});
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  compress: true,
+
   images: {
+    formats: ["image/avif", "image/webp"],
     remotePatterns: [
       {
         protocol: 'https',
@@ -14,10 +23,9 @@ const nextConfig = {
       {
         protocol: 'https',
         hostname: 'cdn-icons-png.flaticon.com',
-        pathname: '/128/300/300221.png',
       }
     ],
   },
 };
 
-export default nextConfig;
+export default bundleAnalyzer(nextConfig);

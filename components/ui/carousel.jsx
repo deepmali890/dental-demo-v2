@@ -30,7 +30,7 @@ function Carousel({
     {
       ...opts,
       axis: orientation === "horizontal" ? "x" : "y",
-      slidesToScroll: 1, // 🔥 1 card scroll fix
+      slidesToScroll: 1,
       align: "start",
       containScroll: "trimSnaps",
     },

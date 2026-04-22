@@ -3,7 +3,6 @@ import ServicesSection from '@/components/sections/ServicesSection'
 export default function DoctorServices({ doctor }) {
   if (!doctor.services?.length) return null
 
-  console.log('DoctorServices rendered with services:', doctor.services)
   return (
     <div className="">
       {doctor.services?.length > 0 && (
