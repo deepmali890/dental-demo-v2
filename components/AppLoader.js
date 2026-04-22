@@ -10,7 +10,7 @@ export default function AppLoader({ children }) {
         const alreadyLoaded = sessionStorage.getItem("appLoaded");
 
         if (alreadyLoaded) {
-            
+            // eslint-disable-next-line react-hooks/set-state-in-effect
             setLoading(false);
             return;
         }
