@@ -4,6 +4,7 @@ import { getLayoutData } from "@/sanity/lib/fetchData";
 import { cache } from "react";
 import LayoutWrapper from "@/components/layout/LayoutWrapper";
 import PWARegister from "@/components/PWARegister";
+import { SpeedInsights } from '@vercel/speed-insights/next'
 
 const getData = cache(getLayoutData);
 
@@ -13,7 +14,7 @@ const cormorant = Cormorant_Garamond({
   weight: ["300", "400", "500", "600", "700"],
   variable: "--font-cormorant",
   display: "swap",
-  
+
 });
 
 const dmSans = DM_Sans({
@@ -100,6 +101,8 @@ export default async function RootLayout({ children }) {
         <LayoutWrapper clinicInfo={clinicInfo} navigation={navigation}>
           {children}
         </LayoutWrapper>
+
+        <SpeedInsights />
       </body>
     </html>
   );
