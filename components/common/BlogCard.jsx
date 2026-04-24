@@ -4,12 +4,11 @@ import { ArrowRight, Clock, Calendar } from "lucide-react"
 import { urlFor } from "@/sanity/lib/client"
 import { formatDate } from "@/lib/utils"
 
-export default function BlogCard({ post, variant = "default" }) {
-
+export default function BlogCard({ post }) {
   if (!post) return null
 
   const imageUrl = post?.coverImage?.asset
-    ? urlFor(post.coverImage).width(600).height(400).url()
+    ? urlFor(post.coverImage).width(1200).height(630).url()
     : null
 
   const category = post?.categories?.[0]
@@ -20,18 +19,27 @@ export default function BlogCard({ post, variant = "default" }) {
       className="group relative flex flex-col bg-white rounded-xl p-4 border border-slate-100 transition-all duration-300 hover:-translate-y-1"
     >
 
-      {/* Image */}
-      <div className="relative h-60 w-full overflow-hidden rounded-md mb-6 bg-slate-100">
+      {/* ✅ IMAGE FIXED */}
+      <div className="
+        relative
+        w-full
+        aspect-[1200/630]   /* 🔥 EXACT RATIO */
+        overflow-hidden
+        rounded-md
+        mb-6
+        bg-slate-100
+        flex items-center justify-center
+      ">
 
-        {imageUrl ? (
+        {imageUrl && (
           <Image
             src={imageUrl}
             alt={post.title}
             fill
             sizes="(max-width: 768px) 100vw, 300px"
-            className="object-cover group-hover:scale-105 transition-transform duration-500"
+            className="object-contain transition-transform duration-500 group-hover:scale-[1.03]"
           />
-        ) : null}
+        )}
 
         {category && (
           <div className="absolute top-4 left-4">
@@ -42,7 +50,7 @@ export default function BlogCard({ post, variant = "default" }) {
         )}
       </div>
 
-      {/* Content */}
+      {/* CONTENT */}
       <div className="flex flex-col flex-1">
 
         {/* Meta */}
