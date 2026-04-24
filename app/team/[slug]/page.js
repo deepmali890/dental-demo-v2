@@ -43,45 +43,55 @@ export default async function DoctorDetailPage({ params }) {
       <DoctorHero doctor={doctor} />
 
       {/* MAIN */}
-      <section className="bg-white py-10 sm:py-12 md:py-16">
+      <section className="bg-white py-8 sm:py-10 md:py-14">
 
         <div className="
           max-w-7xl mx-auto 
           px-4 sm:px-6 lg:px-8
-          grid grid-cols-1 lg:grid-cols-3 
-          gap-8 md:gap-10 lg:gap-12
         ">
 
-          {/* LEFT CONTENT */}
           <div className="
-            lg:col-span-2 
-            space-y-8 sm:space-y-10 md:space-y-12
+            grid 
+            grid-cols-1 
+            lg:grid-cols-3 
+            gap-8 lg:gap-12
           ">
-            <DoctorBio doctor={doctor} />
-            <DoctorSpecializations doctor={doctor} />
-            <DoctorAchievements doctor={doctor} />
+
+            {/* LEFT CONTENT */}
+            <div className="
+              lg:col-span-2 
+              space-y-6 sm:space-y-8 md:space-y-10
+            ">
+              <DoctorBio doctor={doctor} />
+              <DoctorSpecializations doctor={doctor} />
+              <DoctorAchievements doctor={doctor} />
+            </div>
+
+            {/* RIGHT SIDEBAR */}
+            <aside className="
+              space-y-4 sm:space-y-5
+              lg:sticky lg:top-24
+              h-fit
+            ">
+
+              {/* MOBILE FIX: stack order better */}
+              <div className="space-y-4 sm:space-y-5">
+                <DoctorAvailability doctor={doctor} />
+                <DoctorCTA doctor={doctor} />
+                <DoctorSocial doctor={doctor} />
+              </div>
+
+            </aside>
+
           </div>
 
-          {/* RIGHT SIDEBAR */}
-          <aside className="
-            space-y-4 sm:space-y-5
-            lg:sticky lg:top-24
-            h-fit
+          {/* SERVICES */}
+          <div className="
+            mt-10 sm:mt-12 md:mt-14
           ">
-            <DoctorAvailability doctor={doctor} />
-            <DoctorCTA doctor={doctor} />
-            <DoctorSocial doctor={doctor} />
-          </aside>
+            <DoctorServices doctor={doctor} />
+          </div>
 
-        </div>
-
-        {/* SERVICES */}
-        <div className="
-          mt-12 sm:mt-14 md:mt-16
-          max-w-7xl mx-auto 
-          px-4 sm:px-6 lg:px-8
-        ">
-          <DoctorServices doctor={doctor} />
         </div>
 
       </section>
