@@ -5,6 +5,7 @@ import { CheckCircle2, MessageCircle } from 'lucide-react'
 import CTAButton from '../ui/CTAButton'
 
 export default function HeroSection({ data, clinicInfo }) {
+  
   const phone =
     clinicInfo?.contact?.whatsapp || clinicInfo?.contact?.primaryPhone
 

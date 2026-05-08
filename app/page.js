@@ -1,11 +1,12 @@
 import React, { cache } from 'react'
-import { getHomepageData } from '@/sanity/lib/fetchData'
+import { getAboutPageData, getHomepageData } from '@/sanity/lib/fetchData'
 import dynamic from 'next/dynamic'
 
 // ─── Above-fold: Static imports (needed for LCP) ──────────────────
 import AnnouncementBar from '@/components/layout/AnnouncementBar'
 import HeroSection from '@/components/sections/HeroSection'
 import StatsSection from '@/components/sections/StatsSection'
+import AboutAffiliations from '@/components/about/AboutAffiliations'
 
 // ─── Below-fold: Dynamic imports (lazy loaded) ───────────────────
 const WhyUsSection = dynamic(
@@ -31,8 +32,10 @@ const OurTeamSection = dynamic(
 // Testimonials: animations + heavy — ssr:false
 const TestimonialsSection = dynamic(
   () => import('@/components/sections/TestimonialsSection'),
-  { ssr: true}
+  { ssr: true }
 )
+
+
 
 const CTABanner = dynamic(
   () => import('@/components/sections/CTABanner'),
@@ -92,6 +95,12 @@ const HomePage = async () => {
     allDoctors,
   } = data
 
+
+
+  const [about] = await Promise.all([
+    getAboutPageData(),
+  ])
+
   const isVisible = (section) => section?.isVisible !== false
 
   return (
@@ -137,6 +146,9 @@ const HomePage = async () => {
           fallbackDoctors={allDoctors}
         />
       )}
+
+      {/* About Affiliations */}
+      <AboutAffiliations about={about} />
 
       {/* Testimonials */}
       {hp?.testimonialsSection && (
